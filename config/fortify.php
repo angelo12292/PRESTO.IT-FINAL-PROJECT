@@ -73,7 +73,7 @@ return [
     |
     */
 
-    'home' => 'liviwire.insert-announcement',
+    'home' => 'livewire.insert-announcement',
 
     /*
     |--------------------------------------------------------------------------
