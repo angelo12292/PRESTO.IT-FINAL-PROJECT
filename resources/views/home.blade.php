@@ -1,3 +1,8 @@
 <x-layout>
-    <h1>home</h1>
+    <h1>test</h1>
+    <div>
+        <button type="submit" class="btn btn-outline-info">Inserisci Annunci</button>
+    </div>
+
+
 </x-layout>
