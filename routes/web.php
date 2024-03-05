@@ -18,4 +18,7 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
+    Route::get('/inserisci annuncio', function() {
+        return view('insert_announcment');
+    });
 });
