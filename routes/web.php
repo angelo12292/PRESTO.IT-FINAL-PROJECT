@@ -18,15 +18,12 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/inserisci_annuncio', function () {
-        return view('livewire.insert-announcement');
-    })->name('livewire.insert-announcement');
+        return view('insert_announce');
+    })->name('insert_announce');
+
     Route::get('/annunci', function () {
         return view('livewire.show-announcements');
     })->name('livewire.show-announcements');
 
-  Route::get('/inserisci_annuncio', function () {
-    return view('insert_announce');
-        })->name('insert_announce');
-    
 });
 
