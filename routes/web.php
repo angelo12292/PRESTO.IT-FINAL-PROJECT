@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})-> name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/inserisci_annuncio', function() {
         return view('livewire.insert-announcement');
-    });
+    })->name('livewire.insert-announcement');
 });

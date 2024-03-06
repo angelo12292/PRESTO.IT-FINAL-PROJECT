@@ -1,7 +1,7 @@
 <x-layout>
     <h1>test</h1>
     <div>
-        <button type="submit" class="btn btn-outline-info">Inserisci Annunci</button>
+        <a href="{{route('livewire.insert-announcement')}}" type="submit" class="btn btn-outline-info">Inserisci Annunci</a>
     </div>
 
 
