@@ -33,7 +33,6 @@ class InsertAnnouncement extends Component
 
         session()->flash('success', 'Annuncio creato con successo!');
 
-        $this->dispatch('announcements-created');
 
 
     }

@@ -21,9 +21,7 @@ Route::middleware('auth')->group(function () {
         return view('insert_announce');
     })->name('insert_announce');
 
-    Route::get('/annunci', function () {
-        return view('livewire.show-announcements');
-    })->name('livewire.show-announcements');
+    Route::get('/annunci', [PageController::class, 'show'])->name('show_announcements'); 
 
 });
 
