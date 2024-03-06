@@ -5,22 +5,22 @@
     
     <x-success />
 
-            <div class="mb-3">
+         <div class="mb-3">
             <label for="name" class="form-label">Titolo</label>
             <input type="text" class="form-control" id="title" placeholder="nome annuncio" wire:model="AnnTitle">
             @error('AnnTitle') <span class="text-danger small">{{ $message }}</span> @enderror
-            </div>
+        </div>
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo € </label>
             <input type="number" class="form-control" id="price" placeholder="prezzo" wire:model="AnnPrice">
             @error('AnnPrice') <span class="text-danger small">{{ $message }}</span> @enderror
         </div>
         <div class="mb-3">
-        <!-- <select name="category" id="category_id" class="form-select">
-                @foreach($AnnCategory as $category)
-                    <option value="{{$category->id}}">{{$category->name}}</option>
-                 @endforeach
-        </select> -->
+        <select id="category_id" class="form-select" wire:model="AnnCategory">
+             @foreach($categories as $category)
+            <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+            </select>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>

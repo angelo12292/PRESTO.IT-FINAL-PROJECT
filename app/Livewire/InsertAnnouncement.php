@@ -3,12 +3,14 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\Category;
 use App\Models\Announcement;
+use Illuminate\Support\Facades\Auth;
+
 
 class InsertAnnouncement extends Component
 {
     public $AnnTitle;
-    public $AnntUser;
     public $AnnCategory;
     public $AnnDescrip;
     public $AnnPrice;
@@ -17,7 +19,7 @@ class InsertAnnouncement extends Component
     {
         Announcement::create([
             'title'=> $this->AnnTitle,
-            'user'=>$this->AnntUser,
+            'user_id'=>Auth::id(),
             'category_id'=>$this->AnnCategory,
             'description'=>$this->AnnDescrip,
             'price'=>$this->AnnPrice,
@@ -29,6 +31,6 @@ class InsertAnnouncement extends Component
     }
     public function render()
     {
-        return view('livewire.insert-announcement');
+        return view('livewire.insert-announcement', ['categories'=>Category::all()]);
     }
 }
