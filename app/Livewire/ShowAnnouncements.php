@@ -13,5 +13,14 @@ class ShowAnnouncements extends Component
         return view('livewire.show-announcements');
     }
 
-    public function
+    public function mount()
+    {
+        $this->loadAnnouncements();
+    }
+
+    #[on('announcements-created')]
+    public function loadAnnouncements()
+    {
+        $this->announcements = Announcement::orderBy('created_at','desc')->get();
+    }
 }
