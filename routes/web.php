@@ -17,10 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class, 'home'])->name('home');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/inserisci_annuncio', function () {
+        return view('insert_announce');
+    })->name('insert_announce');
 
-  Route::get('/inserisci_annuncio', function () {
-    return view('insert_announce');
-        })->name('insert_announce');
-    
+    Route::get('/annunci', function () {
+        return view('livewire.show-announcements');
+    })->name('livewire.show-announcements');
+
 });
 
