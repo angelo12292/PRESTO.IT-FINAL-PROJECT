@@ -23,4 +23,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/annunci', function () {
         return view('livewire.show-announcements');
     })->name('livewire.show-announcements');
+
+  Route::get('/inserisci_annuncio', function () {
+    return view('insert_announce');
+        })->name('insert_announce');
+    
 });
+
