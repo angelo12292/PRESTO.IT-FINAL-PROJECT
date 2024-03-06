@@ -33,7 +33,7 @@
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
-
+            @guest
             <div class="btn-group me-5 ">
                 <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     
@@ -43,6 +43,22 @@
                     <li><a class="dropdown-item" href="/register">Register</a></li>
                 </ul>
             </div>
+           
+            @else
+            <div class="btn-group me-5 ">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{auth()->user()->name}}
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <form action="/logout" method="POST">
+                            @csrf
+                            <button class="nav-link mx-3" type="submit">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            @endguest
         </div>
     </div>
 </nav>
