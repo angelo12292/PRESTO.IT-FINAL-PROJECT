@@ -1,5 +1,5 @@
 <x-layout>
-    <section class="container text-center mt-4  " style="height:80vh">
+    <section class="container text-center mt-4  " style="height:50vh">
 
         <div>
             <a href="{{route('insert_announce')}}" type="submit" class="btn btn-outline-info">Inserisci
@@ -39,6 +39,16 @@
         </div>
 
 
+    </section>
+
+    <section class="container">
+        <div class="row g-2">
+            @foreach($announcements as $announcement)
+            <div class="col-4 mb-4 d-flex justify-content-center ">
+                <x-card :description="$announcement->description" :categories="$announcement->categories" :title="$announcement->title" />
+            </div>
+            @endforeach
+        </div>
     </section>
 
 
