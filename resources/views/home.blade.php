@@ -2,7 +2,7 @@
     <section class="container text-center mt-4  " style="height:80vh">
 
         <div>
-            <a href="{{route('livewire.insert-announcement')}}" type="submit" class="btn btn-outline-info">Inserisci
+            <a href="{{route('insert_announce')}}" type="submit" class="btn btn-outline-info">Inserisci
                 Annunci</a>
         </div>
 
