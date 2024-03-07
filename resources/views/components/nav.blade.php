@@ -28,10 +28,10 @@
         </li>
 
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <div>
+        <a href="{{route('insert_announcement')}}" type="submit" class="btn btn-outline-info">Inserisci
+            Annunci</a>
+      </div>
       @guest
       <div class="btn-group me-5 ">
         <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
