@@ -45,7 +45,14 @@
         <div class="row g-2">
             @foreach($announcements as $announcement)
             <div class="col-4 mb-4 d-flex justify-content-center ">
-                <x-card :description="$announcement->description" :categories="$announcement->categories" :title="$announcement->title" />
+                <div class="card " style="width: 18rem;">
+                <img src="https://picsum.photos/3{{rand(0, 9)}}{{rand(0, 9)}}/2{{rand(0, 9)}}{{rand(0, 9)}}" class="card-img-top" alt="...">
+                <x-card
+                :price="$announcement->price"
+                :description="$announcement->description" :category="$announcement->category_id" :title="$announcement->title" />
+
+                </div>
+                
             </div>
             @endforeach
         </div>
