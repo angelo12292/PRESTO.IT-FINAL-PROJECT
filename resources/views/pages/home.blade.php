@@ -2,6 +2,11 @@
 
     <section class="container text-center mt-4  " style="height:50vh">
 
+        <!-- <img src="img\image.jpg" alt=""> -->
+        <div class="imgSfondo">asdasd</div>
+
+        <!-- <img src="{{ base_path('resources/img/image.jpg') }}" alt=""> -->
+
         <h1 class="p-4">Buy, Sell, Rent & Exchange<br> in one Click</h1>
 
         <div class="row">
