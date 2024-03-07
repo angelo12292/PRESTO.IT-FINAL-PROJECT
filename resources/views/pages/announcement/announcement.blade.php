@@ -3,21 +3,23 @@
   <div class="container  mt-5  ">
 
     <h1 class="text-center mb-5 ">Annuncio singolo</h1>
-
+    
     <div class="row">
       <div class="col-4 d-flex justify-content-center flex-column p-0 me-5 ">
-        <img src="https://picsum.photos/300/300" alt="" class="rounded-4">
-        <div class="row mt-3 ">
-          <div class="col-4 p-0 d-flex justify-content-center">
-            <img src="https://picsum.photos/130" alt="" class="rounded-4">
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://picsum.photos/400/300" class="d-block w-100 rounded-4" alt="...">
           </div>
-          <div class="col-4 p-0 d-flex justify-content-center">
-            <img src="https://picsum.photos/130" alt="" class="rounded-4">
+          <div class="carousel-item">
+            <img src="https://picsum.photos/400/300" class="d-block w-100 rounded-4" alt="...">
           </div>
-          <div class="col-4 p-0 d-flex justify-content-center">
-            <img src="https://picsum.photos/130" alt="" class="rounded-4">
+          <div class="carousel-item">
+            <img src="https://picsum.photos/400/300" class="d-block w-100 rounded-4" alt="...">
           </div>
         </div>
+      </div>
+        
       </div>
       <div class="col-6 border-start ">
         <h2 class="mb-2 fw-light">Titolo:</h2>
