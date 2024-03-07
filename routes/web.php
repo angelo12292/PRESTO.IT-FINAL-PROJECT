@@ -20,6 +20,8 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 Route::post('/annunci.categoria', [PageController::class, 'searchByCategory'])->name('searchByCategory');
 
 
+
+
 Route::middleware('auth')->group(function () {
 
 

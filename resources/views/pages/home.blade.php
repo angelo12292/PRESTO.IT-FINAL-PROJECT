@@ -1,12 +1,8 @@
 <x-layout>
+
     <section class="container text-center mt-4  " style="height:50vh">
 
-        <div>
-            <a href="{{route('insert_announcement')}}" type="submit" class="btn btn-outline-info">Inserisci
-                Annunci</a>
-        </div>
-
-        <h1>Buy, Sell, Rent & Exchange<br> in one Click</h1>
+        <h1 class="p-4">Buy, Sell, Rent & Exchange<br> in one Click</h1>
 
         <div class="row">
             <div class="col-6 m-auto border p-3">
