@@ -17,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class, 'home'])->name('home');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/inserisci_annuncio', function () {
-        return view('insert_announce');
-    })->name('insert_announce');
+    
 
     Route::get('/annunci', [PageController::class, 'show'])->name('show_announcements'); 
 

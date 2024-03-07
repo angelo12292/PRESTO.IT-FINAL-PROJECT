@@ -73,7 +73,7 @@ return [
     |
     */
 
-    'home' => '/inserisci_annuncio',
+    'home' => 'account/inserisci_annuncio',
 
     /*
     |--------------------------------------------------------------------------
