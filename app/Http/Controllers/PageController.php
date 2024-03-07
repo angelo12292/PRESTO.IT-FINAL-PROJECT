@@ -20,12 +20,10 @@ class PageController extends Controller
     public function searchByCategory(Request $request)
     {
 
-    $category = $request->input('category');
+        $category = $request->input('category');
 
-    $announcements = Announcement::where('category_id', $category)->get();
+        $announcements = Announcement::where('category_id', $category)->get();
 
-    return view('pages.home', ['announcements' => $announcements, 'categories' => Category::all()]);
-    
+        return view('pages.home', ['announcements' => $announcements, 'categories' => Category::all()]);
     }
-
 }

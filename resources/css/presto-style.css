@@ -1,0 +1,9 @@
+.imgSfondo{
+
+  background-image: url('../img/image.jpg');
+  
+
+  width: 600px;
+  height: 200px;
+  border-color:  red;
+}
