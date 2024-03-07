@@ -1,6 +1,11 @@
 <x-layout>
 
-    <section class="container text-center mt-4  " style="height:50vh">
+    <div class="w-75 position-fixed top-0 z-n1 w-100 bg-black">
+        <img src="img\image.jpeg" alt="" class="img-fluid w-100">
+    </div>
+
+    <section class="container text-center mt-4" style="height:50vh">
+
 
         <h1 class="p-4">Buy, Sell, Rent & Exchange<br> in one Click</h1>
 
