@@ -30,7 +30,7 @@
         <h4 class="mb-4 ">{{$announcement->description}}</h4>
 
         <h4 class="mb-2 fw-light h2">Prezzo:</h4>
-        <h4 class="mb-2 ">{{$announcement->price}}</h4>
+        <h4 class="mb-2 ">{{ Number::currency($announcement->price, in: 'EUR', locale: 'it') }}</h4>
 
 
       </div>
