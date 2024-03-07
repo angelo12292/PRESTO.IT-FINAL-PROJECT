@@ -16,4 +16,16 @@ class PageController extends Controller
 
         return view('pages.home', ['categories' => Category::all(), 'announcements' => $announcements]);
     }
+
+    public function searchByCategory(Request $request)
+    {
+
+    $category = $request->input('category');
+
+    $announcements = Announcement::where('category_id', $category)->get();
+
+    return view('pages.home', ['announcements' => $announcements, 'categories' => Category::all()]);
+    
+    }
+
 }

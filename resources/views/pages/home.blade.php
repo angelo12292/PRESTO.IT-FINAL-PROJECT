@@ -10,7 +10,7 @@
 
         <div class="row">
             <div class="col-6 m-auto border p-3">
-                <form action="" method="POST">
+                <form action="{{ route('searchByCategory') }}" method="POST">
                     @csrf
 
                     <div class="row">
