@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\AnnouncementController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class, 'home'])->name('home');
 
 Route::middleware('auth')->group(function () {
-    
 
-    Route::get('/annunci', [PageController::class, 'show'])->name('show_announcements'); 
 
+    Route::get('/annunci', [PageController::class, 'show'])->name('show_announcements');
+
+    Route::get('/annunci/{id}', [AnnouncementController::class, 'announceView'])->name('announce.View');
 });
-

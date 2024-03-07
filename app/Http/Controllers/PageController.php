@@ -16,6 +16,4 @@ class PageController extends Controller
 
         return view('pages.home', ['categories' => Category::all(), 'announcements' => $announcements]);
     }
-
-    
 }
