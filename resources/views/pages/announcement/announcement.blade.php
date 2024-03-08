@@ -76,14 +76,7 @@
           <textarea class="form-control" value="" id="validationTextarea" placeholder="scrivi al venditore" style="height: 200px"></textarea>
           
         </div>
-
-
-
-          <div class="mb-3 text-secondary">
-            <label for="exampleInputnaim" class="form-label">Nome</label>
-            <input type="name" class="form-control" id="exampleInputnaim" value="{{auth()->user()->name}}">
-            <div id="nameHelp" class="form-text"></div>
-          </div>
+          
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Indirizzo email</label>
             <input type="email" class="form-control" id="exampleInputEmail1" value="{{auth()->user()->email}}">
@@ -95,6 +88,16 @@
             <div id="emailHelp" class="form-text">Non condividere con nessuno la tua Password.</div>
           </div>
 
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+
+          <div class="mb-3">
+            <button class="btn btn-primary" type="submit" disabled>Invia email</button>
+          </div>
+          </form>
+
           @else
           <div>
             <h5>Contatta il venditore</h3>
@@ -103,13 +106,6 @@
           </div>
           <div>
             <form >
-          <div class="mb-3">
-            <label for="validationTextarea" class="form-label">Venditore: {{$user->name}}</label>
-            <textarea class="form-control" value="" id="validationTextarea" placeholder="scrivi al venditore" style="height: 200px"></textarea>
-            
-          </div>
-
-
 
             <div class="mb-3 text-secondary">
               <label for="exampleInputnaim" class="form-label">Nome</label>
@@ -126,30 +122,20 @@
               <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
 
+          <div class="d-flex mt-3 ">
+            <div class="mx-2">
+              <a class="btn btn-primary" href="/login" role="button">Login</a>
+            </div>
+            <div class="mx-2">
+              <a class="btn btn-primary" href="/register" role="button">Register</a>
+            </div>
+          </div>
+          
+          </form>
+
           @endauth
           
-
-
-
-
-
-        
-
-        
-
-        <div class="mb-3">
-          <button class="btn btn-primary" type="submit" disabled>Invia email</button>
         </div>
-        </form>
-        </div>
-      
-        
-        
-        
-
-        
-
-        
         
       </div>
     </div>
