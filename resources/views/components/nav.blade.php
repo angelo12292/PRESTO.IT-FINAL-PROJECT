@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-black top-0 h-10 position-fixed z-3 w-100">
-  <div class="container-fluid">
-    <a class="navbar-brand text-white fw-bold" href="{{route('home')}}">Presto</a>
+<nav class="navbar navbar-expand-lg p-0 shadow">
+  <div class="container py-3  bg-trasparent">
+    <a class="navbar-brand fw-bold fs-3 p-0" href="{{route('home')}}">Presto</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,9 +10,7 @@
         <li class="nav-item">
           <a class="nav-link active text-white fw-bold" aria-current="page" href="{{route('home')}}">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white fw-bold" href="#">Link</a>
-        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -27,12 +25,9 @@
           </ul>
         </li>
       </ul>
-      <div>
-        <a href="{{route('insert_announcement')}}" type="submit" class="btn btn-outline-info text-white fw-bold">Inserisci
-            Annunci</a>
-      </div>
+
       @guest
-      <div class="btn-group me-5 ">
+      <div class="btn-group me-2 ">
         <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 
         </button>
@@ -43,8 +38,8 @@
       </div>
 
       @else
-      <div class="btn-group me-5 ">
-        <button class="btn dropdown-toggle text-white fw-bold" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="btn-group me-2 ">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           {{auth()->user()->name}}
         </button>
         <ul class="dropdown-menu">
@@ -57,6 +52,10 @@
         </ul>
       </div>
       @endguest
+      <div>
+        <a href="{{route('insert_announcement')}}" type="submit" class="btn btn-primary  rounded-5  ">Inserisci
+          Annunci</a>
+      </div>
     </div>
   </div>
 </nav>
