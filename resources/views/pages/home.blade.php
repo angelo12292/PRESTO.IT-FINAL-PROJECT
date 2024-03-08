@@ -1,48 +1,48 @@
 <x-layout>
 
-    <section class="container text-center mt-4  " style="height:50vh">
+    <img src="../img/image_black.jpg" alt="">
 
-        <!-- <img src="img\image.jpg" alt=""> -->
-        <div class="imgSfondo">asdasd</div>
+    <div class="imgSfondo">
 
-        <!-- <img src="{{ base_path('resources/img/image.jpg') }}" alt=""> -->
 
-        <h1 class="p-4">Buy, Sell, Rent & Exchange<br> in one Click</h1>
 
-        <div class="row">
-            <div class="col-6 m-auto border p-3">
-                <form action="{{ route('searchByCategory') }}" method="POST">
-                    @csrf
+        <section class="container text-center d-flex flex-column justify-content-center h-100 " style="height:50vh">
+            <h1 class="p-4 fw-bold text-white top-50 ">Buy, Sell, Rent & Exchange<br> in one Click</h1>
 
-                    <div class="row">
+            <div class="row ">
+                <div class="col-8 m-auto border p-3 rounded-5 bg-white shadow z-3">
+                    <form action="{{ route('searchByCategory') }}" method="POST">
+                        @csrf
 
-                        <div class="col-6">
-                            <input type="text" name="announce" id="announce" placeholder="Cerca Annuncio" class="form-control">
+                        <div class="row">
+
+                            <div class="col-6">
+                                <input type="text" name="announce" id="announce" placeholder="Cerca Annuncio" class="form-control rounded-4">
+                            </div>
+
+                            <div class="col-3">
+                                <select name="category" id="category" class="form-select rounded-4">
+                                    @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-3">
+                                <button type="submit" class="btn btn-primary w-100 rounded-4">Cerca</button>
+                            </div>
                         </div>
 
-                        <div class="col-3">
-                            <select name="category" id="category" class="form-select">
-                                @foreach($categories as $category)
-                                <option value="{{$category->id}}">{{$category->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div class="col-3">
-                            <button type="submit" class="btn btn-primary w-100">Cerca</button>
-                        </div>
-                    </div>
 
 
-
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
 
-
+    </div>
     </section>
 
-    <section class="container">
+    <section class="container mt-5">
         <div class="row g-2">
             @foreach($announcements as $announcement)
             <div class="col-4 mb-4 d-flex justify-content-center ">
