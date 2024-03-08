@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-transparent">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{{route('home')}}">Presto</a>
+<nav class="navbar navbar-expand-lg p-0 shadow">
+  <div class="container py-3  bg-trasparent">
+    <a class="navbar-brand fw-bold fs-3 p-0" href="{{route('home')}}">Presto</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,9 +10,7 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
@@ -28,12 +26,9 @@
         </li>
 
       </ul>
-      <div>
-        <a href="{{route('insert_announcement')}}" type="submit" class="btn btn-outline-info">Inserisci
-            Annunci</a>
-      </div>
+
       @guest
-      <div class="btn-group me-5 ">
+      <div class="btn-group me-2 ">
         <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 
         </button>
@@ -44,7 +39,7 @@
       </div>
 
       @else
-      <div class="btn-group me-5 ">
+      <div class="btn-group me-2 ">
         <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           {{auth()->user()->name}}
         </button>
@@ -58,6 +53,10 @@
         </ul>
       </div>
       @endguest
+      <div>
+        <a href="{{route('insert_announcement')}}" type="submit" class="btn btn-primary  rounded-5  ">Inserisci
+          Annunci</a>
+      </div>
     </div>
   </div>
 </nav>
