@@ -1,9 +1,36 @@
-.imgSfondo{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+.imgSfondo {
 
   background-image: url('../img/image.jpg');
-  
+
 
   width: 600px;
   height: 200px;
-  border-color:  red;
+  border-color: red;
+}
+
+
+/* ANIMATION CARD */
+
+.reveal {
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1.3s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
 }
