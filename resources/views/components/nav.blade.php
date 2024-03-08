@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-transparent position-fixed z-3 w-100">
+<nav class="navbar navbar-expand-lg bg-black top-0 h-10 position-fixed z-3 w-100">
   <div class="container-fluid">
     <a class="navbar-brand text-white fw-bold" href="{{route('home')}}">Presto</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -28,7 +28,7 @@
         </li>
       </ul>
       <div>
-        <a href="{{route('insert_announcement')}}" type="submit" class="btn btn-outline-info text-dark fw-bold">Inserisci
+        <a href="{{route('insert_announcement')}}" type="submit" class="btn btn-outline-info text-white fw-bold">Inserisci
             Annunci</a>
       </div>
       @guest
