@@ -113,12 +113,12 @@
 
             <div class="mb-3 text-secondary">
               <label for="exampleInputnaim" class="form-label">Nome</label>
-              <input type="name" class="form-control" id="exampleInputnaim" value="{{auth()->user()->name}}">
+              <input type="name" class="form-control" id="exampleInputnaim" value="">
               <div id="nameHelp" class="form-text">Inserisci il tuo nome.</div>
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Indirizzo email</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" value="{{auth()->user()->email}}">
+              <input type="email" class="form-control" id="exampleInputEmail1" value="">
               <div id="emailHelp" class="form-text">Non condividere con nessuno la tua email.</div>
             </div>
             <div class="mb-3">
