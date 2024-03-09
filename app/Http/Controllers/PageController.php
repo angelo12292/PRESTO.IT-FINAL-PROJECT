@@ -12,7 +12,7 @@ class PageController extends Controller
 
     public function home()
     {
-        $announcements = Announcement::take(6)->orderBy('created_at', 'desc')->get();
+        $announcements = Announcement::where('is_accepted',true)->take(6)->orderBy('created_at', 'desc')->get();
 
         return view('pages.home', ['categories' => Category::all(), 'announcements' => $announcements]);
     }
