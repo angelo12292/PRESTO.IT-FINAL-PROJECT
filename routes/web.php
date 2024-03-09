@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/annunci', [PageController::class, 'show'])->name('show_announcements');
 
-    Route::get('/revisore/home', [RevisorController::class, 'index'])->name('revisor.index');
+    
 
     
 });
