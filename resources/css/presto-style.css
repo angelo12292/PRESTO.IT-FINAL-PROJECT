@@ -1,4 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root {
+  --primary-color: rgb(52,87,180);
+  --accent-color: rgb(252,115,24);
+}
+
+.primary-color-text{
+  color: var(--primary-color)!important;
+}
+.accent-color-text{
+  color: var(--accent-color)!important;
+}
+
+.primary-color-bg{
+  background-color: var(--primary-color)!important;
+}
+.accent-color-bg{
+  background-color: var(--accent-color)!important;
+}
+
 
 * {
   font-family: 'Poppins', sans-serif;
@@ -7,7 +28,81 @@
 
 body {
   overflow-x: hidden;
+  background-color: rgb(255, 250, 244);
 }
+
+
+
+/* navbar*/
+
+.linkNav{
+  font-weight: 500;
+  color: var(--primary-color)!important;
+}
+
+.navAnimation{
+    transition: all 0,5s cubic-bezier(.215, .61, .355, 1);
+  }
+
+.navAnimation:hover{
+  color:var(--accent-color)!important;
+}
+
+.btnStatic{
+  transition: all 0,5s cubic-bezier(.215, .61, .355, 1);
+}
+
+.btnStatic:hover{
+  background-color: var(--accent-color)!important;
+}
+
+.navShadow{
+  box-shadow: 0 5px 20px rgb(255, 206, 173);
+}
+
+
+
+
+
+
+.shopBack{
+  
+  position: absolute;
+  right:10%;
+  z-index: -1;
+  width: 50%;
+  top: 13%
+}
+
+.shopImage{
+  position: absolute;
+  right:22%;
+  
+  width: 31%;
+  top: 20%
+}
+
+
+/* search bar */
+.searchBar{
+  padding-top: 12%;
+}
+
+.searchBtn{
+  transition: all 0,5s cubic-bezier(.215, .61, .355, 1);
+  background-color: var(--accent-color)!important;
+  color:white;
+}
+.searchBtn:hover{
+  background-color: var(--primary-color)!important;
+  color: white;
+}
+
+.searchStyle{
+  border: 5px solid var(--accent-color)!important;
+}
+
+
 
 
 .imgSfondo {
