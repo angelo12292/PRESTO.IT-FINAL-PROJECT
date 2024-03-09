@@ -20,4 +20,17 @@ class Announcement extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function setAccepted($value) {
+
+        $this->is_accepted = true;
+        $this->save();
+        return;
+    }
+
+    public static function toBeRevisionedCount() {
+
+        return Announcement::where('is_accepted', null)->count();
+
+    }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\RevisorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,8 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/annunci', [PageController::class, 'show'])->name('show_announcements');
+
+    Route::get('/revisore/home', [RevisorController::class, 'index'])->name('revisor.index');
 
     
 });

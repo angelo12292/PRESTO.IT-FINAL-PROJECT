@@ -8,20 +8,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active text-white fw-bold" aria-current="page" href="{{route('home')}}">Home</a>
+          <a class="nav-link active fw-bold" aria-current="page" href="{{route('home')}}">Home</a>
         </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item text-white fw-bold" href="#">Action</a></li>
-            <li><a class="dropdown-item text-white fw-bold" href="#">Another action</a></li>
+            <li><a class="dropdown-item fw-bold" href="#">Action</a></li>
+            <li><a class="dropdown-item fw-bold" href="#">Another action</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item text-white fw-bold" href="#">Something else here</a></li>
+            <li><a class="dropdown-item fw-bold" href="#">Something else here</a></li>
           </ul>
         </li>
       </ul>
@@ -32,8 +32,8 @@
 
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item text-white fw-bold" href="/login">Login</a></li>
-          <li><a class="dropdown-item text-white fw-bold" href="/register">Register</a></li>
+          <li><a class="dropdown-item fw-bold" href="/login">Login</a></li>
+          <li><a class="dropdown-item fw-bold" href="/register">Register</a></li>
         </ul>
       </div>
 
@@ -44,9 +44,13 @@
         </button>
         <ul class="dropdown-menu">
           <li>
+            @if (Auth::user()->is_revisor)
+            <a href="{{ route('revisor.index')}}" class="nav-link btn btn-primary btn-sm">Zona revisore <span class="text-black badge ">{{App\Models\Announcement::toBeRevisionedCount()}}</span></a>  
+                
+            @endif
             <form action="/logout" method="POST">
               @csrf
-              <button class="nav-link mx-3 text-white fw-bold" type="submit">Logout</button>
+              <button class="nav-link mx-3 fw-bold" type="submit">Logout</button>
             </form>
           </li>
         </ul>
