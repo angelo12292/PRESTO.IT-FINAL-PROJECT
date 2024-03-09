@@ -7,13 +7,13 @@
         <li class="nav-item ">
           <a class="nav-link active primary-color-text navAnimation " aria-current="page" href="{{route('home')}}">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item ">
           <a class="nav-link active primary-color-text navAnimation " aria-current="page" href="{{route('home')}}">Category</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item ">
           <a class="nav-link active primary-color-text navAnimation " aria-current="page" href="{{route('home')}}">Info</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item ">
           <a class="nav-link active primary-color-text navAnimation " aria-current="page" href="{{route('home')}}">Contact us</a>
         </li>
 
@@ -25,13 +25,6 @@
       <div class="btn-group me-2 ">
         <a class="dropdown-item primary-color-text navAnimation " href="/login">Login</a>
         <a class="dropdown-item ms-3 me-2 primary-color-text navAnimation" href="/register">Register</a>
-        <!-- <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="/login">Login</a></li>
-          <li><a class="dropdown-item" href="/register">Register</a></li>
-        </ul> -->
       </div>
 
       @else
@@ -41,9 +34,13 @@
         </button>
         <ul class="dropdown-menu">
           <li>
+            @if (Auth::user()->is_revisor)
+            <a href="{{ route('revisor.index')}}" class="nav-link btn btn-primary btn-sm">Zona revisore <span class="text-black badge ">{{App\Models\Announcement::toBeRevisionedCount()}}</span></a>
+
+            @endif
             <form action="/logout" method="POST">
               @csrf
-              <button class="nav-link mx-3" type="submit">Logout</button>
+              <button class="nav-link mx-3 fw-bold" type="submit">Logout</button>
             </form>
           </li>
         </ul>
