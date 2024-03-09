@@ -26,4 +26,13 @@ class PageController extends Controller
 
         return view('pages.home', ['announcements' => $announcements, 'categories' => Category::all()]);
     }
+
+
+    public function categoryView(Category $category, $id)
+    {
+        $categories = Category::findOrFail($id);
+        $announcements = Announcement::all();
+
+        return view('pages.category.category', ['announcements' => $announcements, 'categories' => $categories]);
+    }
 }

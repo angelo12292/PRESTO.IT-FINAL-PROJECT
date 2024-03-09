@@ -22,6 +22,8 @@ Route::post('/annunci.categoria', [PageController::class, 'searchByCategory'])->
 
 Route::get('/annunci/{id}', [AnnouncementController::class, 'announceView'])->name('announce.View');
 
+Route::get('/categorie/{id}', [PageController::class, 'categoryView'])->name('category.View');
+
 
 
 
@@ -29,8 +31,4 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/annunci', [PageController::class, 'show'])->name('show_announcements');
-
-    
-
-    
 });

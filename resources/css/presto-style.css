@@ -3,6 +3,7 @@
 
 :root {
   --primary-color: rgb(52,87,180);
+  --secondary-color: rgb(210, 223, 255);
   --accent-color: rgb(252,115,24);
 }
 
@@ -62,7 +63,7 @@ body {
 
 
 
-
+/* HERO SECTION */
 
 
 .shopBack{
@@ -71,7 +72,7 @@ body {
   right:10%;
   z-index: -1;
   width: 50%;
-  top: 13%
+  top: 15%
 }
 
 .shopImage{
@@ -79,13 +80,14 @@ body {
   right:22%;
   
   width: 31%;
-  top: 20%
+  top: 22%
 }
+
 
 
 /* search bar */
 .searchBar{
-  padding-top: 12%;
+  padding-top: 13%;
 }
 
 .searchBtn{
@@ -102,6 +104,24 @@ body {
   border: 5px solid var(--accent-color)!important;
 }
 
+
+/* CATEGORY SECTION */
+
+.categoryCardContainer{
+  background-color: var(--secondary-color)!important;
+
+}
+
+.categoryCard{
+
+  background-color: var(--primary-color)!important;
+  transition: all 0.5s cubic-bezier(.215, .61, .355, 1);
+}
+
+.categoryCard:hover{
+  background-color: var(--accent-color)!important;
+
+}
 
 
 

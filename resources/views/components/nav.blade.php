@@ -9,7 +9,7 @@
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('home')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('home')}}">Categorie</a>
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#category">Categorie</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('home')}}">Annunci</a>
@@ -24,7 +24,7 @@
 
       @else
       <div class="btn-group me-2 ">
-        <button class="btn dropdown-toggle linkNav" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn dropdown-toggle linkNav " type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-person-circle me-1"></i>
           {{auth()->user()->name}}
         </button>

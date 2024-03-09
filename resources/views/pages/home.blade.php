@@ -49,7 +49,26 @@
 
   <!-- SEARCH BY CATEGORY SECTION -->
 
-  <section class="container">
+  <section class=" categoryCardContainer py-5">
+
+    <div class="container py-4">
+      <h2 class="text-center fw-bold mb-3 text-decoration-none primary-color-text" name="category">Categorie</h2>
+
+      <div class="category-container mt-5">
+        <div class="row gap-5">
+
+          @foreach($categories as $category)
+          <a href="{{ route('category.View', $category->id) }}" class="col-2 text-decoration-none ">
+            <div class="shadow rounded-5 categoryCard d-flex flex-column justify-content-center align-items-center reveal reveal.active" style="height: 220px;">
+              <h5 class="text-white ">{{$category->name}}</h5>
+            </div>
+          </a>
+          @endforeach
+        </div>
+      </div>
+    </div>
+
+
 
   </section>
 
