@@ -6,6 +6,7 @@
 
     <p class="card-text text-truncate"><span class="h6">Descrizione: </span>{{$description}}</p>
     <p class="card-text"><span class="h6">Prezzo: </span> {{ Number::currency($price, in: 'EUR', locale: 'it') }}</p>
+
     <a href="{{ $root }}" class="btn btn-outline-info rounded-3 ">Visualizza Articolo</a>
   </div>
 

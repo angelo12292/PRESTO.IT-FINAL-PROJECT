@@ -49,6 +49,7 @@
 
   <!-- SEARCH BY CATEGORY SECTION -->
 
+  <a class="text-center" name="pointer"></a>
   <section class=" categoryCardContainer py-5 position-relative overflow-hidden  ">
     <img src="../img/Speed_Shop_Logo_grey.svg" alt="" style="width: 1000px; top:-100px; opacity: 10%; " class="position-absolute">
     <div class="container py-4">
@@ -71,7 +72,6 @@
 
 
   </section>
-  <a class="text-center" name="pointer"></a>
 
 
 
