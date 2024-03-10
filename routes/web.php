@@ -32,3 +32,5 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/annunci', [PageController::class, 'show'])->name('show_announcements');
 });
+
+Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
