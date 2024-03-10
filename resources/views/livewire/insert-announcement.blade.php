@@ -7,12 +7,12 @@
                 <div class="col-6 m-auto mt-5 ">
                     <div class="mb-3">
                         <label for="name" class="form-label">Titolo</label>
-                        <input type="text" class="form-control" id="title" placeholder="nome annuncio" wire:model="AnnTitle">
+                        <input type="text" class="form-control @error('AnnTitle') is-invalid @enderror" id="title" placeholder="nome annuncio" wire:model="AnnTitle">
                         @error('AnnTitle') <span class="text-danger small">{{ $message }}</span> @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="price" class="form-label">Prezzo € </label>
-                        <input type="number" class="form-control" id="price" placeholder="prezzo" wire:model="AnnPrice">
+                        <label for="price" class="form-label ">Prezzo € </label>
+                        <input type="number" class="form-control @error('AnnPrice') is-invalid @enderror" id="price" placeholder="prezzo" wire:model="AnnPrice">
                         @error('AnnPrice') <span class="text-danger small">{{ $message }}</span> @enderror
                     </div>
                     <div class="mb-3">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Descrizione</label>
-                        <textarea class="form-control" id="description" rows="3" wire:model="AnnDescrip">
+                        <textarea class="form-control @error('AnnDescrip') is-invalid @enderror" id="description" rows="3" wire:model="AnnDescrip">
 
                 </textarea>
                         @error('AnnDescrip') <span class="text-danger small">{{ $message }}</span> @enderror
