@@ -12,7 +12,7 @@ class PageController extends Controller
 
     public function home()
     {
-        $announcements = Announcement::where('is_accepted',true)->take(6)->orderBy('created_at', 'desc')->get();
+        $announcements = Announcement::where('is_accepted', true)->take(6)->orderBy('created_at', 'desc')->get();
 
         return view('pages.home', ['categories' => Category::all(), 'announcements' => $announcements]);
     }
@@ -30,9 +30,9 @@ class PageController extends Controller
 
     public function categoryView(Category $category, $id)
     {
-        $categories = Category::findOrFail($id);
-        $announcements = Announcement::all();
 
-        return view('pages.category.category', ['announcements' => $announcements, 'categories' => $categories]);
+        $category = Category::findOrFail($id);;
+
+        return view('pages.category.category', compact('category'));
     }
 }

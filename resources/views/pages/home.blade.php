@@ -49,10 +49,9 @@
 
   <!-- SEARCH BY CATEGORY SECTION -->
 
-  <section class=" categoryCardContainer py-5">
-
+  <section class=" categoryCardContainer py-5 position-relative ">
     <div class="container py-4">
-      <h2 class="text-center fw-bold mb-3 text-decoration-none primary-color-text" name="category">Categorie</h2>
+      <h2 class="text-center fw-bold mb-3 text-decoration-none primary-color-text">Categorie</h2>
 
       <div class="category-container mt-5">
         <div class="row gap-5">
@@ -66,6 +65,7 @@
           @endforeach
         </div>
       </div>
+      <a class="text-center" name="pointer"></a>
     </div>
 
 

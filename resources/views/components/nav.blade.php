@@ -9,7 +9,7 @@
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('home')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#category">Categorie</a>
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#pointer">Categorie</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('home')}}">Annunci</a>

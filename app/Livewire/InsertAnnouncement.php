@@ -19,6 +19,8 @@ class InsertAnnouncement extends Component
     #[Validate('required|min:1')]
     public $AnnPrice;
 
+
+
     public function store()
     {
         $this->validate();
@@ -34,12 +36,10 @@ class InsertAnnouncement extends Component
         session()->flash('success', 'Annuncio creato con successo!');
 
         $this->resetAnnounce();
-
-
     }
 
     public function resetAnnounce()
-    {  
+    {
         $this->AnnTitle = '';
         $this->AnnDescrip = '';
         $this->AnnCategory = Category::all();
