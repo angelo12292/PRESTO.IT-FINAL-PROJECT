@@ -10,19 +10,28 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
     public function up(): void
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
+            $table->string('name', 50)->nullable();
+            $table->string('icon', 100)->nullable();
             $table->timestamps();
         });
 
+
         $categories = ['Motori', 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Abbigliamento'];
+
+
 
         foreach ($categories as $category) {
 
-            Category::create(['name' => $category]);
+            Category::create(
+                [
+                    'name' => $category,
+                ]
+            );
         }
     }
 

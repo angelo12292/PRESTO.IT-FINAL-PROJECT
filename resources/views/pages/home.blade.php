@@ -49,9 +49,10 @@
 
   <!-- SEARCH BY CATEGORY SECTION -->
 
-  <section class=" categoryCardContainer py-5 position-relative ">
+  <section class=" categoryCardContainer py-5 position-relative overflow-hidden  ">
+    <img src="../img/Speed_Shop_Logo_grey.svg" alt="" style="width: 1000px; top:-100px; opacity: 10%; " class="position-absolute">
     <div class="container py-4">
-      <h2 class="text-center fw-bold mb-3 text-decoration-none primary-color-text">Categorie</h2>
+      <h2 class="text-center mb-5 text-white display-6 " style="z-index: 1;">Categorie</h2>
 
       <div class="category-container mt-5">
         <div class="row gap-5">
@@ -59,18 +60,18 @@
           @foreach($categories as $category)
           <a href="{{ route('category.View', $category->id) }}" class="col-2 text-decoration-none ">
             <div class="shadow rounded-5 categoryCard d-flex flex-column justify-content-center align-items-center reveal reveal.active" style="height: 220px;">
-              <h5 class="text-white ">{{$category->name}}</h5>
+              <h5 class=" fw-bold ">{{$category->name}}</h5>
             </div>
           </a>
           @endforeach
         </div>
       </div>
-      <a class="text-center" name="pointer"></a>
     </div>
 
 
 
   </section>
+  <a class="text-center" name="pointer"></a>
 
 
 
