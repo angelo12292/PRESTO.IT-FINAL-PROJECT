@@ -14,12 +14,12 @@
               <div class="row">
 
                 <div class="col-6">
-                  <input type="text" name="searched" id="searched" placeholder="Cerca Annuncio" class="form-control rounded-5 ">
+                  <input type="search" name="searched" id="searched" placeholder="Cerca Annuncio" class="form-control rounded-5 ">
                 </div>
 
                 <div class="col-4">
-                  <select name="category" id="category" class="form-select rounded-5">
-
+                  <select name="category_id" id="category_id" class="form-select rounded-5">
+                    <!-- <option selected>Categorie</option> -->
                     @foreach($categories as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
