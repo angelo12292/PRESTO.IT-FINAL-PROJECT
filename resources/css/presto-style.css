@@ -5,8 +5,11 @@
   --primary-color: rgb(52,87,180);
   --secondary-color: rgb(210, 223, 255);
   --accent-color: rgb(252,115,24);
+  --background: rgb(255, 250, 244);
+
 }
 
+/* HELPER COLOR */
 .primary-color-text{
   color: var(--primary-color)!important;
 }
@@ -21,6 +24,11 @@
   background-color: var(--accent-color)!important;
 }
 
+.background{
+  background-color: var(--background)!important;
+}
+
+/* --------------------------------------------- */
 
 * {
   font-family: 'Poppins', sans-serif;
@@ -119,14 +127,33 @@ body {
   background-color: white;
   color: var(--primary-color)!important;
   border: 5px solid var(--secondary-color)!important;
-  /* transition: all 0.3s cubic-bezier(.215, .61, .355, 1); */
+  
 }
 
-.categoryCard:hover{
+.categoryCard:hover {
   background-color: var(--accent-color)!important;
   color: white!important;
 
 }
+
+
+.circle {
+      width: 50px;
+      height: 50px;
+      background-color: var(--secondary-color)!important;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 1s all ease;
+}
+
+.categoryCard:hover .circle{
+  color: var(--primary-color)!important;
+}
+
+
+
 
 
 

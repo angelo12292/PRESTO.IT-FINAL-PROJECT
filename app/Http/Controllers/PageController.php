@@ -17,19 +17,19 @@ class PageController extends Controller
         return view('pages.home', ['categories' => Category::all(), 'announcements' => $announcements]);
     }
 
-    public function searchByCategory(Request $request)
+    // public function searchByCategory(Request $request)
+    // {
+
+    //     $category = $request->input('category');
+
+    //     $announcements = Announcement::where('category_id', $category)->get();
+
+    //     return view('pages.home', ['announcements' => $announcements, 'categories' => Category::all()]);
+    // }
+
+    public function searchAnnouncements(Request $request)
     {
-
-        $category = $request->input('category');
-
-        $announcements = Announcement::where('category_id', $category)->get();
-
-        return view('pages.home', ['announcements' => $announcements, 'categories' => Category::all()]);
-    }
-
-
-    public function categoryView(Category $category, $id)
-    {
+        $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
 
         $category = Category::findOrFail($id);
 

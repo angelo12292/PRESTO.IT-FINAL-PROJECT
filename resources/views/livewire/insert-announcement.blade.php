@@ -2,9 +2,9 @@
     <div class="col-12">
         <form wire:submit.prevent="store">
 
-            <x-success />
             <div class="row">
                 <div class="col-6 m-auto mt-5 ">
+                    <x-success />
                     <div class="mb-3">
                         <label for="name" class="form-label">Titolo</label>
                         <input type="text" class="form-control @error('AnnTitle') is-invalid @enderror" id="title" placeholder="nome annuncio" wire:model="AnnTitle">
@@ -30,7 +30,7 @@
                         @error('AnnDescrip') <span class="text-danger small">{{ $message }}</span> @enderror
                     </div>
                     <div class="mb-3">
-                        <button class="btn btn-light" type="submit">Crea</button>
+                        <button class="btn text-white rounded-5  primary-color-bg btnStatic" type="submit">Crea</button>
                     </div>
                 </div>
             </div>
