@@ -10,6 +10,7 @@ class Announcement extends Model
 {
     use HasFactory, Searchable;
 
+    public $asYouType = true;
 
 
     public function toSearchableArray()
