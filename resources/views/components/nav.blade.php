@@ -28,15 +28,15 @@
           <i class="bi bi-person-circle me-1"></i>
           {{auth()->user()->name}}
         </button>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu dropdown-menu-end">
           <li>
             @if (Auth::user()->is_revisor)
-            <a href="{{ route('revisor.index')}}" class="nav-link btn btn-primary btn-sm">Zona revisore <span class="text-black badge ">{{App\Models\Announcement::toBeRevisionedCount()}}</span></a>
+            <a href="{{ route('revisor.index')}}" class="nav-link btn btn-primary btn-sm ">Zona revisore <span class="text-black badge ">{{App\Models\Announcement::toBeRevisionedCount()}}</span></a>
 
             @endif
-            <form action="/logout" method="POST">
+            <form action="/logout" method="POST" class="nav-link btn btn-primary">
               @csrf
-              <button class="nav-link mx-3 fw-bold" type="submit">Logout</button>
+              <button class="nav-link ms-2 " type="submit">Logout</button>
             </form>
           </li>
         </ul>
