@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RevisorController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,7 +23,7 @@ Route::post('/annunci.categoria', [PageController::class, 'searchByCategory'])->
 
 Route::get('/annunci/{id}', [AnnouncementController::class, 'announceView'])->name('announce.View');
 
-Route::get('/categorie/{id}', [PageController::class, 'categoryView'])->name('category.View');
+Route::get('/categorie/{id}', [CategoryController::class, 'categoryView'])->name('category.View');
 
 
 

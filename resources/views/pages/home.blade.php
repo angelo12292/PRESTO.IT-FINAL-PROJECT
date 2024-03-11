@@ -60,8 +60,11 @@
 
           @foreach($categories as $category)
           <a href="{{ route('category.View', $category->id) }}" class="col-2 text-decoration-none ">
-            <div class="shadow rounded-5 categoryCard d-flex flex-column justify-content-center align-items-center reveal reveal.active" style="height: 220px;">
+            <div class="shadow rounded-5 categoryCard d-flex flex-column justify-content-center align-items-center reveal reveal.active" style="height: 210px;">
               <h5 class=" fw-bold ">{{$category->name}}</h5>
+              <div class="circle">
+                <h5 class=" fw-bold m-0">{{$category->announcements()->count()}}</h5>
+              </div>
             </div>
           </a>
           @endforeach
