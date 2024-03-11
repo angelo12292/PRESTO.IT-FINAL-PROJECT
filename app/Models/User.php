@@ -47,4 +47,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Announcement::class);
     }
+    public function emailsSents()
+    {
+        return $this->hasMany(EmailSents::class);
+    }
 }
