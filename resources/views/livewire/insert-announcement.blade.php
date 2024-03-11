@@ -30,7 +30,7 @@
                         @error('AnnDescrip') <span class="text-danger small">{{ $message }}</span> @enderror
                     </div>
                     <div class="mb-3">
-                        <button class="btn btn-light" type="submit">Crea</button>
+                        <button class="btn text-white rounded-5  primary-color-bg btnStatic" type="submit">Crea</button>
                     </div>
                 </div>
             </div>

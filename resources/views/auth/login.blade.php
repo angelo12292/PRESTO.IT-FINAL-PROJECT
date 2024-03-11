@@ -1,12 +1,10 @@
 <x-layout title="Accedi">
 
-    <div class="container mt-5">
+    <div class="container mt-5 position-relative ">
         <div class="row">
             <div class="col-md-4 mx-auto">
-                <div class="card">
-                    <div class="card-header">
-                        Accedi
-                    </div>
+                <div class="card background rounded-5 shadow">
+
                     <div class="card-body">
                         <form action="/login" method="POST">
                             @csrf
@@ -26,7 +24,7 @@
                                     <label for="remeber" class="form-check-label">Ricordati di me</label>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-primary">Accedi</button>
+                                    <button type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">Accedi</button>
                                 </div>
                             </div>
                         </form>

@@ -8,18 +8,18 @@
 
         <div class="row  ">
           <div class="col-12 searchStyle  p-2 rounded-5 animate__animated animate__fadeInLeft bg-white">
-            <form action="{{ route('searchByCategory') }}" method="POST">
+            <form action="{{ route('announcements.search') }}" method="GET">
               @csrf
 
               <div class="row">
 
                 <div class="col-6">
-                  <input type="text" name="announce" id="announce" placeholder="Cerca Annuncio" class="form-control rounded-5 ">
+                  <input type="search" name="searched" id="searched" placeholder="Cerca Annuncio" class="form-control rounded-5 ">
                 </div>
 
                 <div class="col-4">
-                  <select name="category" id="category" class="form-select rounded-5">
-
+                  <select name="searched" id="searched" class="form-select rounded-5">
+                    <option selected>Categorie</option>
                     @foreach($categories as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
@@ -49,8 +49,9 @@
 
   <!-- SEARCH BY CATEGORY SECTION -->
 
-  <a class="text-center" name="pointer"></a>
+  <a class="text-center " name="category-section"></a>
   <section class=" categoryCardContainer py-5 position-relative overflow-hidden  ">
+
     <img src="../img/Speed_Shop_Logo_grey.svg" alt="" style="width: 1000px; top:-100px; opacity: 10%; " class="position-absolute">
     <div class="container py-4">
       <h2 class="text-center mb-5 text-white display-6 " style="z-index: 1;">Categorie</h2>
@@ -63,7 +64,7 @@
             <div class="shadow rounded-5 categoryCard d-flex flex-column justify-content-center align-items-center reveal reveal.active" style="height: 210px;">
               <h5 class=" fw-bold ">{{$category->name}}</h5>
               <div class="circle">
-                <h5 class=" fw-bold m-0">{{$category->announcements()->count()}}</h5>
+                <h5 class=" fw-bold m-0">{{$category->announcements()->where('is_accepted', true)->count()}}</h5>
               </div>
             </div>
           </a>
@@ -71,7 +72,6 @@
         </div>
       </div>
     </div>
-
 
 
   </section>
