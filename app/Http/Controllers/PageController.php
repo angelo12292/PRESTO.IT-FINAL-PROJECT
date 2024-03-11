@@ -31,8 +31,12 @@ class PageController extends Controller
     public function categoryView(Category $category, $id)
     {
 
-        $category = Category::findOrFail($id);;
+        $category = Category::findOrFail($id);
 
-        return view('pages.category.category', compact('category'));
+        // da valutare dove 
+
+        $announcements = Announcement::where('is_accepted', true)->take(6)->orderBy('created_at', 'desc')->get();
+
+        return view('pages.category.category', ['category' => $category, 'announcements' => $announcements]);
     }
 }
