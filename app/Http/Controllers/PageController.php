@@ -31,12 +31,6 @@ class PageController extends Controller
     {
         $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
 
-        $category = Category::findOrFail($id);
-
-        // da valutare dove 
-
-        $announcements = Announcement::where('is_accepted', true)->take(6)->orderBy('created_at', 'desc')->get();
-
-        return view('pages.category.category', ['category' => $category, 'announcements' => $announcements]);
+        return view('pages.announcement.index', compact('announcements'));
     }
 }

@@ -15,7 +15,8 @@
         "livewire/livewire": "^3.4",
         "nyholm/psr7": "*",
         "railsware/mailtrap-php": "*",
-        "symfony/http-client": "*"
+        "symfony/http-client": "*",
+        "teamtnt/laravel-scout-tntsearch-driver": "^13.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

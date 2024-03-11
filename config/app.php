@@ -159,6 +159,9 @@ return [
         /*
          * Package Service Providers...
          */
+        TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
+        
         App\Providers\FortifyServiceProvider::class,
 
         /*
