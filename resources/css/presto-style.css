@@ -5,9 +5,11 @@
   --primary-color: rgb(52,87,180);
   --secondary-color: rgb(210, 223, 255);
   --accent-color: rgb(252,115,24);
+  --background: rgb(255, 250, 244);
 
 }
 
+/* HELPER COLOR */
 .primary-color-text{
   color: var(--primary-color)!important;
 }
@@ -22,6 +24,11 @@
   background-color: var(--accent-color)!important;
 }
 
+.background{
+  background-color: var(--background)!important;
+}
+
+/* --------------------------------------------- */
 
 * {
   font-family: 'Poppins', sans-serif;

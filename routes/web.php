@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 
-Route::post('/annunci.categoria', [PageController::class, 'searchByCategory'])->name('searchByCategory');
+// Route::post('/annunci.categoria', [PageController::class, 'searchByCategory'])->name('searchByCategory');
 
 Route::get('/annunci/{id}', [AnnouncementController::class, 'announceView'])->name('announce.View');
 
@@ -35,3 +35,5 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+
+Route::get('/ricerca/annuncio', [PageController::class, 'searchAnnouncements'])->name('announcements.search');
