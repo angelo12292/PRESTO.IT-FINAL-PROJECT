@@ -18,8 +18,8 @@
                 </div>
 
                 <div class="col-4">
-                  <select name="category_id" id="category_id" class="form-select rounded-5">
-                    <!-- <option selected>Categorie</option> -->
+                  <select name="searched" id="searched" class="form-select rounded-5">
+                    <option selected>Categorie</option>
                     @foreach($categories as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
