@@ -64,7 +64,7 @@
             <div class="shadow rounded-5 categoryCard d-flex flex-column justify-content-center align-items-center reveal reveal.active" style="height: 210px;">
               <h5 class=" fw-bold ">{{$category->name}}</h5>
               <div class="circle">
-                <h5 class=" fw-bold m-0">{{$category->announcements()->count()}}</h5>
+                <h5 class=" fw-bold m-0">{{$category->announcements()->where('is_accepted', true)->count()}}</h5>
               </div>
             </div>
           </a>
