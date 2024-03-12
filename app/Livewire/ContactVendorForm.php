@@ -12,6 +12,7 @@ use App\Models\EmailSents;
 use App\Models\User;
 use Livewire\Attributes\On;
 
+
 class ContactVendorForm extends Component
 {
     public $emailSentId = null;
@@ -45,12 +46,12 @@ class ContactVendorForm extends Component
     }
 
     
-    // #[On('mail-created')]
-    // public function contactVendor(User $user)
-    // {
+    #[On('mail-created')]
+    public function contactVendor(User $user)
+    {
 
-    //     dd(Auth::id()->email);
-    //     Mail::to('admin@presto.it')->send(new ContactVendor(Auth::user()));
-    //     // $user->email
-    // }
+        // //dd(Auth::id()->email);
+        // Mail::to($user->email)->send(new ContactVendor(Auth::user()));
+        // //$user->email
+    }
 }
