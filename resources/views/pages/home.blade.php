@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="col-4">
-                  <select name="searchCategory" id="searchCategory" class="form-select rounded-5">
+                  <select name="searchedCategory" id="searchedCategory" class="form-select rounded-5">
                     <option selected>Categorie</option>
                     @foreach($categories as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
@@ -32,6 +32,7 @@
                 <div class="col-2">
                   <button type="submit" class="btn searchBtn  w-100 rounded-5 btnStatic">Cerca</button>
                 </div>
+                <x-error-search />
               </div>
             </form>
           </div>

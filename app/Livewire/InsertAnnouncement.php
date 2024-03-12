@@ -33,16 +33,19 @@ class InsertAnnouncement extends Component
             'price' => $this->AnnPrice,
         ]);
 
-        session()->flash('success', 'Annuncio creato con successo!');
-
         $this->resetAnnounce();
+        
+        return redirect()->route('insert_announcement')->with('success', 'Annuncio creato con successo!');
+        
+
+        
     }
 
     public function resetAnnounce()
     {
         $this->AnnTitle = '';
         $this->AnnDescrip = '';
-        $this->AnnCategory = Category::all();
+        $this->AnnCategory = '';
         $this->AnnPrice = '';
     }
 
