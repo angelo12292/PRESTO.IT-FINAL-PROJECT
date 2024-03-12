@@ -12,7 +12,7 @@
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="#category-section">Categorie</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('home')}}">Annunci</a>
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href=git>Annunci</a>
         </li>
       </ul>
 
