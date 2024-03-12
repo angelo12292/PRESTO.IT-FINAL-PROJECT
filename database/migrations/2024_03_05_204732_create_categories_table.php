@@ -27,7 +27,13 @@ return new class extends Migration
         //     [
         //         'name' => 'Motori',
         //         'icon' => 'fa-car',
+        // $categories = [
+        //     [
+        //         'name' => 'Motori',
+        //         'icon' => 'fa-car',
 
+        //     ], 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Abbigliamento'
+        // ];
         //     ], 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Abbigliamento'
         // ];
 

@@ -6,6 +6,8 @@
     <title>{{$title ?? 'Presto.it'}}</title>
 </head>
 <body>
+
+    <x-success />
     <div>
         <h1>Un utente ha richiesto di lavorare con noi</h1>
         <h2>ecco i suoi dati:</h2>
