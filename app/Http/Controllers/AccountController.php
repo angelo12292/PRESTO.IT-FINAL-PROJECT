@@ -25,12 +25,12 @@ class AccountController extends Controller
         return view('accounts.show-announcements', compact('announcements'));
     }
     
-    public function contactVendor(User $user)
-    {
+   public function contactVendor(User $user)
+   {
         
-        Mail::to($user->email)->send(new ContactVendor(Auth::user()));
+       Mail::to($user->email)->send(new ContactVendor(Auth::user()));
         
-    }
+   }
 
     
 
