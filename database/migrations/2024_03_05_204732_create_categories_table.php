@@ -34,18 +34,12 @@ return new class extends Migration
 
         //     ], 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Abbigliamento'
         // ];
-        //     ], 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Abbigliamento'
-        // ];
 
 
 
         foreach ($categories as $category) {
 
-            Category::create(
-                [
-                    'name' => $category,
-                ]
-            );
+            Category::create($category);
         }
     }
 
