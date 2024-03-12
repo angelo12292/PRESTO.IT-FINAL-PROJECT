@@ -1,14 +1,14 @@
 <x-layout>
-<x-access-denied />
-<x-success />
-<x-error />
-<x-message />
+  <x-access-denied />
+  <x-success />
+  <x-error />
+  <x-message />
   <!-- HERO SECTION -->
   <section class="container mt-4 searchBar" style="height:100vh">
     <div class="row">
       <div class="col-6 d-flex flex-column justify-content-center pe-5 ">
         <h1 class="fw-bold mb-5 animate__animated animate__fadeInLeft primary-color-text">Buy, Sell, Rent & Exchange<br> in one Click</h1>
-        
+
         <div class="row  ">
           <div class="col-12 searchStyle  p-2 rounded-5 animate__animated animate__fadeInLeft bg-white">
             <form action="{{ route('announcements.search') }}" method="GET">
@@ -21,6 +21,7 @@
                 </div>
 
                 <div class="col-4">
+<<<<<<< HEAD
                   <select name="searched" id="searched" class="form-select rounded-5">
                     <option selected>Categorie</option>
                     @foreach($categories as $category)
@@ -28,21 +29,30 @@
                 @endforeach
                 </select>
               </div>
+=======
+                  <select name="searchedByCategory" id="searchedByCategory" class="form-select rounded-5">
+                    <option selected>Categorie</option>
+                    @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                  </select>
+                </div>
+>>>>>>> a3681e8e2532153820077b65c255ff2bb323a2e8
 
-              <div class="col-2">
-                <button type="submit" class="btn searchBtn  w-100 rounded-5 btnStatic">Cerca</button>
+                <div class="col-2">
+                  <button type="submit" class="btn searchBtn  w-100 rounded-5 btnStatic">Cerca</button>
+                </div>
               </div>
+            </form>
           </div>
-          </form>
         </div>
+
       </div>
 
-    </div>
-
-    <div class="col-6  ">
-      <img src="img/Online-Shopping.png" alt="" class="shopImage animate__animated animate__fadeInRight">
-      <img src="img/Online-Shopping-background.png" alt="" class="shopBack ">
-    </div>
+      <div class="col-6  ">
+        <img src="img/Online-Shopping.png" alt="" class="shopImage animate__animated animate__fadeInRight">
+        <img src="img/Online-Shopping-background.png" alt="" class="shopBack ">
+      </div>
 
     </div>
   </section>
@@ -65,6 +75,7 @@
           @foreach($categories as $category)
           <a href="{{ route('category.View', $category->id) }}" class="col-2 text-decoration-none ">
             <div class="shadow rounded-5 categoryCard d-flex flex-column justify-content-center align-items-center reveal reveal.active" style="height: 210px;">
+              <i class="fa-solid {{ $category->icon }}"></i>
               <h5 class=" fw-bold ">{{$category->name}}</h5>
               <div class="circle">
                 <h5 class=" fw-bold m-0">{{$category->announcements()->where('is_accepted', true)->count()}}</h5>

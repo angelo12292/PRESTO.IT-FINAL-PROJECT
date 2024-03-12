@@ -28,29 +28,13 @@ class PageController extends Controller
     // }
 
     public function searchAnnouncements(Request $request)
+
     {
-        // Per la sola categoria//
-
-        if (!$request->searched) {
-            $announcements = Announcement::search($request->searchedCategory)->where('is_accepted', true)->paginate(10);
-            return view('pages.announcement.index', compact('announcements'));
-        }
 
 
-
-        // Per il solo titolo
-
-        elseif (!$request->searchedCategory) {
-            $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
-            return view('pages.announcement.index', compact('announcements'));
-        }
+        $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
 
 
-
-        // Quello incrociato//
-
-        if ($request->searched && $request->searchedCategory) {
-            $announcements = Announcement::search($request->searched)->where('is_accepted', true)->where('category_id', $request->searchedCategory)->paginate(10);
 
             return view('pages.announcement.index', compact('announcements'));
         }
