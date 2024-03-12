@@ -31,7 +31,10 @@
         <ul class="dropdown-menu dropdown-menu-end">
           <li>
             @if (Auth::user()->is_revisor)
-            <a href="{{ route('revisor.index')}}" class="nav-link btn btn-primary btn-sm ">Zona revisore <span class="text-black badge ">{{App\Models\Announcement::toBeRevisionedCount()}}</span></a>
+            <a href="{{ route('revisor.index')}}" class="nav-link btn btn-primary btn-sm ">Zona revisore (acetta annunci)<span class="text-black badge ">annunci da revisionare: {{App\Models\Announcement::toBeRevisionedCount()}}</span>
+            </a>
+            <a href="{{ route('revisor.index-revised')}}" class="nav-link btn btn-primary btn-sm ">Zona revisore (ripristina stato degli annunci)<span class="text-black badge ">annunci da ripristinare: {{App\Models\Announcement::revisionedCount()}}</span></span>
+            </a>
 
             @endif
             <form action="/logout" method="POST" class="nav-link btn btn-primary">

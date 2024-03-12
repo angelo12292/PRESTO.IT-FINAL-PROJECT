@@ -41,7 +41,7 @@ class Announcement extends Model
     public function setAccepted($value)
     {
 
-        $this->is_accepted = true;
+        $this->is_accepted = $value;
         $this->save();
         return;
     }
@@ -51,4 +51,12 @@ class Announcement extends Model
 
         return Announcement::where('is_accepted', null)->count();
     }
+    
+    public static function revisionedCount()
+    {
+
+        return Announcement::where('is_accepted', true)->count();
+    }
+
+
 }
