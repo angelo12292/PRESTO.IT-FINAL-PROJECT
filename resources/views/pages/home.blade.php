@@ -20,14 +20,14 @@
                   <input type="text" name="searched" id="searched" placeholder="Cerca Annuncio" class="form-control rounded-5 ">
                 </div>
 
-                {{--<div class="col-4">
+                <div class="col-4">
                   <select name="searched" id="searched" class="form-select rounded-5">
                     <option selected>Categorie</option>
                     @foreach($categories as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
                 @endforeach
                 </select>
-              </div>--}}
+              </div>
 
               <div class="col-2">
                 <button type="submit" class="btn searchBtn  w-100 rounded-5 btnStatic">Cerca</button>
