@@ -21,12 +21,12 @@ return new class extends Migration
         });
 
 
-       $categories = ['Motori', 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Abbigliamento'];
+        $categories = ['Motori', 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Abbigliamento'];
 
-        // $categories = [
-        //     [
-        //         'name' => 'Motori',
-        //         'icon' => 'fa-car',
+        $categories = [
+            [
+                'name' => 'Motori',
+                'icon' => 'fa-car',
 
             ],
             [
