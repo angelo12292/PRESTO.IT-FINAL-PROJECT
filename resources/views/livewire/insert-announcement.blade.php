@@ -17,6 +17,7 @@
                     </div>
                     <div class="mb-3">
                         <select id="category_id" class="form-select" wire:model="AnnCategory">
+                            <option selected>Categorie</option>
                             @foreach($categories as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach

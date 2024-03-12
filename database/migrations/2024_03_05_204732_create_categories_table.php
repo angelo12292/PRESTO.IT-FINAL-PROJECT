@@ -28,53 +28,8 @@ return new class extends Migration
                 'name' => 'Motori',
                 'icon' => 'fa-car',
 
-            ],
-            [
-                'name' => 'Informatica',
-                'icon' => 'fa-computer',
-
-            ],
-            [
-                'name' => 'Elettrodomestici',
-                'icon' => 'fa-plug',
-
-            ],
-            [
-                'name' => 'Libri',
-                'icon' => 'fa-book-open',
-
-            ],
-            [
-                'name' => 'Giochi',
-                'icon' => 'fa-gamepad',
-
-            ],
-            [
-                'name' => 'Sport',
-                'icon' => 'fa-volleyball',
-
-            ],
-            [
-                'name' => 'Immobili',
-                'icon' => 'fa-shop',
-
-            ],
-            [
-                'name' => 'Telefoni',
-                'icon' => 'fa-mobile-screen',
-
-            ],
-            [
-                'name' => 'Arredamento',
-                'icon' => 'fa-mobile-screen',
-
-            ],
-            [
-                'name' => 'Abbigliamento',
-                'icon' => 'fa-mobile-screen',
-
-            ],
-        ];
+        //     ], 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Abbigliamento'
+        // ];
 
 
 

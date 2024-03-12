@@ -17,38 +17,37 @@
               <div class="row">
 
                 <div class="col-6">
-                  <input type="text" name="searched" id="searched" placeholder="Cerca Annuncio" class="form-control rounded-5 ">
+                  <input type="search" name="searched" id="searched" placeholder="Cerca Annuncio" class="form-control rounded-5 ">
                 </div>
 
                 <div class="col-4">
-<<<<<<< HEAD
-                  <select name="searched" id="searched" class="form-select rounded-5">
-                    <option selected>Categorie</option>
-                    @foreach($categories as $category)
-                    <option value="{{$category->id}}">{{$category->name}}</option>
-                @endforeach
-                </select>
-              </div>
-=======
-                  <select name="searchedByCategory" id="searchedByCategory" class="form-select rounded-5">
+                  <select name="searchedCategory" id="searchedCategory" class="form-select rounded-5">
                     <option selected>Categorie</option>
                     @foreach($categories as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
                   </select>
                 </div>
->>>>>>> a3681e8e2532153820077b65c255ff2bb323a2e8
+                    @endforeach
+                  </select>
+                </div>
 
                 <div class="col-2">
                   <button type="submit" class="btn searchBtn  w-100 rounded-5 btnStatic">Cerca</button>
                 </div>
+                <x-error-search />
               </div>
             </form>
           </div>
         </div>
 
       </div>
+      </div>
 
+      <div class="col-6  ">
+        <img src="img/Online-Shopping.png" alt="" class="shopImage animate__animated animate__fadeInRight">
+        <img src="img/Online-Shopping-background.png" alt="" class="shopBack ">
+      </div>
       <div class="col-6  ">
         <img src="img/Online-Shopping.png" alt="" class="shopImage animate__animated animate__fadeInRight">
         <img src="img/Online-Shopping-background.png" alt="" class="shopBack ">
