@@ -28,18 +28,59 @@ return new class extends Migration
                 'name' => 'Motori',
                 'icon' => 'fa-car',
 
-            ], 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Abbigliamento'
+            ],
+            [
+                'name' => 'Informatica',
+                'icon' => 'fa-computer',
+
+            ],
+            [
+                'name' => 'Elettrodomestici',
+                'icon' => 'fa-plug',
+
+            ],
+            [
+                'name' => 'Libri',
+                'icon' => 'fa-book-open',
+
+            ],
+            [
+                'name' => 'Giochi',
+                'icon' => 'fa-gamepad',
+
+            ],
+            [
+                'name' => 'Sport',
+                'icon' => 'fa-volleyball',
+
+            ],
+            [
+                'name' => 'Immobili',
+                'icon' => 'fa-shop',
+
+            ],
+            [
+                'name' => 'Telefoni',
+                'icon' => 'fa-mobile-screen',
+
+            ],
+            [
+                'name' => 'Arredamento',
+                'icon' => 'fa-mobile-screen',
+
+            ],
+            [
+                'name' => 'Abbigliamento',
+                'icon' => 'fa-mobile-screen',
+
+            ],
         ];
 
 
 
         foreach ($categories as $category) {
 
-            Category::create(
-                [
-                    'name' => $category,
-                ]
-            );
+            Category::create($category);
         }
     }
 
