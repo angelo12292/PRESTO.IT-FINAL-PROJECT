@@ -125,7 +125,7 @@ body {
 /* CATEGORY SECTION */
 
 .categoryCardContainer {
-  /* background-color: var(--secondary-color)!important; */
+
   background: rgb(52, 87, 180);
   background: linear-gradient(180deg, rgba(52, 87, 180, 1) 0%, rgba(1, 5, 17, 1) 100%);
 
