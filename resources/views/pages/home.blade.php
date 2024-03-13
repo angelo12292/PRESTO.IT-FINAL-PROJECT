@@ -28,14 +28,13 @@
                     @endforeach
                   </select>
                 </div>
-                    @endforeach
-                  </select>
-                </div>
 
                 <div class="col-2">
                   <button type="submit" class="btn searchBtn  w-100 rounded-5 btnStatic">Cerca</button>
                 </div>
+
                 <x-error-search />
+                
               </div>
             </form>
           </div>
