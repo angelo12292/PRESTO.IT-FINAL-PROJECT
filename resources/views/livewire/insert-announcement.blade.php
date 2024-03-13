@@ -1,6 +1,7 @@
-<div class="container">
+<div class="container-fluid p-0">
     <x-nav />
-    <div class="col-12">
+
+    <div class="col-12 mt-5 pt-5 " style="height: 80vh">
         <form wire:submit.prevent="store">
 
             <div class="row">

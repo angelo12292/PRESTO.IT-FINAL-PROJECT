@@ -10,12 +10,12 @@
 </head>
 
 <body>
-    
+
 
     {{$slot}}
 
 
-    
+
 
 </body>
 
