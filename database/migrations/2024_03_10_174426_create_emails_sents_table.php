@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('email_sents', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('sending_user_id')->nullable();
+            $table->unsignedBigInteger('receiving_user_id')->nullable();
+            $table->boolean('displayed')->default(false);
             $table->text('body',300);
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('sending_user_id')->references('id')->on('users');
+            $table->foreign('receiving_user_id')->references('id')->on('users');
         });
     }
 

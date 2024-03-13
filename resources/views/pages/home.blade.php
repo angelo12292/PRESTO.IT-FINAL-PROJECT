@@ -1,4 +1,5 @@
 <x-layout>
+<x-nav-home />
   <x-access-denied />
   <x-success />
   <x-error />
@@ -97,7 +98,7 @@
 
 
 
-
+  <a class="text-center " name="announcements-section"></a>
   <section class="container mt-5 pt-5  ">
     <div class="row g-2">
       @foreach($announcements as $announcement)

@@ -17,7 +17,7 @@ class ContactVendorForm extends Component
 {
     public $emailSentId = null;
     public $body;
-    public $user;
+    public $receiving_user_id;
 
 
     public function rules(){
@@ -33,25 +33,30 @@ class ContactVendorForm extends Component
 
     public function store(Request $request)
     {
-        EmailSents::create([
+       
+       EmailSents::create([
             
-            'user_id' => Auth::id(),
+
+            'sending_user_id' => Auth::id(),
+            'receiving_user_id' =>$this->receiving_user_id,
             
             'body' => $this->body,
             
         ]);
+        
+        
 
         $this->dispatch('mail-created');
 
     }
 
     
-    #[On('mail-created')]
-    public function contactVendor(User $user)
-    {
+    // #[On('mail-created')]
+    // public function contactVendor(User $user)
+    // {
 
-        // //dd(Auth::id()->email);
-        // Mail::to($user->email)->send(new ContactVendor(Auth::user()));
-        // //$user->email
-    }
+    //     // //dd(Auth::id()->email);
+    //     Mail::to($user->email)->send(new ContactVendor(Auth::user()));
+    //     //$user->email
+    // }
 }

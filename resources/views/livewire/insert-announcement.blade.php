@@ -1,4 +1,5 @@
 <div class="container">
+    <x-nav />
     <div class="col-12">
         <form wire:submit.prevent="store">
 
@@ -37,4 +38,5 @@
             </div>
         </form>
     </div>
+    <x-footer />
 </div>

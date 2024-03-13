@@ -1,5 +1,9 @@
 <x-layout>
-
+  <x-nav />
+  <x-access-denied />
+  <x-success />
+  <x-error />
+  <x-message />
   
   <div class="container-md mt-5 ">
 
@@ -114,5 +118,5 @@
     </div>
 
   </div>
-
+  <x-footer />
 </x-layout>

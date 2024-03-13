@@ -70,7 +70,11 @@ return new class extends Migration
 
         foreach ($categories as $category) {
 
-            Category::create($category);
+            Category::create(
+                [
+                    'name' => $category,
+                ]
+            );
         }
     }
 
