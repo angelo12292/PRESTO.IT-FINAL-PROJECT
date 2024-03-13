@@ -29,7 +29,7 @@ class PageController extends Controller
 
     public function searchAnnouncements(Request $request)
     {   
-        // Per la sola categoria
+        // Quello incrociato
         
         if ($request->searched && $request->searchedCategory != 'Categorie') {
             $announcements = Announcement::search($request->searched)->where('is_accepted', true)->where('category_id', $request->searchedCategory)->paginate(10);
@@ -46,11 +46,13 @@ class PageController extends Controller
             return view('pages.announcement.index', compact('announcements'));
         }
             
-        
+        // Errore
+
         elseif (!$request->searched && $request->searchedCategory == 'Categorie') {
             return redirect()->back()->with('errorSearch', 'Ricerca sbagliata');
         }
-        // Quello incrociato
+        
+        // Per la categoria
         
         elseif (!$request->searched) {
             $announcements = Announcement::search($request->searchedCategory)->where('is_accepted', true)->paginate(10);
