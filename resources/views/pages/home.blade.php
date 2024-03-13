@@ -61,8 +61,8 @@
 
 
   <!-- SEARCH BY CATEGORY SECTION -->
+  <a class="text-center d-block py-5" name="category-section"></a>
 
-  <a class="text-center " name="category-section"></a>
   <section class=" categoryCardContainer py-5 position-relative overflow-hidden  ">
 
     <img src="../img/Speed_Shop_Logo_grey.svg" alt="" style="width: 1000px; top:-100px; opacity: 10%; " class="position-absolute">
@@ -76,11 +76,11 @@
 
 
       <div class="category-container mt-5">
-        <div class="row gap-5">
+        <div class="row gap-5 justify-content-center ">
 
           @foreach($categories as $category)
-          <a href="{{ route('category.View', $category->id) }}" class="col-2 text-decoration-none ">
-            <div class="shadow rounded-5 categoryCard d-flex flex-column justify-content-center align-items-center reveal reveal.active gap-2 " style="height: 210px;">
+          <a href="{{ route('category.View', $category->id) }}" class="col-12 col-sm-5 col-md-5 col-lg-3 col-xxl-2 text-decoration-none ">
+            <div class="shadow rounded-5 categoryCard d-flex flex-sm-column  justify-content-center align-items-center reveal reveal.active gap-2 " style="height: 210px;">
               <i class="fa-solid {{ $category->icon }} fs-2 "></i>
               <h5 class=" fw-bold ">{{$category->name}}</h5>
               <div class="circle">
@@ -92,14 +92,12 @@
         </div>
       </div>
     </div>
-
-
   </section>
 
 
 
 
-  <a class="text-center " name="announcements-section"></a>
+  <a class="text-center d-block py-5" name="announcements-section"></a>
   <section class="container mt-5 pt-5  ">
 
     <div class="d-flex align-items-center justify-content-center ">

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg p-0 navShadow fixed-top -top bg-body-white bg-body-tertiary mb-5">
+<nav class="navbar navbar-expand-lg  navShadow sticky-top  bg-body-white bg-body-tertiary mb-5">
   <div class="container py-4  bg-trasparent">
     <img src="../img/Speed_Shop_Logo.svg" alt="" style="width: 40px;">
     <a class="navbar-brand fw-bold fs-3 p-0 ms-2 primary-color-text" href="{{route('home')}}">Presto</a>
