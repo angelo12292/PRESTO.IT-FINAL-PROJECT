@@ -28,9 +28,6 @@
                     @endforeach
                   </select>
                 </div>
-                    @endforeach
-                  </select>
-                </div>
 
                 <div class="col-2">
                   <button type="submit" class="btn searchBtn  w-100 rounded-5 btnStatic">Cerca</button>
@@ -42,16 +39,16 @@
         </div>
 
       </div>
-      </div>
+    </div>
 
-      <div class="col-6  ">
-        <img src="img/Online-Shopping.png" alt="" class="shopImage animate__animated animate__fadeInRight">
-        <img src="img/Online-Shopping-background.png" alt="" class="shopBack ">
-      </div>
-      <div class="col-6  ">
-        <img src="img/Online-Shopping.png" alt="" class="shopImage animate__animated animate__fadeInRight">
-        <img src="img/Online-Shopping-background.png" alt="" class="shopBack ">
-      </div>
+    <div class="col-6  ">
+      <img src="img/Online-Shopping.png" alt="" class="shopImage animate__animated animate__fadeInRight">
+      <img src="img/Online-Shopping-background.png" alt="" class="shopBack ">
+    </div>
+    <div class="col-6  ">
+      <img src="img/Online-Shopping.png" alt="" class="shopImage animate__animated animate__fadeInRight">
+      <img src="img/Online-Shopping-background.png" alt="" class="shopBack ">
+    </div>
 
     </div>
   </section>
