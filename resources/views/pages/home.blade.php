@@ -111,7 +111,7 @@
     <div class="row g-2">
       @foreach($announcements as $announcement)
       <div class="col-4 mb-4 d-flex justify-content-center ">
-        <x-card :price="$announcement->price" :description="$announcement->description" :category="$announcement->category->name" :title="$announcement->title" :root="route('announce.View',$announcement->id)" />
+        <x-card :user="$announcement->user->name" :price="$announcement->price" :description="$announcement->description" :category="$announcement->category->name" :title="$announcement->title" :root="route('announce.View',$announcement->id)" />
       </div>
       @endforeach
     </div>
