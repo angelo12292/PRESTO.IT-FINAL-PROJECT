@@ -1,4 +1,5 @@
 <x-layout>
+<x-nav-home />
   <x-access-denied />
   <x-success />
   <x-error />
@@ -28,9 +29,7 @@
                     @endforeach
                   </select>
                 </div>
-                    @endforeach
-                  </select>
-                </div>
+                   
 
                 <div class="col-2">
                   <button type="submit" class="btn searchBtn  w-100 rounded-5 btnStatic">Cerca</button>
@@ -92,16 +91,16 @@
 
 
 
-
+  <a class="text-center " name="announcements-section"></a>
   <section class="container mt-5 pt-5  ">
     <div class="row g-2">
       @foreach($announcements as $announcement)
-      <div class="col-4 mb-4 d-flex justify-content-center ">
+      <div class="col-4 mb-4 d-flex justify-content-center" name="announcements-section">
         <x-card :price="$announcement->price" :description="$announcement->description" :category="$announcement->category->name" :title="$announcement->title" :root="route('announce.View',$announcement->id)" />
       </div>
       @endforeach
     </div>
   </section>
 
-
+  <x-footer />
 </x-layout>

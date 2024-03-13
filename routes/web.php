@@ -25,14 +25,7 @@ Route::get('/annunci/{id}', [AnnouncementController::class, 'announceView'])->na
 
 Route::get('/categorie/{id}', [CategoryController::class, 'categoryView'])->name('category.View');
 
-
-
-
-Route::middleware('auth')->group(function () {
-
-
-    Route::get('/annunci', [PageController::class, 'show'])->name('show_announcements');
-});
+Route::get('/annunci', [AnnouncementController::class, 'showAnnouncements'])->name('show_announcements');
 
 Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 

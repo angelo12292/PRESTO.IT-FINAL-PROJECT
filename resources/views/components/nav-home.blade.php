@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg p-0 navShadow sticky-top bg-body-white bg-body-tertiary mb-5">
+<nav class="navbar navbar-expand-lg  navShadow fixed-top bg-body-tertiary">
   <div class="container py-4  bg-trasparent">
     <img src="../img/Speed_Shop_Logo.svg" alt="" style="width: 40px;">
     <a class="navbar-brand fw-bold fs-3 p-0 ms-2 primary-color-text" href="{{route('home')}}">Presto</a>
@@ -8,9 +8,11 @@
         <li class="nav-item">
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('home')}}">Home</a>
         </li>
-        
         <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('show_announcements')}}">Annunci</a>
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#category-section">Categorie</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#announcements-section">Annunci</a>
         </li>
       </ul>
 
