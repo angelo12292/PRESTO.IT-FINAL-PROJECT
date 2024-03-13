@@ -29,8 +29,24 @@ class AccountController extends Controller
    {
         
        Mail::to($user->email)->send(new ContactVendor(Auth::user()));
+       return redirect()->back()->with(['success' => 'hai inviato l\'email al venditore']);
+       
         
    }
+
+//    public function store(Request $request)
+//     {
+//         EmailSents::create([
+            
+//             'sending_user_id' => Auth::id(),
+            
+//             'body' => $this->body,
+            
+//         ]);
+
+//         $this->dispatch('mail-created');
+
+//     }
 
     
 

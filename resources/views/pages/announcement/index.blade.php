@@ -1,5 +1,5 @@
 <x-layout>
-
+  <x-nav />
   <div class="container">
     <h1>Ricerca Annunci</h1>
 
@@ -24,5 +24,5 @@
   </div>
 
 
-
+  <x-footer />
 </x-layout>
