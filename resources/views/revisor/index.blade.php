@@ -1,4 +1,5 @@
 <x-layout>
+  <x-nav />
   <div class="container mt-5">
     @if(session()->has('success'))
     <div class="alert alert-success">
@@ -90,4 +91,5 @@
   </div>
   @endif
   </div>
+  <x-footer />
 </x-layout>
