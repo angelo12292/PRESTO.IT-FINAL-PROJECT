@@ -1,13 +1,13 @@
 <x-layout>
-<x-nav-home />
+  <x-nav-home />
   <x-access-denied />
   <x-success />
   <x-error />
   <x-message />
   <!-- HERO SECTION -->
-  <section class="container mt-4 searchBar" style="height:90vh">
+  <section class="container mt-5 " style="height:95vh">
     <div class="row">
-      <div class="col-6 d-flex flex-column justify-content-center pe-5 ">
+      <div class="col-6 d-flex flex-column justify-content-center pe-5 searchBar">
         <h1 class="fw-bold mb-5 animate__animated animate__fadeInLeft primary-color-text">Buy, Sell, Rent & Exchange<br>
           in one Click</h1>
 
@@ -71,8 +71,8 @@
         <h3 class="text-center  accent-color-text fw-light m-0 " style="z-index: 1;">Categorie</h3>
         <div class="d-inline-block accent-color-bg ms-3 " style="height:2px; width:60px"></div>
       </div>
-
       <h3 class="text-center mb-5 text-white h1" style="z-index: 1;">Ricerca per categoria</h3>
+
 
       <div class="category-container mt-5">
         <div class="row gap-5">
@@ -100,6 +100,13 @@
 
   <a class="text-center " name="announcements-section"></a>
   <section class="container mt-5 pt-5  ">
+
+    <div class="d-flex align-items-center justify-content-center ">
+      <div class="d-inline-block accent-color-bg me-3 " style="height:2px; width:60px"></div>
+      <h3 class="text-center  accent-color-text fw-light m-0 " style="z-index: 1;">Annunci</h3>
+      <div class="d-inline-block accent-color-bg ms-3 " style="height:2px; width:60px"></div>
+    </div>
+    <h3 class="text-center mb-5 primary-color-text h1" style="z-index: 1;">Ultimi annunci inseriti</h3>
     <div class="row g-2">
       @foreach($announcements as $announcement)
       <div class="col-4 mb-4 d-flex justify-content-center ">

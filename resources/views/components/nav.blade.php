@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg p-0 navShadow sticky-top bg-body-white bg-body-tertiary mb-5">
+<nav class="navbar navbar-expand-lg p-0 navShadow fixed-top -top bg-body-white bg-body-tertiary mb-5">
   <div class="container py-4  bg-trasparent">
     <img src="../img/Speed_Shop_Logo.svg" alt="" style="width: 40px;">
     <a class="navbar-brand fw-bold fs-3 p-0 ms-2 primary-color-text" href="{{route('home')}}">Presto</a>
@@ -8,7 +8,7 @@
         <li class="nav-item">
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('home')}}">Home</a>
         </li>
-        
+
         <li class="nav-item">
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('show_announcements')}}">Annunci</a>
         </li>
@@ -29,9 +29,13 @@
         <ul class="dropdown-menu dropdown-menu-end">
           <li>
             @if (Auth::user()->is_revisor)
-            <a href="{{ route('revisor.index')}}" class="nav-link btn btn-primary btn-sm ">Zona revisore (acetta annunci)<span class="text-black badge ">annunci da revisionare: {{App\Models\Announcement::toBeRevisionedCount()}}</span>
+            <a href="{{ route('revisor.index')}}" class="nav-link btn btn-primary btn-sm ">Zona revisore (acetta
+              annunci)<span class="text-black badge ">annunci da revisionare:
+                {{App\Models\Announcement::toBeRevisionedCount()}}</span>
             </a>
-            <a href="{{ route('revisor.index-revised')}}" class="nav-link btn btn-primary btn-sm ">Zona revisore (ripristina stato degli annunci)<span class="text-black badge ">annunci da ripristinare: {{App\Models\Announcement::revisionedCount()}}</span></span>
+            <a href="{{ route('revisor.index-revised')}}" class="nav-link btn btn-primary btn-sm ">Zona revisore
+              (ripristina stato degli annunci)<span class="text-black badge ">annunci da ripristinare:
+                {{App\Models\Announcement::revisionedCount()}}</span></span>
             </a>
 
             @endif
