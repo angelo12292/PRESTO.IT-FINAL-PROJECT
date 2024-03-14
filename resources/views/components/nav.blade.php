@@ -13,9 +13,7 @@
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('show_announcements')}}">Annunci</a>
         </li>
 
-        <li class="nav-item">
-          <x-success />
-        </li>
+
       </ul>
 
 
@@ -27,7 +25,25 @@
 
       @else
 
-      <div class=" me-3 position-relative ">
+      <div class=" me-3 position-relative d-flex align-items-center ">
+        <div class="dropdown background ">
+          @if(session()->has('success'))
+          <span class="position-absolute top-0 start-100 translate-middle rounded-pill bg-danger" style="width:10px; height:10px"></span>
+          @endif
+          <button class="btn primary-color-text dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-bell-fill"></i>
+          </button>
+          <ul class="dropdown-menu background ">
+            <li> <x-success /></li>
+          </ul>
+        </div>
+
+
+
+        </i>
+        <ul class="dropdown-menu ">
+        </ul>
+
         @if (Auth::user()->is_revisor)
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           {{App\Models\Announcement::toBeRevisionedCount()}}
