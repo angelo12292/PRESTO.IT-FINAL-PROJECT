@@ -37,11 +37,11 @@
           <i class="bi bi-person-circle me-1"></i>
           {{auth()->user()->name}}
         </button>
-        <ul class="dropdown-menu ">
+        <ul class="dropdown-menu background ">
           <li>
             @if (Auth::user()->is_revisor)
             <a href="{{ route('revisor.index')}}" class=" nav-link text-start position-relative dropdown-item primary-color-text ps-3 p-0 dropDownHover">
-              acetta <br>annunci: <span class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
+              accetta <br>annunci: <span class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
             </a>
           <li>
             <hr class="dropdown-divider">

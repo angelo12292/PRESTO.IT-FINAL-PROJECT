@@ -83,7 +83,11 @@ body {
   color: white !important;
 }
 
-
+.imgNav{
+  width: 40px !important;
+  overflow:visible !important;
+  overflow-clip-margin:initial !important;
+}
 
 
 
