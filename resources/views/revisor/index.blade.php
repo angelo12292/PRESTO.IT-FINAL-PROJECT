@@ -15,7 +15,9 @@
     <div class="row ">
       <div class="col-12">
         <header>
-          <h1 class="text-center">{{$announcement_to_check ? 'Ecco l\'annuncio da revisionare' : 'Non ci sono annunci da revisionare'}}</h1>
+          <h1 class="text-center">
+            {{$announcement_to_check ? 'Ecco l\'annuncio da revisionare' : 'Non ci sono annunci da revisionare'}}
+          </h1>
         </header>
       </div>
     </div>
