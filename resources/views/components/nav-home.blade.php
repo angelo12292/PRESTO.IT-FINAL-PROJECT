@@ -14,6 +14,10 @@
         <li class="nav-item">
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="#announcements-section">Annunci</a>
         </li>
+
+        <li class="nav-item">
+          <x-success />
+        </li>
       </ul>
 
       @guest

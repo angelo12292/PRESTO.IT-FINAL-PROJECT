@@ -13,7 +13,12 @@
           <a class="nav-link active navAnimation linkNav" aria-current="page"
             href="{{route('show_announcements')}}">Annunci</a>
         </li>
+
+        <li class="nav-item">
+          <x-success />
+        </li>
       </ul>
+      
 
       @guest
       <div class="d-flex gap-3  me-4 ">

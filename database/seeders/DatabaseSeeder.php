@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Announcement;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,16 +15,22 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        \App\Models\User::factory()->create([
+        User::factory()->create([
             'name' => 'A-team',
             'email' => 'ateam@example.it',
             'password' => 'ateam123',
         ]);
 
-        \App\Models\User::factory(25)->create();
+        User::factory()->create([
+            'name' => 'John Hannibal Smith ',
+            'email' => 'hannibal@example.it',
+            'password' => 'ateam123',
+        ]);
+
+        User::factory(25)->create();
 
 
-        \App\Models\Announcement::factory(40)->create();
+        Announcement::factory(40)->create();
 
         
 
