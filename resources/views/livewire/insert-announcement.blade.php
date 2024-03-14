@@ -1,5 +1,5 @@
 <div class="container-fluid p-0 ">
-    <x-nav-home />
+    <x-nav />
     <div class="d-flex flex-column justify-content-between pt-5" style="height: 100vh">
         <div class="col-12 mt-5 pt-5 ">
             <form wire:submit.prevent="store">
