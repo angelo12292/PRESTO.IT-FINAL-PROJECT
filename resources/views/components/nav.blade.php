@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg  navShadow sticky-top  background mb-5">
   <div class="container py-4  bg-trasparent">
-    <img src="../img/Speed_Shop_Logo.svg" alt="" style="width: 40px;">
+    <img src="/img/Speed_Shop_Logo.svg" alt="" style="width: 40px;">
     <a class="navbar-brand fw-bold fs-3 p-0 ms-2 primary-color-text" href="{{route('home')}}">Presto</a>
 
     <div class="collapse navbar-collapse ms-4" id="navbarSupportedContent">

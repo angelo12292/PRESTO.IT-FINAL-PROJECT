@@ -7,7 +7,7 @@
                 <table class="table">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
+                        {{-- <th scope="col">#</th> --}}
                         <th scope="col">Titolo</th>
                         <th scope="col">Categoria</th>
                         <th scope="col">Descrizione</th>
@@ -17,11 +17,11 @@
                     <tbody>
                       <tr>                           
                         @foreach ($announcements as $announcement)                           
-                          <th scope="row">{{ $announcement->id }}</th>
-                          <td>{{ $announcement->title }}</td>
-                          <td>{{ $announcement->category->name }}</td>
-                          <td>{{ $announcement->description }}</td>
-                          <td>{{ $announcement->price }}</td>
+                          {{-- <th scope="row">{{ $announcement->id }}</th> --}}
+                          <th scope="row"><a class="primary-color-text" href="{{ route('announce.View', $announcement)}}">{{ $announcement->title }}</a></th>
+                          <td class="fw-norma"><a class="text-black" href="{{ route('announce.View', $announcement)}}">{{ $announcement->category->name }}</a></td>
+                          <td class="fw-normal"><a class="text-black" href="{{ route('announce.View', $announcement)}}">{{ $announcement->description }}</a></td>
+                          <td class="fw-semibold "><a class="text-black" href="{{ route('announce.View', $announcement)}}">{{ Number::currency($announcement->price, in: 'EUR', locale: 'it') }}</a></td>
                       </tr>
                         @endforeach
                     </tbody>
