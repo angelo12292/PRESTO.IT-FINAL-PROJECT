@@ -1,14 +1,29 @@
 <x-layout>
-  <x-nav />
-  <x-access-denied />
-  <x-success />
-  <x-error />
-  <x-message />
   
-  <div class="container-md mt-5 ">
+  
+  <div class="container-fluid p-0">
 
-    <div class="row ">
-      <div class="col-12">
+    <div class="row m-0">
+      <div class="col-12 p-0">
+        <x-nav />
+      </div>
+    
+    </div>
+    
+    <div class="row m-0">
+      <div class="col-5">
+        <x-access-denied />
+        <x-success />
+        <x-error />
+        <x-message />
+      </div>
+    </div>
+
+
+
+
+    <div class="row text-center m-0 ">
+      <div class="col-12 p-0 ">
         <header>
           <h1>Annuncio: {{$announcement->title}}</h1>
           <h3>{{ Number::currency($announcement->price, in: 'EUR', locale: 'it') }} <span class="text-end fs-6 ">Categoria: {{$announcement->category->name}}</span></h3>
@@ -19,9 +34,9 @@
 
     </div>
     
-    <div class="row mt-2 g-5">
+    <div class="row m-0 text-center mt-2 d-block d-sm-flex ">
       
-      <div class="col-sm-6 col-md-8">
+      <div class="col-10 mx-auto col-sm-5 col-md-6 col-lg-7 p-0 mx-0">
 
 
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -67,17 +82,15 @@
       </div>
       
 
-      <div class="col-4 col-md-3 flex-column ms-5 border-start">
+      <div class="col-10 mx-auto col-sm-5 col-md-4 col-lg-3 flex-column m-0 p-0 ">
         @auth
         <div>
           <h5>Contatta il venditore {{$user->name}}.</h5>
         </div>
         
-        <livewire:contact-vendor-form />
+        <livewire:contact-vendor-form :receiving_user_id="$user->id" :receiving_user_email="$user->email"/>
         
-        <div class="mb-3 d-grid">
-          <a href="{{route('contact.vendor',compact('user'))}}"><button  wire:click="save" class="btn btn-light" type="submit">Invia email </button></a>
-        </div>
+        
 
         @else
         <div>
@@ -117,6 +130,7 @@
       </div>
     </div>
 
+    <x-footer />
   </div>
-  <x-footer />
+  
 </x-layout>

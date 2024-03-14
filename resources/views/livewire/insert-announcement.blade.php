@@ -1,12 +1,12 @@
 <div class="container-fluid p-0">
     <x-nav />
 
-    <div class="col-12 mt-5 pt-5 " style="height: 80vh">
+    <div class="col-12 mt-5 pt-5 mb-5" style="height: 80vh">
         <form wire:submit.prevent="store">
 
-            <div class="row">
+            <div class="row ">
                 <div class="col-6 m-auto mt-5 ">
-                    <x-success />
+                    
                     <div class="mb-3">
                         <label for="name" class="form-label">Titolo</label>
                         <input type="text" class="form-control @error('AnnTitle') is-invalid @enderror" id="title" placeholder="nome annuncio" wire:model="AnnTitle">

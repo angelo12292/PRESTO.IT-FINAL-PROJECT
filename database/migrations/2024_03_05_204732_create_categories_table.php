@@ -21,50 +21,50 @@ return new class extends Migration
         });
 
 
-         $categories = ['Motori', 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Abbigliamento'];
+        // $categories = ['Motori', 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Abbigliamento'];
 
-        // $categories = [
-        //     [
-        //         'name' => 'Motori',
-        //         'icon' => 'fa-car-side',
-        //     ],
-        //     [
-        //         'name' => 'Informatica',
-        //         'icon' => 'fa-computer',
-        //     ],
-        //     [
-        //         'name' => 'Elettrodomestici',
-        //         'icon' => 'fa-plug',
-        //     ],
-        //     [
-        //         'name' => 'Libri',
-        //         'icon' => 'fa-book',
-        //     ],
-        //     [
-        //         'name' => 'Giochi',
-        //         'icon' => 'fa-gamepad',
-        //     ],
-        //     [
-        //         'name' => 'Sport',
-        //         'icon' => 'fa-volleyball',
-        //     ],
-        //     [
-        //         'name' => 'Immobili',
-        //         'icon' => 'fa-shop',
-        //     ],
-        //     [
-        //         'name' => 'Telefoni',
-        //         'icon' => 'fa-mobile',
-        //     ],
-        //     [
-        //         'name' => 'Arredamento',
-        //         'icon' => 'fa-couch',
-        //     ],
-        //     [
-        //         'name' => 'Abbigliamento',
-        //         'icon' => 'fa-shirt',
-        //     ],
-        // ];
+        $categories = [
+            [
+                'name' => 'Motori',
+                'icon' => 'fa-car-side',
+            ],
+            [
+                'name' => 'Informatica',
+                'icon' => 'fa-computer',
+            ],
+            [
+                'name' => 'Elettrodomestici',
+                'icon' => 'fa-plug',
+            ],
+            [
+                'name' => 'Libri',
+                'icon' => 'fa-book',
+            ],
+            [
+                'name' => 'Giochi',
+                'icon' => 'fa-gamepad',
+            ],
+            [
+                'name' => 'Sport',
+                'icon' => 'fa-volleyball',
+            ],
+            [
+                'name' => 'Immobili',
+                'icon' => 'fa-shop',
+            ],
+            [
+                'name' => 'Telefoni',
+                'icon' => 'fa-mobile',
+            ],
+            [
+                'name' => 'Arredamento',
+                'icon' => 'fa-couch',
+            ],
+            [
+                'name' => 'Abbigliamento',
+                'icon' => 'fa-shirt',
+            ],
+        ];
 
 
 

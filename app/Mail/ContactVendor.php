@@ -21,7 +21,6 @@ class ContactVendor extends Mailable
      * Create a new message instance.
      */
     public $user;
-    public $contactVendorTextarea;
     public $emailSents;
 
    
