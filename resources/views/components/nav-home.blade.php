@@ -28,9 +28,11 @@
 
       @else
       <div class=" me-3 position-relative ">
+        @if (Auth::user()->is_revisor)
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           {{App\Models\Announcement::toBeRevisionedCount()}}
         </span>
+        @endif
         <button class="btn dropdown-toggle linkNav " type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-person-circle me-1"></i>
           {{auth()->user()->name}}
