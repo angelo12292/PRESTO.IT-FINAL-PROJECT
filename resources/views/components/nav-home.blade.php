@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg  navShadow fixed-top background">
   <div class="container py-4  bg-trasparent">
-    <img src="../img/Speed_Shop_Logo.svg" alt="" style="width: 40px;">
+    <img src="/img/Speed_Shop_Logo.svg" alt="" style="width: 40px;">
     <a class="navbar-brand fw-bold fs-3 p-0 ms-2 primary-color-text" href="{{route('home')}}">Presto</a>
 
     <div class="collapse navbar-collapse ms-4" id="navbarSupportedContent">
@@ -37,11 +37,11 @@
           <i class="bi bi-person-circle me-1"></i>
           {{auth()->user()->name}}
         </button>
-        <ul class="dropdown-menu ">
+        <ul class="dropdown-menu background ">
           <li>
             @if (Auth::user()->is_revisor)
             <a href="{{ route('revisor.index')}}" class=" nav-link text-start position-relative dropdown-item primary-color-text ps-3 p-0 dropDownHover">
-              acetta <br>annunci: <span class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
+              accetta <br>annunci: <span class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
             </a>
           <li>
             <hr class="dropdown-divider">

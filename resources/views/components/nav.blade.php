@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg  navShadow sticky-top  background mb-5">
   <div class="container py-4  bg-trasparent">
-    <img src="../img/Speed_Shop_Logo.svg" alt="" style="width: 40px;">
+    <img src="/img/Speed_Shop_Logo.svg" alt="" class="imgNav">
     <a class="navbar-brand fw-bold fs-3 p-0 ms-2 primary-color-text" href="{{route('home')}}">Presto</a>
 
     <div class="collapse navbar-collapse ms-4" id="navbarSupportedContent">
@@ -10,15 +10,14 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page"
-            href="{{route('show_announcements')}}">Annunci</a>
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('show_announcements')}}">Annunci</a>
         </li>
 
         <li class="nav-item">
           <x-success />
         </li>
       </ul>
-      
+
 
       @guest
       <div class="d-flex gap-3  me-4 ">
@@ -29,9 +28,11 @@
       @else
 
       <div class=" me-3 position-relative ">
+        @if (Auth::user()->is_revisor)
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           {{App\Models\Announcement::toBeRevisionedCount()}}
         </span>
+        @endif
         <button class="btn dropdown-toggle linkNav " type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-person-circle me-1"></i>
           {{auth()->user()->name}}
@@ -39,9 +40,8 @@
         <ul class="dropdown-menu ">
           <li>
             @if (Auth::user()->is_revisor)
-            <a href="{{ route('revisor.index')}}"
-              class=" nav-link text-start position-relative dropdown-item primary-color-text ps-3 p-0 dropDownHover">
-              acetta <br>annunci: <span class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
+            <a href="{{ route('revisor.index')}}" class=" nav-link text-start position-relative dropdown-item primary-color-text ps-3 p-0 dropDownHover">
+              accetta <br>annunci: <span class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
             </a>
           <li>
             <hr class="dropdown-divider">
@@ -56,16 +56,14 @@
           @endif
           <form action="/logout" method="POST" class="nav-link btn ">
             @csrf
-            <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start "
-              type="submit">Logout</button>
+            <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start " type="submit">Logout</button>
           </form>
           </li>
         </ul>
       </div>
       @endguest
       <div>
-        <a href="{{route('insert_announcement')}}" type="submit"
-          class="btn text-white rounded-5  primary-color-bg btnStatic"><span>Inserisci
+        <a href="{{route('insert_announcement')}}" type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic"><span>Inserisci
             Annunci</span></a>
       </div>
     </div>
