@@ -12,14 +12,14 @@
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="#category-section">Categorie</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#announce-section">Annunci</a>
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#announcements-section">Annunci</a>
         </li>
 
         <li class="nav-item">
-          
+
         </li>
       </ul>
-      <livewire:notification-form/>
+      <livewire:notification-form />
       @guest
       <div class="d-flex gap-3  me-4 ">
         <a class="dropdown-item linkNav navAnimation " href="/login">Login</a>
@@ -58,7 +58,7 @@
             @csrf
             <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start " type="submit">Logout</button>
           </form>
-          <livewire:notifications-list/>
+          <livewire:notifications-list />
           </li>
         </ul>
       </div>
