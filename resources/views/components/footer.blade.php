@@ -1,5 +1,5 @@
 <div class="container-fluid mt-4 p-3 py-5 primary-color-bg ">
-    <div class="container">
+    
         <div class="row ">
             <div class="col-12 text-center text-white d-flex align-items-center justify-content-between">
                 <div class="align-middle">
@@ -14,5 +14,5 @@
 
             </div>
         </div>
-    </div>
+    
 </div>

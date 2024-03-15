@@ -9,7 +9,7 @@
     
     </div>
      
-    <x-success/>
+        <x-success/>
 
     <div class="mb-3 d-grid">
         <button  wire:click="" class="btn btn-light p-0" type="submit">invia messaggio</button>
