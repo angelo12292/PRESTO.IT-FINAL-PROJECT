@@ -14,6 +14,9 @@ class PageController extends Controller
     {
         $announcements = Announcement::where('is_accepted', true)->take(6)->orderBy('created_at', 'desc')->get();
 
+
+
+
         return view('pages.home', ['categories' => Category::all(), 'announcements' => $announcements]);
     }
 
@@ -28,10 +31,36 @@ class PageController extends Controller
     // }
 
     public function searchAnnouncements(Request $request)
-    
     {
-        $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
+        // Quello incrociato
 
-        return view('pages.announcement.index', compact('announcements'));
+        if ($request->searched && $request->searchedCategory != 'Categorie') {
+            $announcements = Announcement::search($request->searched)->where('is_accepted', true)->where('category_id', $request->searchedCategory)->paginate(10);
+
+            return view('pages.announcement.index', compact('announcements'));
+        }
+
+
+
+        // Per il solo titolo
+
+        elseif ($request->searched && $request->searchedCategory == 'Categorie') {
+            $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
+            return view('pages.announcement.index', compact('announcements'));
+        }
+
+        // Errore
+
+        elseif (!$request->searched && $request->searchedCategory == 'Categorie') {
+            return redirect()->back()->with('errorSearch', 'Ricerca sbagliata');
+        }
+
+        // Per la categoria
+
+        elseif (!$request->searched) {
+            $announcements = Announcement::search($request->searchedCategory)->where('is_accepted', true)->paginate(10);
+
+            return view('pages.announcement.index', compact('announcements'));
+        }
     }
 }

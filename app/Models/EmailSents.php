@@ -9,7 +9,7 @@ class EmailSents extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id','body'];
+    protected $fillable = ['sending_user_id','receiving_user_id','body'];
 
     public function user()
     {

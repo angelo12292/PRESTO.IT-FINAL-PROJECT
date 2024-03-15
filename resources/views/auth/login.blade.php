@@ -1,9 +1,9 @@
 <x-layout title="Accedi">
-
-    <div class="container mt-5 position-relative ">
+    <x-nav />
+    <div class="container mt-5 pt-5" style="height:71vh">
         <div class="row">
             <div class="col-md-4 mx-auto">
-                <div class="card background rounded-5 shadow">
+                <div class="card background rounded-5 shadow p-3">
 
                     <div class="card-body">
                         <form action="/login" method="POST">
@@ -32,6 +32,8 @@
                 </div>
             </div>
         </div>
+
     </div>
+    <x-footer />
 
 </x-layout>

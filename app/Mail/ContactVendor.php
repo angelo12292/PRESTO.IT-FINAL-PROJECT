@@ -21,7 +21,6 @@ class ContactVendor extends Mailable
      * Create a new message instance.
      */
     public $user;
-    public $contactVendorTextarea;
     public $emailSents;
 
    
@@ -30,7 +29,7 @@ class ContactVendor extends Mailable
     public function __construct(User $user)
     {
         $this->user = $user;
-        $this->emailSents = EmailSents::where('user_id',auth()->user()->id)->take(1)->orderBy('created_at', 'desc')->get();
+        $this->emailSents = EmailSents::where('sending_user_id',auth()->user()->id)->take(1)->orderBy('created_at', 'desc')->get();
         //dd($this->emailSents,$this->user);
     }
 

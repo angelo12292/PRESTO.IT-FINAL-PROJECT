@@ -1,22 +1,25 @@
 <x-layout>
-  <div class="container mt-5 ">
+  <x-nav />
+  <div class="d-flex flex-column justify-content-between " style="height:84vh">
+    <div class="container mt-5 ">
 
-    <h1 class="text-center mb-5 primary-color-text">{{ $category->name }}</h1>
+      <h1 class="text-center mb-5 primary-color-text">{{ $category->name }}</h1>
 
 
 
-    <div class="row g-2">
-      @foreach($category->announcements as $annoucement)
-      @if($annoucement->is_accepted)
-      <div class="col-4 mb-4 d-flex justify-content-center ">
-        <x-card :price="$annoucement->price" :description="$annoucement->description" :category="$annoucement->category->name" :title="$annoucement->title" :root="route('announce.View',$annoucement->id)" />
+      <div class="row g-2">
+        @foreach($category->announcements as $annoucement)
+        @if($annoucement->is_accepted)
+        <div class="col-4 mb-4 d-flex justify-content-center ">
+          <x-card :user="$annoucement->user->name" :price="$annoucement->price" :description="$annoucement->description" :category="$annoucement->category->name" :title="$annoucement->title" :root="route('announce.View',$annoucement->id)" />
+        </div>
+        @endif
+        @endforeach
+
       </div>
-      @endif
-      @endforeach
 
     </div>
 
+    <x-footer />
   </div>
-
-
 </x-layout>

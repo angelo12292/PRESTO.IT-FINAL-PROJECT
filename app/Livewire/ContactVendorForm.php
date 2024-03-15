@@ -15,17 +15,21 @@ use Livewire\Attributes\On;
 
 class ContactVendorForm extends Component
 {
-    public $emailSentId = null;
+    public $emailSentId;
+    #[Validate]
     public $body;
-    public $user;
+    public $receiving_user_id;
+    public $receiving_user_email;
+
 
 
     public function rules(){
         return [
         'body'=> 'required|max:300'
         ];
+
     }
-    
+
     public function render()
     {
         return view('livewire.contact-vendor-form');
@@ -33,25 +37,40 @@ class ContactVendorForm extends Component
 
     public function store(Request $request)
     {
-        EmailSents::create([
-            
-            'user_id' => Auth::id(),
-            
+        $this->validate();
+
+       EmailSents::create(
+        [
+
+
+            'sending_user_id' => Auth::id(),
+            'receiving_user_id' =>$this->receiving_user_id,
             'body' => $this->body,
-            
+
         ]);
+
+
 
         $this->dispatch('mail-created');
 
     }
 
-    
+    public function resetEmailBody()
+    {
+        $this->body = '';
+
+    }
+
+
     #[On('mail-created')]
-    public function contactVendor(User $user)
+    public function contactVendor()
     {
 
-        // //dd(Auth::id()->email);
-        // Mail::to($user->email)->send(new ContactVendor(Auth::user()));
-        // //$user->email
+        Mail::to($this->receiving_user_email)->send(new ContactVendor(Auth::user()));
+        $this->resetEmailBody();
+
+        session()->flash('success', 'Hai inviato correttamente la mail al venditore.');
+
+
     }
 }

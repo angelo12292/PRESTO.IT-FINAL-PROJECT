@@ -1,5 +1,9 @@
 @if(session()->has('success'))
-<div class="alert alert-success">
+
+<p class="dropdown-item">
+
     {{ session('success') }}
-</div>
+</p>
+
+
 @endif

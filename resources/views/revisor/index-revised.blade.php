@@ -1,5 +1,6 @@
 <x-layout>
-    <div class="container mt-5">
+    <x-nav />
+    <div class="container-fluid p-0">
         @if(session()->has('success'))
         <div class="alert alert-success">
         {{ session('success') }}
@@ -13,20 +14,21 @@
 
 
 
-        <div class="row">
-            <div class="col-5">
+        <div class="row justify-content-evenly ">
+            
+            <div class="col-5 shadow p-3 mb-5 bg-body-tertiary rounded">
 
-                <div class="row ">
-                    <div class="col-12">
+                <div class="col-12">
+                    <div class="">
                         <header>
-                        <h1 class="text-center">{{$announcement_checked['true'] ? 'Ecco l\'annuncio accettato' : 'Non ci sono annunci da revisionare'}}</h1>
+                        <h1 class="text-center">{{$announcement_checked['true'] ? 'Annunci accettati' : 'Non ci sono annunci da revisionare'}}</h1>
                         </header>
                     </div>
                 </div>
                 @if($announcement_checked['true'])
 
-                <div class="row">
-                    <div class="col-12">
+                <div class="col-12">
+                    <div class="col-8 mx-auto">
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -63,7 +65,8 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-
+                    </div>
+                    <div calss="col-6">
                         <h5 class="mb-2 fw-light h2">Titolo: </h5>
                         <h4 class="mb-4 ">{{$announcement_checked['true']->title}}</h4>
                         <h4 class="mb-2 fw-light h2">Descrizione:</h4>
@@ -73,13 +76,13 @@
 
                     </div>
                 </div>
-                <div class="row gap-3 ">
+                <div class="col-12 d-flex justify-content-end">
 
 
                     <form action="{{route ('revisor.restore_announcement',['announcement'=>$announcement_checked['true']])}}" method="POST">
                     @csrf
                     @method('PATCH')
-                    <button type="submit" class="btn btn-primary ">Ripristina </button>
+                    <button type="submit" class="btn btn-primary btn btn-primary me-3">Ripristina </button>
                     </form>
 
 
@@ -93,19 +96,19 @@
             </div>
 
 
-            <div class="col-5">
+            <div class="col-5 shadow p-3 mb-5 bg-body-tertiary rounded">
 
-                <div class="row ">
-                    <div class="col-12">
+                <div class="col-12">
+                    <div class="">
                         <header>
-                        <h1 class="text-center">{{$announcement_checked['false'] ? 'Ecco l\'annuncio scartato' : 'Non ci sono annunci da revisionare'}}</h1>
+                        <h1 class="text-center">{{$announcement_checked['false'] ? 'Annunci scartati' : 'Non ci sono annunci da revisionare'}}</h1>
                         </header>
                     </div>
                 </div>
                 @if($announcement_checked['false'])
 
-                <div class="row">
-                    <div class="col-12">
+                <div class="col-12">
+                    <div class="col-8 mx-auto">
                         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -142,7 +145,8 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-
+                    </div>
+                    <div calss="col-12">
                         <h5 class="mb-2 fw-light h2">Titolo: </h5>
                         <h4 class="mb-4 ">{{$announcement_checked['false']->title}}</h4>
                         <h4 class="mb-2 fw-light h2">Descrizione:</h4>
@@ -151,13 +155,13 @@
                         <h4 class="mb-4 ">{{$announcement_checked['false']->price}}</h4>
 
                     </div>
-                </div>
-                <div class="row gap-3 ">
+                
+                <div class="col-12 d-flex justify-content-end">
 
                     <form action="{{route ('revisor.restore_announcement',['announcement'=>$announcement_checked['false']])}}" method="POST">
                     @csrf
                     @method('PATCH')
-                    <button type="submit" class="btn btn-primary ">Ripristina </button>
+                    <button type="submit" class="btn btn-primary me-3">Ripristina </button>
                     </form>
 
                     <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_checked['false']])}}" method="POST">
@@ -171,8 +175,8 @@
             </div>
 
         </div>
+        
     </div>
-    
-    
-  
+
+    <x-footer/>
 </x-layout>

@@ -25,12 +25,28 @@ class AccountController extends Controller
         return view('accounts.show-announcements', compact('announcements'));
     }
     
-   public function contactVendor(User $user)
-   {
+//    public function contactVendor(User $user)
+//    {
         
-       Mail::to($user->email)->send(new ContactVendor(Auth::user()));
+//        Mail::to($user->email)->send(new ContactVendor(Auth::user()));
+//        return redirect()->back()->with(['success' => 'hai inviato l\'email al venditore']);
+       
         
-   }
+//    }
+
+//    public function store(Request $request)
+//     {
+//         EmailSents::create([
+            
+//             'sending_user_id' => Auth::id(),
+            
+//             'body' => $this->body,
+            
+//         ]);
+
+//         $this->dispatch('mail-created');
+
+//     }
 
     
 
