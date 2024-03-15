@@ -16,13 +16,14 @@
 
 
 
-    <div class="container">
+    <div class="container mx-auto ">
       <div class="row  m-0 ">
         <div class="col-12 p-0 ">
           <header>
-            <h1>Annuncio: {{$announcement->title}}</h1>
-            <h3 class="d-flex align-items-center ">{{ Number::currency($announcement->price, in: 'EUR', locale: 'it') }}
-              <span class="text-end fs-6 ms-3">Categoria: {{$announcement->category->name}}</span>
+            <h1 class="primary-color-text ">Annuncio: {{$announcement->title}}</h1>
+            <h3 class="d-flex align-items-center primary-color-text ">
+              {{ Number::currency($announcement->price, in: 'EUR', locale: 'it') }}
+              <span class="text-end fs-6 ms-3 primary-color-text ">Categoria: {{$announcement->category->name}}</span>
             </h3>
           </header>
         </div>
@@ -78,8 +79,8 @@
               </button>
             </div>
 
-            <h4 class="mb-2 fw-light h2">Descrizione:</h4>
-            <h4 class="mb-4 ">{{$announcement->description}}</h4>
+            <h4 class="mt-4 mb-2 fw-light h2 primary-color-text ">Descrizione:</h4>
+            <h4 class="mb-4 primary-color-text ">{{$announcement->description}}</h4>
 
           </div>
 
@@ -87,22 +88,14 @@
           <div class="col-10 mx-auto col-sm-5 col-md-4 col-lg-3 flex-column m-0 p-0 ">
             @auth
             <div>
-              <h5>Contatta il venditore {{$user->name}}.</h5>
-            </div>
-
-            <livewire:contact-vendor-form />
-
-            <div class="mb-3 d-grid">
-              <a href="{{route('contact.vendor',compact('user'))}}"><button wire:click="save" class="btn btn-light" type="submit">Invia email </button></a>
+              <h5 class="primary-color-text ">Contatta il venditore {{$user->name}}.</h5>
             </div>
 
             <livewire:contact-vendor-form :receiving_user_id="$user->id" :receiving_user_email="$user->email" />
 
-
-
             @else
             <div>
-              <h5>Contatta il venditore {{$user->name}}.</h3>
+              <h5 class="primary-color-text ">Contatta il venditore {{$user->name}}.</h3>
 
             </div>
 

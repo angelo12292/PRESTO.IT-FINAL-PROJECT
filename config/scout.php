@@ -116,7 +116,7 @@ return [
         'id' => env('ALGOLIA_APP_ID', ''),
         'secret' => env('ALGOLIA_SECRET', ''),
     ],
-
+    
     'tntsearch' => [
         'storage'  => storage_path(), //place where the index files will be stored
         'fuzziness' => env('TNTSEARCH_FUZZINESS', false),
@@ -133,6 +133,7 @@ return [
         'searchBoolean' => env('TNTSEARCH_BOOLEAN', false),
         'maxDocs' => env('TNTSEARCH_MAX_DOCS', 500),
     ],
+
     /*
     |--------------------------------------------------------------------------
     | Meilisearch Configuration
