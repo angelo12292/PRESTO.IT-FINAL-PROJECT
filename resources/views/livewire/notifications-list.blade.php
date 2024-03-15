@@ -6,7 +6,7 @@
         
         <li class="list-group-item ps-3 w-100">
             <a href="{{route('notification.index')}}" class="nav-link primary-color-text dropDownHover w-100 text-start "
-              type="submit">{{$notification->id}}: {{$notification->body}}</a>
+              type="submit">{{$notification->body}}</a>
         </li>
         
         @endforeach

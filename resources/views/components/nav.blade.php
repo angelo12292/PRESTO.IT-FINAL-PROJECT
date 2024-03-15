@@ -12,12 +12,11 @@
         <li class="nav-item">
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('show_announcements')}}">Annunci</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href=git>Annunci</a>
-        </li>
+
+
       </ul>
 
-
+      <livewire:notification-form/>
       @guest
       <div class="d-flex gap-3  me-4 ">
         <a class="dropdown-item linkNav navAnimation " href="/login">Login</a>
@@ -35,7 +34,7 @@
             <i class="bi bi-bell-fill"></i>
           </button>
           <ul class="dropdown-menu background ">
-            <li> <x-success /></li>
+            <li>  <livewire:notifications-list/></li>
           </ul>
         </div>
 
@@ -75,7 +74,7 @@
             @csrf
             <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start " type="submit">Logout</button>
           </form>
-         <livewire:notifications-list/>
+        
           
           </li>
         </ul>

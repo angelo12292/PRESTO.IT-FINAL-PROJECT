@@ -1,18 +1,15 @@
 <x-layout>
     <x-nav />
         
-
-        <ul class="list-group">
-            <li class="list-group-item ps-3 w-100">
-                <p class=" primary-color-text   text-start "
-                type="submit"></p>
-            </li>
+        <h1 class=" m-5">Tutte le notifiche</h1>
+        <ul class="list-group pb-5">
+            
             <ul class="list-group">
             @foreach($notifications as $notification)
-                <li class="list-group-item">{{$notification->id}}: {{$notification->body}}</li>
+                <li class="list-group-item primary-color-bg text-white">{{$notification->body}}</li>
                 
             @endforeach    
         </ul>
         
-    <x-footer/>
+    
 </x-layout>
