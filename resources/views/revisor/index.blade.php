@@ -12,10 +12,10 @@
     </div>
     @endif
 
-    <div class="row ">
+    <div class="row mb-4">
       <div class="col-12">
         <header>
-          <h1 class="text-center">
+          <h1 class="text-center primary-color-text">
             {{$announcement_to_check ? 'Ecco l\'annuncio da revisionare' : 'Non ci sono annunci da revisionare'}}
           </h1>
         </header>
@@ -62,12 +62,12 @@
           </button>
         </div>
 
-        <h5 class="mb-2 fw-light h2">Titolo: </h5>
+        <h5 class="mb-2 mt-4 fw-light h2">Titolo: </h5>
         <h4 class="mb-4 ">{{$announcement_to_check->title}}</h4>
         <h4 class="mb-2 fw-light h2">Descrizione:</h4>
         <h4 class="mb-4 ">{{$announcement_to_check->description}}</h4>
         <h4 class="mb-2 fw-light h2">Prezzo:</h4>
-        <h4 class="mb-4 ">{{$announcement_to_check->price}}</h4>
+        <h4 class="mb-4 ">{{ Number::currency($announcement_to_check->price, in: 'EUR', locale: 'it') }}</h4>
 
       </div>
     </div>
@@ -79,14 +79,14 @@
     <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
       @csrf
       @method('PATCH')
-      <button type="submit" class="btn btn-primary ">Accetta</button>
+      <button type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">Accetta</button>
     </form>
 
 
     <form action="{{route ('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
       @csrf
       @method('PATCH')
-      <button type="submit" class="btn btn-danger ">Rifiuta</button>
+      <button type="submit" class="btn btn-danger rounded-5 ">Rifiuta</button>
     </form>
 
 
