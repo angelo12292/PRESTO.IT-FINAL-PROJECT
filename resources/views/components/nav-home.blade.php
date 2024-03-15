@@ -12,7 +12,7 @@
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="#category-section">Categorie</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#announcements-section">Annunci</a>
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#announce-section">Annunci</a>
         </li>
 
         <li class="nav-item">
