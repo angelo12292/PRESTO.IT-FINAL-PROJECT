@@ -1,17 +1,9 @@
 <x-layout>
   <x-nav />
   <div class="container mt-5">
-    @if(session()->has('success'))
-    <div class="alert alert-success">
-      {{ session('success') }}
-    </div>
-    @endif
-    @if(session()->has('fail'))
-    <div class="alert alert-warning ">
-      {{ session('fail') }}
-    </div>
-    @endif
-
+    <livewire:notification-message/>
+    
+    
     <div class="row ">
       <div class="col-12">
         <header>

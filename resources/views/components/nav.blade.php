@@ -75,6 +75,8 @@
             @csrf
             <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start " type="submit">Logout</button>
           </form>
+         <livewire:notifications-list/>
+          
           </li>
         </ul>
       </div>
