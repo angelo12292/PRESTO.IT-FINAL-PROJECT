@@ -59,9 +59,13 @@ class PageController extends Controller
       
             return view('pages.announcement.index', compact('announcements'));
         }
-
-       
             
+    }
+
+
+    public function notificationStore()
+    {
+        
     }
     
 } 

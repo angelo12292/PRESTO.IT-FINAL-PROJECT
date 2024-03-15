@@ -1,12 +1,13 @@
 <div class="container-fluid p-0 ">
-    <x-nav-home />
+    <x-nav />
     <div class="d-flex flex-column justify-content-between pt-5" style="height: 100vh">
+    <livewire:notification-message/>
         <div class="col-12 mt-5 pt-5 ">
             <form wire:submit.prevent="store">
 
                 <div class="row">
                     <div class="col-6 m-auto mt-5 ">
-                        <x-success />
+                        
                         <div class="mb-3">
                             <label for="name" class="form-label">Titolo</label>
                             <input type="text" class="form-control @error('AnnTitle') is-invalid @enderror" id="title" placeholder="nome annuncio" wire:model="AnnTitle">

@@ -90,15 +90,7 @@
               <h5>Contatta il venditore {{$user->name}}.</h5>
             </div>
 
-            <livewire:contact-vendor-form />
-
-            <div class="mb-3 d-grid">
-              <a href="{{route('contact.vendor',compact('user'))}}"><button wire:click="save" class="btn btn-light" type="submit">Invia email </button></a>
-            </div>
-
             <livewire:contact-vendor-form :receiving_user_id="$user->id" :receiving_user_email="$user->email" />
-
-
 
             @else
             <div>
