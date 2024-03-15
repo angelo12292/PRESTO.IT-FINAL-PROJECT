@@ -7,7 +7,7 @@
     <div class="row ">
       <div class="col-12">
         <header>
-          <h1 class="text-center primary-color-text">
+          <h1 class="text-center primary-color-text mb-5 ">
             {{$announcement_to_check ? 'Ecco l\'annuncio da revisionare' : 'Non ci sono annunci da revisionare'}}
           </h1>
         </header>
@@ -54,12 +54,14 @@
           </button>
         </div>
 
-        <h5 class="mb-2 mt-4 fw-light h2">Titolo: </h5>
-        <h4 class="mb-4 ">{{$announcement_to_check->title}}</h4>
-        <h4 class="mb-2 fw-light h2">Descrizione:</h4>
-        <h4 class="mb-4 ">{{$announcement_to_check->description}}</h4>
-        <h4 class="mb-2 fw-light h2">Prezzo:</h4>
-        <h4 class="mb-4 ">{{ Number::currency($announcement_to_check->price, in: 'EUR', locale: 'it') }}</h4>
+        <h5 class="mb-2 mt-4 fw-light h2 primary-color-text">Titolo: </h5>
+        <h4 class="mb-4  primary-color-text">{{$announcement_to_check->title}}</h4>
+        <h4 class="mb-2 fw-light h2 primary-color-text">Descrizione:</h4>
+        <h4 class="mb-4  primary-color-text">{{$announcement_to_check->description}}</h4>
+        <h4 class="mb-2 fw-light h2 primary-color-text">Prezzo:</h4>
+        <h4 class="mb-4  primary-color-text">
+          {{ Number::currency($announcement_to_check->price, in: 'EUR', locale: 'it') }}
+        </h4>
 
       </div>
     </div>
