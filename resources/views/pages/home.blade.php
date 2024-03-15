@@ -37,7 +37,7 @@
                 </div>
 
                 <x-error-search />
-                
+
               </div>
             </form>
           </div>
@@ -96,21 +96,28 @@
 
 
   <a class="text-center d-block py-3" name="announcements-section"></a>
-  <section class="container mt-5 pt-5  ">
+  <section class="container mt-5 pt-5 mb-5 pt-5">
 
     <div class="d-flex align-items-center justify-content-center ">
       <div class="d-inline-block accent-color-bg me-3 " style="height:2px; width:60px"></div>
       <h3 class="text-center  accent-color-text fw-light m-0 " style="z-index: 1;">Annunci</h3>
       <div class="d-inline-block accent-color-bg ms-3 " style="height:2px; width:60px"></div>
     </div>
-    <h3 class="text-center mb-5 primary-color-text h1" style="z-index: 1;">Ultimi annunci inseriti</h3>
-    <div class="row g-2">
-      @foreach($announcements as $announcement)
-      <div class="col-4 mb-4 d-flex justify-content-center ">
-        <x-card :user="$announcement->user->name" :price="$announcement->price" :description="$announcement->description" :category="$announcement->category->name" :title="$announcement->title" :root="route('announce.View',$announcement->id)" />
+
+
+    @if($announcements->count() < 1) <h3 class="text-center mb-5 primary-color-text h1" style="z-index: 1;">Non ci sono
+      annunci revisionati</h3>
+      @else
+      <h3 class="text-center mb-5 primary-color-text h1" style="z-index: 1;">Ultimi annunci inseriti</h3>
+      @endif
+
+      <div class="row g-2">
+        @foreach($announcements as $announcement)
+        <div class="col-4 mb-4 d-flex justify-content-center ">
+          <x-card :user="$announcement->user->name" :price="$announcement->price" :description="$announcement->description" :category="$announcement->category->name" :title="$announcement->title" :root="route('announce.View',$announcement->id)" />
+        </div>
+        @endforeach
       </div>
-      @endforeach
-    </div>
   </section>
 
   <x-footer />

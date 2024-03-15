@@ -10,15 +10,13 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page"
-            href="{{route('show_announcements')}}">Annunci</a>
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('show_announcements')}}">Annunci</a>
         </li>
 
-      
-        
+
       </ul>
-      
-      <livewire:notification-form/>
+
+
       @guest
       <div class="d-flex gap-3  me-4 ">
         <a class="dropdown-item linkNav navAnimation " href="/login">Login</a>
@@ -27,10 +25,30 @@
 
       @else
 
-      <div class=" me-3 position-relative ">
+      <div class=" me-3 position-relative d-flex align-items-center ">
+        <div class="dropdown background ">
+          @if(session()->has('success'))
+          <span class="position-absolute top-0 start-100 translate-middle rounded-pill bg-danger" style="width:10px; height:10px"></span>
+          @endif
+          <button class="btn primary-color-text dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-bell-fill"></i>
+          </button>
+          <ul class="dropdown-menu background ">
+            <li> <x-success /></li>
+          </ul>
+        </div>
+
+
+
+        </i>
+        <ul class="dropdown-menu ">
+        </ul>
+
+        @if (Auth::user()->is_revisor)
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           {{App\Models\Announcement::toBeRevisionedCount()}}
         </span>
+        @endif
         <button class="btn dropdown-toggle linkNav " type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="bi bi-person-circle me-1"></i>
           {{auth()->user()->name}}
@@ -38,9 +56,8 @@
         <ul class="dropdown-menu ">
           <li>
             @if (Auth::user()->is_revisor)
-            <a href="{{ route('revisor.index')}}"
-              class=" nav-link text-start position-relative dropdown-item primary-color-text ps-3 p-0 dropDownHover">
-              acetta <br>annunci: <span class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
+            <a href="{{ route('revisor.index')}}" class=" nav-link text-start position-relative dropdown-item primary-color-text ps-3 p-0 dropDownHover">
+              accetta <br>annunci: <span class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
             </a>
           <li>
             <hr class="dropdown-divider">
@@ -55,8 +72,7 @@
           @endif
           <form action="/logout" method="POST" class="nav-link btn ">
             @csrf
-            <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start "
-              type="submit">Logout</button>
+            <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start " type="submit">Logout</button>
           </form>
          <livewire:notifications-list/>
           
@@ -65,8 +81,7 @@
       </div>
       @endguest
       <div>
-        <a href="{{route('insert_announcement')}}" type="submit"
-          class="btn text-white rounded-5  primary-color-bg btnStatic"><span>Inserisci
+        <a href="{{route('insert_announcement')}}" type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic"><span>Inserisci
             Annunci</span></a>
       </div>
     </div>

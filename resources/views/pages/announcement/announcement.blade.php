@@ -16,7 +16,7 @@
 
 
 
-    <div class="container">
+    <div class="container mx-auto ">
       <div class="row  m-0 ">
         <div class="col-12 p-0 ">
           <header>
