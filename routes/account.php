@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/inserisci_annuncio', [AccountController::class,'insertAnnouncement'])->name('insert_announcement');
 
-
+Route::get('/notifiche/index', [AccountController::class,'notificationIndex'])->name('notification.index');
 
 Route::get('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
 

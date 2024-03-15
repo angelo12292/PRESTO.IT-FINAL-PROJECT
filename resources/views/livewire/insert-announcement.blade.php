@@ -6,7 +6,7 @@
 
                 <div class="row">
                     <div class="col-6 m-auto mt-5 ">
-                        <x-success />
+                        
                         <div class="mb-3">
                             <label for="name" class="form-label">Titolo</label>
                             <input type="text" class="form-control @error('AnnTitle') is-invalid @enderror" id="title" placeholder="nome annuncio" wire:model="AnnTitle">

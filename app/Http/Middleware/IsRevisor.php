@@ -20,7 +20,7 @@ class IsRevisor
             return $next($request);
 
         }
-        return redirect('/')->with(['access.denied' => 'Attenzione! Solo i revisori possono accedere a questa sezione']);
+        return redirect('inserisci_annuncio')->with('access.denied', 'Attenzione! Solo i revisori possono accedere a questa sezione');
     }
     // ['message' => 'Attenzione! Solo i revisori possono accedere a questa sezione']
 

@@ -96,7 +96,7 @@
 
 
   <a class="text-center d-block py-3" name="announcements-section"></a>
-  <section class="container mt-5  mb-5 ">
+  <section class="container mt-5 pt-5 mb-5 pt-5">
 
     <div class="d-flex align-items-center justify-content-center ">
       <div class="d-inline-block accent-color-bg me-3 " style="height:2px; width:60px"></div>

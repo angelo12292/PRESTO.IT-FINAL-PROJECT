@@ -12,8 +12,9 @@
         <li class="nav-item">
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('show_announcements')}}">Annunci</a>
         </li>
-
-
+        <li class="nav-item">
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href=git>Annunci</a>
+        </li>
       </ul>
 
 
@@ -74,6 +75,8 @@
             @csrf
             <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start " type="submit">Logout</button>
           </form>
+         <livewire:notifications-list/>
+          
           </li>
         </ul>
       </div>
