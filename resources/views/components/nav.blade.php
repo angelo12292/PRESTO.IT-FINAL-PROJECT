@@ -17,7 +17,7 @@
         </li>
       </ul>
 
-
+      <livewire:notification-form/>
       @guest
       <div class="d-flex gap-3  me-4 ">
         <a class="dropdown-item linkNav navAnimation " href="/login">Login</a>

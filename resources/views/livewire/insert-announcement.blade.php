@@ -1,11 +1,17 @@
 <div class="container-fluid p-0 ">
     <x-nav />
-    <div class="d-flex flex-column justify-content-between pt-5" style="height: 85vh">
+    <div class="raw">
+        <div class="col-6 mx-auto">
+            <livewire:notification-message/>
+         </div>
+    </div>
+    
+    <div class="d-flex flex-column justify-content-between " style="height: 85vh">
         <div class="col-12 ">
             <form wire:submit.prevent="store">
 
                 <div class="row">
-                    <div class="col-6 m-auto mt-5 ">
+                    <div class="col-6 m-auto mt-2 ">
                         
                         <div class="mb-3">
                             <label for="name" class="form-label">Titolo</label>

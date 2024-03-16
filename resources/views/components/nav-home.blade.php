@@ -30,7 +30,27 @@
       </div>
 
       @else
-      <div class=" me-3 position-relative ">
+
+
+      <div class=" me-3 position-relative d-flex align-items-center ">
+        <div class="dropdown background ">
+          @if(session()->has('success'))
+          <span class="position-absolute top-0 start-100 translate-middle rounded-pill bg-danger" style="width:10px; height:10px"></span>
+          @endif
+          <button class="btn primary-color-text dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-bell-fill"></i>
+          </button>
+          <ul class="dropdown-menu background ">
+            <li>  <livewire:notifications-list/></li>
+          </ul>
+        </div>
+
+
+
+        </i>
+        <ul class="dropdown-menu ">
+        </ul>
+
         @if (Auth::user()->is_revisor)
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
           {{App\Models\Announcement::toBeRevisionedCount()}}
@@ -40,7 +60,7 @@
           <i class="bi bi-person-circle me-1"></i>
           {{auth()->user()->name}}
         </button>
-        <ul class="dropdown-menu background ">
+        <ul class="dropdown-menu ">
           <li>
             @if (Auth::user()->is_revisor)
             <a href="{{ route('revisor.index')}}" class=" nav-link text-start position-relative dropdown-item primary-color-text ps-3 p-0 dropDownHover">
