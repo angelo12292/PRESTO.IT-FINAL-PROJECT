@@ -1,2 +1,4 @@
 <?php
-return ['AllAnnouncements'=> 'all my announce'];
+return [
+    'AllAnnouncements'=> 'Buy, Sell, Rent & Exchange in one Click'
+];
