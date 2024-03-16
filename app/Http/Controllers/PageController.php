@@ -14,7 +14,7 @@ class PageController extends Controller
     {
         $announcements = Announcement::where('is_accepted', true)->take(6)->orderBy('created_at', 'desc')->get();
 
-
+        
 
 
         return view('pages.home', ['categories' => Category::all(), 'announcements' => $announcements]);
@@ -63,4 +63,13 @@ class PageController extends Controller
             return view('pages.announcement.index', compact('announcements'));
         }
     }
+
+    // Per la traduzione del sito
+
+    public function setLanguage($lang)
+    {   
+        session()->put('locale', $lang);
+        return redirect()->back();
+    }
+
 }

@@ -5,16 +5,9 @@
   <div class="container-fluid mt-5 ">
 
 
-    <div class="row m-0">
-      <div class="col-5">
-        <x-access-denied />
-        <x-success />
-        <x-error />
-        <x-message />
-      </div>
-    </div>
+    
 
-
+    
 
     <div class="container mx-auto ">
       <div class="row  m-0 ">
@@ -92,7 +85,9 @@
             </div>
 
             <livewire:contact-vendor-form :receiving_user_id="$user->id" :receiving_user_email="$user->email" />
-
+            <div class="raw">
+              
+            </div>
             @else
             <div>
               <h5 class="primary-color-text ">Contatta il venditore {{$user->name}}.</h3>

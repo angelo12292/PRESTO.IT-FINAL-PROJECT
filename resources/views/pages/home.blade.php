@@ -8,8 +8,8 @@
   <section class="container mt-5" style="height:95vh">
     <div class="row">
       <div class="col-12 col-lg-8 col-xl-6 d-flex flex-column justify-content-center pe-md-5 searchBar z-1">
-        <h1 class="fw-bold mb-5 animate__animated animate__fadeInLeft primary-color-text">Buy, Sell, Rent & Exchange<br>
-          in one Click</h1>
+        <h1 class="fw-bold mb-5 animate__animated animate__fadeInLeft primary-color-text">{{__('ui.AllAnnouncements')}}<br>
+        </h1>
 
         <div class="row  ">
           <div class="col-12 searchStyle  p-2 rounded-5 animate__animated animate__fadeInLeft bg-white">
