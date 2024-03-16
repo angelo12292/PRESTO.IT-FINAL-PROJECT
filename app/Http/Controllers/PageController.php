@@ -63,4 +63,13 @@ class PageController extends Controller
             return view('pages.announcement.index', compact('announcements'));
         }
     }
+
+    // Per la traduzione del sito
+
+    public function setLanguage($lang)
+    {
+        session()->put('locale', $lang);
+        return redirect()->back();
+    }
+
 }
