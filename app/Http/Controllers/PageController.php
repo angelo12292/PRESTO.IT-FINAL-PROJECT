@@ -67,7 +67,7 @@ class PageController extends Controller
     // Per la traduzione del sito
 
     public function setLanguage($lang)
-    {
+    {   
         session()->put('locale', $lang);
         return redirect()->back();
     }

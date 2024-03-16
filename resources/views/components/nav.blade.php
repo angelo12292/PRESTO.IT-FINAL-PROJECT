@@ -12,9 +12,6 @@
         <li class="nav-item">
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('show_announcements')}}">Annunci</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#announcements-section">Annunci</a>
-        </li>
       </ul>
 
       <livewire:notification-form/>
