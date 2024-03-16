@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Models\Category;
+
 use App\Models\Announcement;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 class PageController extends Controller
 {
@@ -14,7 +16,7 @@ class PageController extends Controller
     {
         $announcements = Announcement::where('is_accepted', true)->take(6)->orderBy('created_at', 'desc')->get();
 
-        
+
 
 
         return view('pages.home', ['categories' => Category::all(), 'announcements' => $announcements]);
@@ -66,10 +68,11 @@ class PageController extends Controller
 
     // Per la traduzione del sito
 
-    public function setLanguage($lang)
-    {   
-        session()->put('locale', $lang);
+    public function setLanguage($locale)
+    {
+        App::setLocale($locale);
+        Session::put("locale", $locale);
+        // session()->put('locale', $lang);
         return redirect()->back();
     }
-
 }

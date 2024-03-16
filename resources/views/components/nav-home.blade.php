@@ -17,24 +17,24 @@
 
 
         <li class="nav-item border-bottom noBorderBot">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#category-section">Categorie</a>
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#category-section">{{__('ui.Category')}}</a>
         </li>
         <li class="nav-item border-bottom noBorderBot">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#announcements-section">Annunci</a>
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#announcements-section">{{__('ui.Announce')}}</a>
         </li>
 
       </ul>
-      <x-_locale lang="it" />
-      <x-_locale lang="en" />
-      <x-_locale lang="es" />
+      <x-_locale lang="it" nation="it" />
+      <x-_locale lang="en" nation="gb" />
+      <x-_locale lang="es" nation="es" />
       <livewire:notification-form />
       @guest
       <div class="row m-0 me-lg-4 ms-lg-3">
         <div class="col-12 col-lg-6 py-2 px-0 p-lg-0 border-bottom noBorderBot">
-          <a class="dropdown-item linkNav navAnimation " href="/login">Login</a>
+          <a class="dropdown-item linkNav navAnimation " href="/login">{{__('ui.Login')}}</a>
         </div>
         <div class="col-12 col-lg-6 py-2 px-0 p-lg-0 border-bottom noBorderBot">
-          <a class="dropdown-item linkNav navAnimation" href="/register">Register</a>
+          <a class="dropdown-item linkNav navAnimation" href="/register">{{__('ui.Register')}}</a>
         </div>
       </div>
 
@@ -93,8 +93,7 @@
       </div>
       @endguest
       <div class="py-2 p-lg-0">
-        <a href="{{route('insert_announcement')}}" type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic"><span>Inserisci
-            Annunci</span></a>
+        <a href="{{route('insert_announcement')}}" type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">{{__('ui.InsertAnnounce')}}</a>
       </div>
     </div>
   </div>
