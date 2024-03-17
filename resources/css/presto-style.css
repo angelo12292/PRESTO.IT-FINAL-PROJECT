@@ -89,6 +89,15 @@ body {
   overflow-clip-margin:initial !important;
 }
 
+@media (min-width: 992px) {
+  
+.noBorderBot{
+
+  border-bottom: none !important;
+
+}
+}
+
 
 
 /* HERO SECTION */
@@ -109,6 +118,59 @@ body {
   top: 28%;
   width: 31%;
 }
+
+@media (max-width: 992px) {
+  
+  .shopBack {
+   
+    right: 19%;
+    top: 52%;
+    z-index: -1;
+    width: 70%;
+  }
+  
+  .shopImage {
+    position: absolute;
+    right: 40%;
+    top: 68%;
+    width: 32%;
+  }
+}
+@media (max-width: 768px) {
+  
+  .shopBack {
+   
+    right: 15%;
+    top: 59%;
+    z-index: -1;
+    width: 80%;
+  }
+  
+  .shopImage {
+    position: absolute;
+    right: 37%;
+    top: 69%;
+    width: 41%;
+  }
+}
+@media (max-width: 576px) {
+  
+  .shopBack {
+   
+    right: 9%;
+    top: 65%;
+    z-index: -1;
+    width: 89%;
+  }
+  
+  .shopImage {
+    position: absolute;
+    right: 37%;
+    top: 77%;
+    width: 41%;
+  }
+}
+
 
 
 
@@ -172,6 +234,12 @@ body {
   color: var(--primary-color) !important;
 }
 
+@media (max-width: 576px) {
+  
+.w-card{
+  width: 75%;
+}
+}
 
 
 

@@ -1,6 +1,6 @@
 <x-layout title="Accedi">
     <x-nav />
-    <div class="container mt-5 pt-5" style="height:71vh">
+    <div class="container mt-5 pt-5" style="min-height: 64vh;">
         <div class="row">
             <div class="col-md-4 mx-auto">
                 <div class="card background rounded-5 shadow p-3">

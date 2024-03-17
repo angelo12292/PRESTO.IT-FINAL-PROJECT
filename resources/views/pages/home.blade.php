@@ -11,18 +11,18 @@
         <h1 class="fw-bold mb-5 animate__animated animate__fadeInLeft primary-color-text">{{__('ui.AllAnnouncements')}}<br>
         </h1>
 
-        <div class="row  ">
+        <div class="row  px-2">
           <div class="col-12 searchStyle  p-2 rounded-5 animate__animated animate__fadeInLeft bg-white">
             <form action="{{ route('announcements.search') }}" method="GET">
               @csrf
 
-              <div class="row">
+              <div class="row gap-3 gap-md-0">
 
-                <div class="col-6">
+                <div class="col-12 col-xl-5 col-md-6 ">
                   <input type="search" name="searched" id="searched" placeholder="Cerca Annuncio" class="form-control rounded-5 ">
                 </div>
 
-                <div class="col-4">
+                <div class="col-12 col-xl-4 col-md-4 p-md-0">
                   <select name="searchedCategory" id="searchedCategory" class="form-select rounded-5">
                     <option selected>Categorie</option>
                     @foreach($categories as $category)
@@ -32,7 +32,7 @@
                 </div>
 
 
-                <div class="col-2">
+                <div class="col-12 col-xl-3  col-md-2 ">
                   <button type="submit" class="btn searchBtn  w-100 rounded-5 btnStatic">Cerca</button>
                 </div>
 
@@ -47,7 +47,7 @@
     </div>
     </div>
 
-    <div class="d-none d-lg-block  col-6  ">
+    <div class="col-12">
       <img src="img/Online-Shopping.png" alt="" class="shopImage animate__animated animate__fadeInRight">
       <img src="img/Online-Shopping-background.png" alt="" class="shopBack ">
     </div>
@@ -77,7 +77,7 @@
         <div class="row gap-5 justify-content-center ">
 
           @foreach($categories as $category)
-          <a href="{{ route('category.View', $category->id) }}" class="col-12 col-sm-5 col-md-5 col-lg-3 col-xxl-2 text-decoration-none ">
+          <a href="{{ route('category.View', $category->id) }}" class="col-12 col-sm-5 col-md-5 col-lg-3 col-xxl-2 text-decoration-none w-card">
             <div class="shadow rounded-5 categoryCard d-flex flex-sm-column  justify-content-center align-items-center reveal reveal.active gap-2 " style="height: 210px;">
               <i class="fa-solid {{ $category->icon }} fs-2 "></i>
               <h5 class=" fw-bold ">{{$category->name}}</h5>
@@ -113,7 +113,7 @@
 
       <div class="row g-2">
         @foreach($announcements as $announcement)
-        <div class="col-4 mb-4 d-flex justify-content-center ">
+        <div class="col-12 col-lg-6 col-xl-4 mb-4 d-flex justify-content-center ">
           <x-card :user="$announcement->user->name" :price="$announcement->price" :description="$announcement->description" :category="$announcement->category->name" :title="$announcement->title" :root="route('announce.View',$announcement->id)" />
         </div>
         @endforeach
