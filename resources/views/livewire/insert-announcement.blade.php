@@ -32,6 +32,10 @@
                             </select>
                         </div>
                         <div class="mb-3">
+                           <input wire:model="temporary_images" type="file" name="image">
+                        </div>
+
+                        <div class="mb-3">
                             <label for="description" class="form-label">Descrizione</label>
                             <textarea class="form-control @error('AnnDescrip') is-invalid @enderror" id="description" rows="3" wire:model="AnnDescrip">
 

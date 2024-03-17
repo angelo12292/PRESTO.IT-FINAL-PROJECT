@@ -5,12 +5,15 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Announcement;
-use Illuminate\Support\Facades\Auth;
+use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
+use Illuminate\Support\Facades\Auth;
 
 
 class InsertAnnouncement extends Component
 {
+    use WithFileUploads;
+
     #[Validate('required|max:50')]
     public $AnnTitle;
     public $AnnCategory;
@@ -18,6 +21,10 @@ class InsertAnnouncement extends Component
     public $AnnDescrip;
     #[Validate('required|min:1')]
     public $AnnPrice;
+    #[Validate('image|max:1024')]
+    public $Images = [];
+    #[Validate('image|max:1024')]
+    public $temporary_images;
 
 
 
