@@ -25,6 +25,8 @@ return new class extends Migration
 
 
         $categories = [
+
+            // Category Ita
             [
                 'name' => 'Motori',
                 'icon' => 'fa-car',
@@ -75,9 +77,8 @@ return new class extends Migration
                 'icon' => 'fa-shirt',
 
             ],
+
         ];
-
-
 
 
 
