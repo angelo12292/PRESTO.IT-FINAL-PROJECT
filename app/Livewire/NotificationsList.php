@@ -24,17 +24,24 @@ class NotificationsList extends Component
     {
         return view('livewire.notifications-list');
     }
-
+    
     public function mount()
     {
         return $this->loadNotification();
+        
     }
-    #[On('notification-created')]
+   #[On('notification-created')]
     public function loadNotification()
     {
-        $this->notifications = Notification::where('view',false)->where('user_id',Auth::user()->id)->take(4)->orderBy('id', 'ASC')->get();
+
+        if (Auth::user()) {
+            
+            $this->notifications = Notification::where('view',false)->where('user_id',Auth::user()->id)->take(4)->orderBy('id', 'DESC')->get();
+        } else {
+            $this->notifications =[];
+        }
+        
     }
-   
     
  
 }

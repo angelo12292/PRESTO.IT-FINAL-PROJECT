@@ -12,9 +12,7 @@
         <li class="nav-item">
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('show_announcements')}}">Annunci</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#announcements-section">Annunci</a>
-        </li>
+       
       </ul>
 
       <livewire:notification-form/>
@@ -36,16 +34,10 @@
           </button>
           <ul class="dropdown-menu background ">
             <li>
-              <x-success />
+              <livewire:notifications-list />
             </li>
           </ul>
         </div>
-
-
-
-        </i>
-        <ul class="dropdown-menu ">
-        </ul>
 
         @if (Auth::user()->is_revisor)
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -77,7 +69,7 @@
             @csrf
             <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start " type="submit">Logout</button>
           </form>
-          <livewire:notifications-list />
+          
 
           </li>
         </ul>

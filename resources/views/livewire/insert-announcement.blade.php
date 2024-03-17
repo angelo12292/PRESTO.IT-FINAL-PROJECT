@@ -31,6 +31,33 @@
                                 @endforeach
                             </select>
                         </div>
+                         <div class="mb-3">
+                           <input wire:model="temporary_images" type="file" name="images" multiple class="form-control shadow   @error('temporary_images.*') is-invalid @enderror" placeholder="Img">
+                            @error('temporary_images.*')
+                                <p class="text-danger mt-2 ">
+                                    {{message}}
+                                </p>
+                            @enderror 
+                        </div>
+                        @if(!empty($images))
+                            <div class="row">
+                                <div class="col-12">
+                                    <p>Photo prewiew:</p>
+                                    <div class="row border border-4 border-info rounded shadow py-4 ">
+                                        @foreach($images as $key => $image)
+                                        <div class="col my-3">
+                                            <img src="{{$image->temporaryUrl()}}" class=" mx-auto shadow rounded" style="width: 100%;height:100%)">
+                                            
+                                            <button type="button" class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
+                                            wire:click="removeImage({{$key}})">
+                                            Cancella
+                                            </button>
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                         <div class="mb-3">
                             <label for="description" class="form-label">Descrizione</label>
                             <textarea class="form-control @error('AnnDescrip') is-invalid @enderror" id="description" rows="3" wire:model="AnnDescrip">
@@ -39,7 +66,7 @@
                             @error('AnnDescrip') <span class="text-danger small">{{ $message }}</span> @enderror
                         </div>
                         <div class="mb-3">
-                            <button class="btn text-white rounded-5  primary-color-bg btnStatic" type="submit">Crea</button>
+                            <button class="btn text-white rounded-5  primary-color-bg btnStatic" wire:confirm="Stai per inserire un nuov annuncio, Confermi?" wire:click="announcementCreated" type="submit">Crea</button>
                         </div>
                     </div>
                 </div>
@@ -47,5 +74,4 @@
         </div>
         <x-footer />
     </div>
-</div>
 </div>
