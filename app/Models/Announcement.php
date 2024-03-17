@@ -57,7 +57,7 @@ class Announcement extends Model
 
         return Announcement::where('is_accepted', true)->count();
     }
-    
+
 
     public function images()
     {

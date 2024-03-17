@@ -22,7 +22,7 @@ class InsertAnnouncement extends Component
     #[Validate('required|min:1')]
     public $AnnPrice;
     #[Validate('image|max:1024')]
-    public $Images = [];
+    public $images = [];
     #[Validate('image|max:1024')]
     public $temporary_images;
 
@@ -38,6 +38,7 @@ class InsertAnnouncement extends Component
             'category_id' => $this->AnnCategory,
             'description' => $this->AnnDescrip,
             'price' => $this->AnnPrice,
+            'images' => $this->images,
         ]);
 
         $this->resetAnnounce();
