@@ -10,15 +10,15 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('show_announcements')}}">Annunci</a>
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('show_announcements')}}">{{__('ui.Announce')}}</a>
         </li>
       </ul>
 
-      <livewire:notification-form/>
+      <livewire:notification-form />
       @guest
       <div class="d-flex gap-3  me-4 ">
-        <a class="dropdown-item linkNav navAnimation " href="/login">Login</a>
-        <a class="dropdown-item linkNav navAnimation" href="/register">Register</a>
+        <a class="dropdown-item linkNav navAnimation " href="/login">{{__('ui.Login')}}</a>
+        <a class="dropdown-item linkNav navAnimation" href="/register">{{__('ui.Register')}}</a>
       </div>
 
       @else

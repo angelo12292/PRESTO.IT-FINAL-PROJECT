@@ -7,10 +7,10 @@
                     <p class="m-0">Presto.it</p>
                 </div>
 
-                <div>
-                    <p>Vuoi lavorare con noi?</p>
+                <div class="text-end">
+                    <p>{{__('ui.workWithUs')}}</p>
 
-                    <a href="{{route('become.revisor')}}" class="text-white ">Registrati e clicca qui!</a>
+                    <a href="{{route('become.revisor')}}" class="text-white ">{{__('ui.registerClick')}}</a>
                 </div>
 
             </div>

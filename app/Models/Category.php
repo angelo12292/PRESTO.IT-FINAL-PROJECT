@@ -11,10 +11,6 @@ class Category extends Model
 
     protected $fillable = ['name', 'icon'];
 
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
 
     public function announcements()
     {

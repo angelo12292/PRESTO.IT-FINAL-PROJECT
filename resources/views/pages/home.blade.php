@@ -67,10 +67,10 @@
     <div class="container ">
       <div class="d-flex align-items-center justify-content-center ">
         <div class="d-inline-block accent-color-bg me-3 " style="height:2px; width:60px"></div>
-        <h3 class="text-center  accent-color-text fw-light m-0 " style="z-index: 1;">Categorie</h3>
+        <h3 class="text-center  accent-color-text fw-light m-0 " style="z-index: 1;">{{__('ui.categorySection')}}</h3>
         <div class="d-inline-block accent-color-bg ms-3 " style="height:2px; width:60px"></div>
       </div>
-      <h3 class="text-center mb-5 text-white h1" style="z-index: 1;">Ricerca per categoria</h3>
+      <h3 class="text-center mb-5 text-white h1" style="z-index: 1;">{{__('ui.searchByCategory')}}</h3>
 
 
       <div class="category-container mt-5">
@@ -100,15 +100,14 @@
 
     <div class="d-flex align-items-center justify-content-center ">
       <div class="d-inline-block accent-color-bg me-3 " style="height:2px; width:60px"></div>
-      <h3 class="text-center  accent-color-text fw-light m-0 " style="z-index: 1;">Annunci</h3>
+      <h3 class="text-center  accent-color-text fw-light m-0 " style="z-index: 1;">{{__('ui.announceSection')}}</h3>
       <div class="d-inline-block accent-color-bg ms-3 " style="height:2px; width:60px"></div>
     </div>
 
 
-    @if($announcements->count() < 1) <h3 class="text-center mb-5 primary-color-text h1" style="z-index: 1;">Non ci sono
-      annunci revisionati</h3>
+    @if($announcements->count() < 1) <h3 class="text-center mb-5 primary-color-text h1" style="z-index: 1;">{{__('ui.noAnnounceCardSection')}}</h3>
       @else
-      <h3 class="text-center mb-5 primary-color-text h1" style="z-index: 1;">Ultimi annunci inseriti</h3>
+      <h3 class="text-center mb-5 primary-color-text h1" style="z-index: 1;">{{__('ui.okAnnounceCardSection')}}</h3>
       @endif
 
       <div class="row g-2">
