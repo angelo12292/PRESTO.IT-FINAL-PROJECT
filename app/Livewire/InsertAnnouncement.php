@@ -8,11 +8,12 @@ use App\Models\Announcement;
 use App\Models\Image;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
-use Livewire\Attributes\Validate;
 
 
 class InsertAnnouncement extends Component
 {
+    use WithFileUploads;
+
     use WithFileUploads;
 
     #[Validate('required|max:50')]

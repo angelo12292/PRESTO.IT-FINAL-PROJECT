@@ -1,29 +1,41 @@
 <nav class="navbar navbar-expand-lg  navShadow fixed-top background">
   <div class="container py-4  bg-trasparent">
-    <img src="/img/Speed_Shop_Logo.svg" alt="" style="width: 40px;">
-    <a class="navbar-brand fw-bold fs-3 p-0 ms-2 primary-color-text" href="{{route('home')}}">Presto</a>
+    <div class="d-flex">
+      <img src="/img/Speed_Shop_Logo.svg" alt="" style="width: 40px;">
+      <a class="navbar-brand fw-bold fs-3 p-0 ms-2 primary-color-text" href="{{route('home')}}">Presto</a>
+    </div>
 
-    <div class="collapse navbar-collapse ms-4" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse ms-5 pt-3 p-lg-0 " id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+        <li class="nav-item border-bottom noBorderBot">
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('home')}}">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#category-section">Categorie</a>
+
+
+        <li class="nav-item border-bottom noBorderBot">
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#category-section">{{__('ui.Category')}}</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#announcements-section">Annunci</a>
+        <li class="nav-item border-bottom noBorderBot">
+          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#announcements-section">{{__('ui.Announce')}}</a>
         </li>
 
-        <li class="nav-item">
-
-        </li>
       </ul>
+      <x-_locale lang="it" nation="it" />
+      <x-_locale lang="en" nation="gb" />
+      <x-_locale lang="es" nation="es" />
       <livewire:notification-form />
       @guest
-      <div class="d-flex gap-3  me-4 ">
-        <a class="dropdown-item linkNav navAnimation " href="/login">Login</a>
-        <a class="dropdown-item linkNav navAnimation" href="/register">Register</a>
+      <div class="row m-0 me-lg-4 ms-lg-3">
+        <div class="col-12 col-lg-6 py-2 px-0 p-lg-0 border-bottom noBorderBot">
+          <a class="dropdown-item linkNav navAnimation " href="/login">{{__('ui.Login')}}</a>
+        </div>
+        <div class="col-12 col-lg-6 py-2 px-0 p-lg-0 border-bottom noBorderBot">
+          <a class="dropdown-item linkNav navAnimation" href="/register">{{__('ui.Register')}}</a>
+        </div>
       </div>
 
       @else
@@ -38,15 +50,12 @@
             <i class="bi bi-bell-fill"></i>
           </button>
           <ul class="dropdown-menu background ">
-            <li>  <livewire:notifications-list/></li>
+            <li> <livewire:notifications-list /></li>
           </ul>
         </div>
 
 
 
-        </i>
-        <ul class="dropdown-menu ">
-        </ul>
 
         @if (Auth::user()->is_revisor)
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -61,13 +70,13 @@
           <li>
             @if (Auth::user()->is_revisor)
             <a href="{{ route('revisor.index')}}" class=" nav-link text-start position-relative dropdown-item primary-color-text ps-3 p-0 dropDownHover">
-              accetta <br>annunci: <span class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
+              {{__('ui.acceptAnnounce')}}<br>{{__('ui.dropDownAnnounce')}}: <span class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
             </a>
           <li>
             <hr class="dropdown-divider">
           </li>
           <a href="{{ route('revisor.index-revised')}}" class="nav-link primary-color-text ps-3 dropDownHover">
-            ripristina <br>annunci: <span class="fw-bold">{{App\Models\Announcement::revisionedCount()}}</span>
+            {{__('ui.restoreAnnounce')}}<br>{{__('ui.dropDownAnnounce')}}: <span class="fw-bold">{{App\Models\Announcement::revisionedCount()}}</span>
           </a>
           <li>
             <hr class="dropdown-divider">
@@ -83,9 +92,8 @@
         </ul>
       </div>
       @endguest
-      <div>
-        <a href="{{route('insert_announcement')}}" type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic"><span>Inserisci
-            Annunci</span></a>
+      <div class="py-2 p-lg-0">
+        <a href="{{route('insert_announcement')}}" type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">{{__('ui.InsertAnnounce')}}</a>
       </div>
     </div>
   </div>
