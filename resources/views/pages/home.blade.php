@@ -19,12 +19,12 @@
               <div class="row gap-3 gap-md-0">
 
                 <div class="col-12 col-xl-5 col-md-6 ">
-                  <input type="search" name="searched" id="searched" placeholder="Cerca Annuncio" class="form-control rounded-5 ">
+                  <input type="search" name="searched" id="searched" placeholder="{{__('ui.InputSearch')}}" class="form-control rounded-5 ">
                 </div>
 
                 <div class="col-12 col-xl-4 col-md-4 p-md-0">
                   <select name="searchedCategory" id="searchedCategory" class="form-select rounded-5">
-                    <option selected>Categorie</option>
+                    <option selected>{{__('ui.CategorySearch')}}</option>
                     @foreach($categories as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
@@ -33,7 +33,7 @@
 
 
                 <div class="col-12 col-xl-3  col-md-2 ">
-                  <button type="submit" class="btn searchBtn  w-100 rounded-5 btnStatic">Cerca</button>
+                  <button type="submit" class="btn searchBtn  w-100 rounded-5 btnStatic">{{__('ui.Search')}}</button>
                 </div>
 
                 <x-error-search />

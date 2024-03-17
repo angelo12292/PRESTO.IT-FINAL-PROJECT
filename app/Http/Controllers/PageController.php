@@ -6,6 +6,7 @@ use App\Models\Category;
 
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
 
@@ -15,8 +16,6 @@ class PageController extends Controller
     public function home()
     {
         $announcements = Announcement::where('is_accepted', true)->take(6)->orderBy('created_at', 'desc')->get();
-
-
 
 
         return view('pages.home', ['categories' => Category::all(), 'announcements' => $announcements]);
@@ -70,8 +69,35 @@ class PageController extends Controller
 
     public function setLanguage($locale)
     {
+
         App::setLocale($locale);
         Session::put("locale", $locale);
+
+        $categories = Category::all();
+
+        if ($locale == 'en') {
+
+            $categoriesEn = ['Automotive', 'Electronics', 'Home Appliances', 'Book', 'Games', 'Sport', 'Property', 'Phone', 'Furnitures', 'Clothing'];
+
+
+            for ($i = 0; $i <= $categories->count() - 1; $i++) {
+
+                // dd('cia');
+                $categories[$i]->name = $categoriesEn[$i];
+                $categories[$i]->save();
+            }
+            return redirect()->back();
+        }
+
+        $categoriesIt = ['Motori', 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Abbigliamento'];
+        for ($i = 0; $i <= $categories->count() - 1; $i++) {
+
+            // dd('cia');
+            $categories[$i]->name = $categoriesIt[$i];
+            $categories[$i]->save();
+        }
+
+
         // session()->put('locale', $lang);
         return redirect()->back();
     }
