@@ -26,13 +26,30 @@ class InsertAnnouncement extends Component
     public $AnnPrice;
     
     public $images = [];
-    #
+    
     public $temporary_images =[];
-    public $announcement_id;
+
+    public $announcement_id = null;
+
+    protected function rules()
+    {
+        return [
+            'AnnTitle'=>'required|max:50',
+            'AnnCategory'=>'required|max:200',
+            'AnnDescrip'=>'required|min:1',
+            'AnnPrice'=>'required|max:10000',
+            
+            'images.*'=>'image|max:10000',
+            'temporary_images.*'=>'image|max:10000',
+        ];
+    }
+
     
     protected $messages =[
         'required'=> 'il campo :attribute è richiesto',
-        'images.max'=>'L\'immagine è richiesta'
+        'images.max'=>'L\'immagine è richiesta',
+        'temporary_images.*.max'=>'il file deve essere massimo di ',
+        'temporary_images.required'=>'L\'immagine è richiesta'
         
     
     ];
