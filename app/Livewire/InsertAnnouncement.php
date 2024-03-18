@@ -14,15 +14,13 @@ class InsertAnnouncement extends Component
 {
     use WithFileUploads;
 
-    use WithFileUploads;
-
-    #[Validate('required|max:50')]
+    // #[Validate('required|max:50')]
     public $AnnTitle;
     
     public $AnnCategory;
-    #[Validate('required|max:200')]
+    // #[Validate('required|max:200')]
     public $AnnDescrip;
-    #[Validate('required|min:1')]
+    // #[Validate('required|min:1')]
     public $AnnPrice;
     
     public $images = [];
@@ -38,7 +36,7 @@ class InsertAnnouncement extends Component
             'AnnCategory'=>'required|max:200',
             'AnnDescrip'=>'required|min:1',
             'AnnPrice'=>'required|max:10000',
-            
+         
             'images.*'=>'image|max:10000',
             'temporary_images.*'=>'image|max:10000',
         ];
@@ -80,9 +78,6 @@ class InsertAnnouncement extends Component
             }
         }
 
-        $this->announcement->user()->associate(Auth::user());
-
-        $this->announcement->save();
 
         $this->resetAnnounce();
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use App\Models\User;
+use App\Models\Image;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\BecomeRevisor;
 use Illuminate\Support\Facades\Auth;
@@ -20,6 +21,9 @@ class RevisorController extends Controller
 
         $announcement_to_check = Announcement::where('is_accepted', null)->first();
 
+        
+
+        
         return view('revisor.index', compact('announcement_to_check'));
     }
 
