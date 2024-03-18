@@ -21,9 +21,9 @@
           
           @if($announcement_to_check->images)
             <div class="carousel-inner">
-              @foreach
+              @foreach($announcement_to_check->images as $image)
               <div class="carousel-item @if(@loop->first) active @endif">
-                <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
+                <img src="{{ $image ->path}}" class="d-block w-100 " alt="...">
               </div>
             </div>
             @endforeach
