@@ -1,6 +1,6 @@
 <div class="container-fluid p-0 ">
     <x-nav />
-    <div class="raw">
+    <div class="row">
         <div class="col-6 mx-auto">
             <livewire:notification-message/>
          </div>
@@ -32,8 +32,8 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                           <input wire:model="temporary_images" type="file" name="image" multiple class="form-control shadow   @error('temporary_images.*') is-invalid @enderror" placeholder="Img">
-                            @error('temporary_images.*')
+                           <input wire:model="images" type="file" name="image" multiple class="form-control shadow   @error('images.*') is-invalid @enderror" placeholder="Img">
+                            @error('images.*')
                                 <p class="text-danger mt-2 ">
                                     {{message}}
                             @enderror

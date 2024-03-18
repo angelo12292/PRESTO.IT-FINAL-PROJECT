@@ -41,7 +41,14 @@ class InsertAnnouncement extends Component
             'images' => $this->images,
         ]);
 
+        $this->announcement->user()->associate(Auth::user());
+
+        $this->announcement->save();
+
         $this->resetAnnounce();
+
+
+        
         
         return redirect()->route('insert_announcement')->with('success', 'Annuncio creato con successo!');
         
