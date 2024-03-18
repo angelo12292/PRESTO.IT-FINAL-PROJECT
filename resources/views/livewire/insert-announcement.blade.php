@@ -31,13 +31,13 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="mb-3">
-                           <input wire:model="temporary_images" type="file" name="image" multiple class="form-control shadow   @error('temporary_images.*') is-invalid @enderror" placeholder="Img">
+                         <div class="mb-3">
+                           <input wire:model="temporary_images" type="file" name="images" multiple class="form-control shadow   @error('temporary_images.*') is-invalid @enderror" placeholder="Img">
                             @error('temporary_images.*')
                                 <p class="text-danger mt-2 ">
                                     {{message}}
-                            @enderror
                                 </p>
+                            @enderror 
                         </div>
                         @if(!empty($images))
                             <div class="row">
@@ -66,8 +66,7 @@
                             @error('AnnDescrip') <span class="text-danger small">{{ $message }}</span> @enderror
                         </div>
                         <div class="mb-3">
-        
-                            <button class="btn text-white rounded-5  primary-color-bg btnStatic" type="submit">Crea</button>
+                            <button class="btn text-white rounded-5  primary-color-bg btnStatic" wire:confirm="Stai per inserire un nuov annuncio, Confermi?" wire:click="announcementCreated" type="submit">Crea</button>
                         </div>
                     </div>
                 </div>
@@ -75,5 +74,4 @@
         </div>
         <x-footer />
     </div>
-</div>
 </div>

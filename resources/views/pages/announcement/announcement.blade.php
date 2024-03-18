@@ -33,7 +33,7 @@
         <div class="row m-0 text-center mt-2 d-block d-sm-flex ">
 
           <div class="col-10 mx-auto col-sm-5 col-md-6 col-lg-7 p-0 mx-0">
-
+          
 
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-indicators">

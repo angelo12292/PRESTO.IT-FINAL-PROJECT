@@ -87,6 +87,17 @@ class PageController extends Controller
                 $categories[$i]->save();
             }
             return redirect()->back();
+        } else if ($locale == 'es') {
+
+            $categoriesEs = ['Motores', 'Electrónica', 'Electrodomésticos', 'Libros', 'Juegos', 'Deporte', 'Propiedades', 'Telefonos', 'Muebles', 'Ropa'];
+
+            for ($i = 0; $i <= $categories->count() - 1; $i++) {
+
+                // dd('cia');
+                $categories[$i]->name = $categoriesEs[$i];
+                $categories[$i]->save();
+            }
+            return redirect()->back();
         }
 
         $categoriesIt = ['Motori', 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Abbigliamento'];

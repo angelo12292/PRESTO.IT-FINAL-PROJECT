@@ -49,9 +49,9 @@ class ContactVendorForm extends Component
 
         ]);
 
-
-
         $this->dispatch('mail-created');
+
+        
 
     }
 
@@ -59,6 +59,13 @@ class ContactVendorForm extends Component
     {
         $this->body = '';
 
+    }
+
+    public function emailSent()
+    {
+        $this->dispatch('email-sent');
+        session()->flash('success');
+       
     }
 
 
@@ -69,7 +76,9 @@ class ContactVendorForm extends Component
         Mail::to($this->receiving_user_email)->send(new ContactVendor(Auth::user()));
         $this->resetEmailBody();
 
-        session()->flash('success', 'Hai inviato correttamente la mail al venditore.');
+        
+        
+        
 
 
     }

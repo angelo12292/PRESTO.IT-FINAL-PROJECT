@@ -1,5 +1,5 @@
 <div>
-    @if(session()->has('success'))
+    @if(session()->has('announcementSuccess'))
     
     <form action="" wire:submit.prevent="store" class="invisible z-n1">
         <p class="d-inline-flex gap-1">
@@ -16,8 +16,8 @@
     </form>
     @endif
 
-    @if(session()->has('error'))
-    <form action="" wire:submit.prevent="store">
+    @if(session()->has('EmailSentsuccess'))
+    <form action="" wire:submit.prevent="emailNotificationStore">
         <p class="d-inline-flex gap-1">
             
             <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" wire:click="">

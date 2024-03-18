@@ -33,6 +33,10 @@ class AccountController extends Controller
 
         return view("accounts.notification_index",compact('notifications'));
     }
+    public function becomeRevisorForm()
+    {
+        return view('accounts.become-revisor-form');
+    }
 
     
 

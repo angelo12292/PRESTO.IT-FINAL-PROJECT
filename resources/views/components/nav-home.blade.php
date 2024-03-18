@@ -70,13 +70,13 @@
           <li>
             @if (Auth::user()->is_revisor)
             <a href="{{ route('revisor.index')}}" class=" nav-link text-start position-relative dropdown-item primary-color-text ps-3 p-0 dropDownHover">
-              accetta <br>annunci: <span class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
+              {{__('ui.acceptAnnounce')}}<br>{{__('ui.dropDownAnnounce')}}: <span class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
             </a>
           <li>
             <hr class="dropdown-divider">
           </li>
           <a href="{{ route('revisor.index-revised')}}" class="nav-link primary-color-text ps-3 dropDownHover">
-            ripristina <br>annunci: <span class="fw-bold">{{App\Models\Announcement::revisionedCount()}}</span>
+            {{__('ui.restoreAnnounce')}}<br>{{__('ui.dropDownAnnounce')}}: <span class="fw-bold">{{App\Models\Announcement::revisionedCount()}}</span>
           </a>
           <li>
             <hr class="dropdown-divider">
@@ -87,7 +87,7 @@
             @csrf
             <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start " type="submit">Logout</button>
           </form>
-          <livewire:notifications-list />
+          
           </li>
         </ul>
       </div>
