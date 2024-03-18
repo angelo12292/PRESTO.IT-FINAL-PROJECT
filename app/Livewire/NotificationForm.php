@@ -16,9 +16,7 @@ use Livewire\Attributes\On;
 class NotificationForm extends Component
 {
 
-    public $user;
-    public $success='operazione avvenuta con successo';
-    public $error="sono in error";
+   
     
 
 
@@ -32,23 +30,41 @@ class NotificationForm extends Component
     public function render()
     {
         return view('livewire.notification-form');
+        
     }
-    #[On('message-closed')]
-    public function store(Request $request)
+    #[On('email-sent')]
+    public function emailNotificationStore(Request $request)
     {
        
-
+    
        Notification::create(
         [
             'user_id' => Auth::id(),
-            'body' => $this->success,
+            'body' => "email inviata correttamente",
         ]);
-
+        
+            
         $this->dispatch('notification-created');
-
+        
+    
     }
     
-
-
-
+    #[On('announcement-created')]
+    public function announcementNotificationStore(Request $request)
+    {
+        
+        
+        Notification::create(
+        [
+            'user_id' => Auth::id(),
+            'body' => "hai creato un nuovo articolo",
+        ]);
+            
+        $this->dispatch('notification-created');
+        
+        
+    }
+    
+    
+    
 }

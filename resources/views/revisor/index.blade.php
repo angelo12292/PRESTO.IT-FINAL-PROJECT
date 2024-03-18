@@ -18,32 +18,31 @@
     <div class="row">
       <div class="col-12">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4" aria-label="Slide 4"></button>
-
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
+          
+          @if($announcement_to_check->images)
+            <div class="carousel-inner">
+              @foreach
+              <div class="carousel-item @if(@loop->first) active @endif">
+                <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
+              </div>
             </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/1600/901" class="d-block w-100 " alt="...">
+            @endforeach
+          @else  
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://picsum.photos/1600/901" class="d-block w-100 " alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://picsum.photos/1600/898" class="d-block w-100 " alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://picsum.photos/1600/899" class="d-block w-100 " alt="...">
+              </div>
             </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/1600/898" class="d-block w-100 " alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/1600/899" class="d-block w-100 " alt="...">
-            </div>
-          </div>
-
+          @endif
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
