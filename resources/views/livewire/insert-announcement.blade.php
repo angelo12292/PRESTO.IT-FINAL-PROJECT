@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-6 m-auto mt-2 ">
                         
-                        <div class="mb-3">
+                        <div  class="mb-3">
                             <label for="name" class="form-label">Titolo</label>
                             <input type="text" class="form-control @error('AnnTitle') is-invalid @enderror" id="title" placeholder="nome annuncio" wire:model="AnnTitle">
                             @error('AnnTitle') <span class="text-danger small">{{ $message }}</span> @enderror
@@ -61,8 +61,8 @@
                 </textarea>
                             @error('AnnDescrip') <span class="text-danger small">{{ $message }}</span> @enderror
                         </div>
-                        <div class="mb-3">
-                            <button class="btn text-white rounded-5  primary-color-bg btnStatic" wire:confirm="Stai per inserire un nuov annuncio, Confermi?" wire:click="announcementCreated" type="submit">Crea</button>
+                        <div wire:loading.remove class="mb-3">
+                            <button   class="btn text-white rounded-5  primary-color-bg btnStatic" wire:confirm="Stai per inserire un nuov annuncio, Confermi?"  type="submit">Crea</button>
                         </div>
                     </div>
                 </div>

@@ -28,7 +28,7 @@ class InsertAnnouncement extends Component
     public $AnnPrice;
     
     #[Validate([
-        'images' => 'required',
+        
         'images.*' => 'image|max:1024',
     ], message: [
         'required' => 'l\immagine è richiesta.',
@@ -41,14 +41,14 @@ class InsertAnnouncement extends Component
     public $images = [];
 
     #[Validate([
-        'temporary_images' => 'required',
-        'temporary_images.*' => 'image|max:1024',
-        'temporary_images.*' => 'image|min:1'
+        
+        'temporary_images.*' => 'image|max:1',
+        
     ], message: [
         'required' => 'l\immagine è richiesta.',
         'temporary_images.*image' => 'il file deve essere un\immagine.',
         'temporary_images.*.max' => 'l\'immagine è troppo grande',
-        'temporary_images.*.min' => 'l\'immagine è troppo piccola',
+        
     ], attribute: [
         'temporary_images.*' => 'temporary_image',
     ])]
