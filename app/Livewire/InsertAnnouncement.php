@@ -28,7 +28,7 @@ class InsertAnnouncement extends Component
     public $AnnPrice;
     
     #[Validate([
-        'images' => 'required',
+        // 'images' => 'required',
         'images.*' => 'image|max:1024',
     ], message: [
         'required' => 'l\immagine è richiesta.',
@@ -41,9 +41,8 @@ class InsertAnnouncement extends Component
     public $images = [];
 
     #[Validate([
-        'temporary_images' => 'required',
+        // 'temporary_images' => 'required',
         'temporary_images.*' => 'image|max:1024',
-        'temporary_images.*' => 'image|min:1'
     ], message: [
         'required' => 'l\immagine è richiesta.',
         'temporary_images.*image' => 'il file deve essere un\immagine.',
@@ -106,6 +105,10 @@ class InsertAnnouncement extends Component
             }
         }
 
+        
+
+        
+
 
         $this->resetAnnounce();
 
@@ -136,7 +139,7 @@ class InsertAnnouncement extends Component
     {
         if($this->validate([
             'temporary_images.*' => 'image|max:1024',
-            'temporary_images.*' => 'image|min:1'
+            
             
             
 
@@ -158,4 +161,11 @@ class InsertAnnouncement extends Component
     {
         return view('livewire.insert-announcement', ['categories' => Category::all()]);
     }
+
+    public function updated($propertyName) {
+
+        $this->validateOnly($propertyName);
+
+    }
+
 }
