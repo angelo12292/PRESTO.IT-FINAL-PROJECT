@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Livewire\Attributes\Validate;
 use App\Models\Category;
 use App\Models\Announcement;
 use App\Models\Image;
@@ -14,43 +15,69 @@ class InsertAnnouncement extends Component
 {
     use WithFileUploads;
 
-    // #[Validate('required|max:50')]
+   #[Validate('required', message:'Inserire il titolo.')]
+   #[Validate('max:50', message:'il titolo contiene troppi caratteri.')]
     public $AnnTitle;
     
     public $AnnCategory;
-    // #[Validate('required|max:200')]
+    #[Validate('required', message:'Inserire la descrizione.')]
+    #[Validate('min:1', message:'la descrizione contiene pochi caratteri.')]
     public $AnnDescrip;
-    // #[Validate('required|min:1')]
+    #[Validate('required', message:'Inserire il prezzo.')]
+    #[Validate('max:10000', message:'il prezzo è troppo alto.')]
     public $AnnPrice;
     
+    #[Validate([
+        'images' => 'required',
+        'images.*' => 'image|max:1024',
+    ], message: [
+        'required' => 'l\immagine è richiesta.',
+        'images.*image' => 'il file deve essere un\immagine.',
+        'images.*.max' => 'l\'immagine è troppo grande',
+        'temporary_images.*.min' => 'l\'immagine è troppo piccola',
+    ], attribute: [
+        'images.*' => 'image',
+    ])]
     public $images = [];
-    
+
+    #[Validate([
+        'temporary_images' => 'required',
+        'temporary_images.*' => 'image|max:1024',
+        'temporary_images.*' => 'image|min:1'
+    ], message: [
+        'required' => 'l\immagine è richiesta.',
+        'temporary_images.*image' => 'il file deve essere un\immagine.',
+        'temporary_images.*.max' => 'l\'immagine è troppo grande',
+        'temporary_images.*.min' => 'l\'immagine è troppo piccola',
+    ], attribute: [
+        'temporary_images.*' => 'temporary_image',
+    ])]
     public $temporary_images =[];
 
     public $announcement_id = null;
 
-    protected function rules()
-    {
-        return [
-            'AnnTitle'=>'required|max:50',
-            'AnnCategory'=>'required|max:200',
-            'AnnDescrip'=>'required|min:1',
-            'AnnPrice'=>'required|max:10000',
+    // protected function rules()
+    // {
+    //     return [
+    //         'AnnTitle'=>'required|max:50',
+    //         'AnnCategory'=>'required|max:200',
+    //         'AnnDescrip'=>'required|min:1',
+    //         'AnnPrice'=>'required|max:10000',
          
-            'images.*'=>'image|max:10000',
-            'temporary_images.*'=>'image|max:10000',
-        ];
-    }
+    //         'images.*'=>'image|max:10000',
+    //         'temporary_images.*'=>'image|max:10000',
+    //     ];
+    // }
 
     
-    protected $messages =[
-        'required'=> 'il campo :attribute è richiesto',
-        'images.max'=>'L\'immagine è richiesta',
-        'temporary_images.*.max'=>'il file deve essere massimo di ',
-        'temporary_images.required'=>'L\'immagine è richiesta'
+    // protected $messages =[
+    //     'required'=> 'il campo :attribute è richiesto',
+    //     'images.max'=>'L\'immagine è richiesta',
+    //     'temporary_images.*.max'=>'il file deve essere massimo di ',
+    //     'temporary_images.required'=>'L\'immagine è richiesta'
         
     
-    ];
+    // ];
 
     public function store()
     {
@@ -67,8 +94,9 @@ class InsertAnnouncement extends Component
         ])->id;
         
             
+        
 
-
+        
         if (count($this->images)) {
             foreach ($this->images as $image) {
                 Image::create([
@@ -107,7 +135,9 @@ class InsertAnnouncement extends Component
     public function updatedTemporaryImages()
     {
         if($this->validate([
-            'temporary_images.*'=>'image|max:10000',
+            'temporary_images.*' => 'image|max:1024',
+            'temporary_images.*' => 'image|min:1'
+            
             
 
         ])){
