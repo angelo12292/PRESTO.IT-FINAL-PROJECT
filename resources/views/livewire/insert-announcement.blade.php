@@ -33,7 +33,7 @@
                         </div>
                          <div class="mb-3">
                            <input wire:model="temporary_images" type="file" name="images" multiple class="form-control shadow   @error('temporary_images.*') is-invalid @enderror" placeholder="Img">
-                            @error('temporary_images.*')<span class="text-danger small">{{ $message }}</span>
+                            @error('temporary_images.*')<p class="text-danger small">{{ $message }}</p>
                             @enderror 
                         </div>
                         @if(!empty($images))
@@ -61,8 +61,8 @@
                 </textarea>
                             @error('AnnDescrip') <span class="text-danger small">{{ $message }}</span> @enderror
                         </div>
-                        <div wire:loading.remove class="mb-3">
-                            <button   class="btn text-white rounded-5  primary-color-bg btnStatic" wire:confirm="Stai per inserire un nuov annuncio, Confermi?"  type="submit">Crea</button>
+                        <div class="mb-3" wire:loading.remove>
+                            <button class="btn text-white rounded-5  primary-color-bg btnStatic" wire:click="announcementCreated" wire:target="updatedTemporaryImages"  type="submit">Crea</button>
                         </div>
                     </div>
                 </div>
