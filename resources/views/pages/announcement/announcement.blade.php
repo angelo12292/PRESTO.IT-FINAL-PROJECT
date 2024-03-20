@@ -48,7 +48,7 @@
                 @if(count($announcement->images))
                 @foreach($announcement->images as $image)
               <div class="carousel-item @if($loop->first) active @endif">
-                <img src="{{$image->getUrl(300,300)}}" class="d-block w-100" alt="...">
+                <img src="{{$image->getUrl(300,200)}}" class="d-block w-100" alt="...">
               </div>
               @endforeach
               @else
