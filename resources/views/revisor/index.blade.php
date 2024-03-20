@@ -16,14 +16,14 @@
     @if($announcement_to_check)
 
     <div class="row">
-      <div class="col-12">
+      <div class="col-6 mx-auto">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
 
           @if(count($announcement_to_check->images))
             <div class="carousel-inner">
               @foreach($announcement_to_check->images as $image)
               <div class="carousel-item @if($loop->first) active @endif">
-                <img src="{{ Storage::url($image->path) }}" class="d-block w-100" alt="...">
+                <img src="{{$image->getUrl(300,300)}}" class="d-block w-100" alt="...">
               </div>
               @endforeach
             </div>
@@ -62,29 +62,30 @@
           {{ Number::currency($announcement_to_check->price, in: 'EUR', locale: 'it') }}
         </h4>
 
+        <div class="d-flex">
+        <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
+          @csrf
+          @method('PATCH')
+          <button type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">Accetta</button>
+        </form>
+  
+  
+        <form class="ps-3" action="{{route ('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
+          @csrf
+          @method('PATCH')
+          <button type="submit" class="btn btn-danger rounded-5 ">Rifiuta</button>
+        </form>
+      </div>
+  
+    @endif
+
       </div>
     </div>
   </div>
   </div>
-  <div class="container d-flex gap-3 ">
+  
 
 
-    <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
-      @csrf
-      @method('PATCH')
-      <button type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">Accetta</button>
-    </form>
-
-
-    <form action="{{route ('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
-      @csrf
-      @method('PATCH')
-      <button type="submit" class="btn btn-danger rounded-5 ">Rifiuta</button>
-    </form>
-
-
-  </div>
-  @endif
   </div>
   <x-footer />
 </x-layout>

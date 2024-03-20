@@ -49,7 +49,7 @@
                 @if(count($announcement_checked['true']->images))
                 @foreach($announcement_checked['true']->images as $image)
                 <div class="carousel-item @if($loop->first) active @endif">
-                  <img src="{{ Storage::url($image->path) }}" class="d-block w-100" alt="...">
+                  <img src="{{$image->getUrl(300,300)}}" class="d-block w-100" alt="...">
                 </div>
                 @endforeach
                 @else
@@ -116,9 +116,9 @@
       </div>
 
 
-      <div class="col-6 p-3 mb-5">
+      <div class="col-6 p-3 mb-5 border-end">
 
-        <div class="col-12">
+        <div class="col-12 mb-5">
           <div class="">
             <header>
               <h1 class="text-center primary-color-text">
@@ -129,7 +129,7 @@
         </div>
         @if($announcement_checked['false'])
 
-        <div class="col-8 mx-auto mt-4">
+        <div class="col-8 mx-auto">
           <div class="col-12 mx-auto">
             <div id="carouselExampleSlidesOnlyFalse" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-indicators">
@@ -149,7 +149,7 @@
                 @if(count($announcement_checked['false']->images))
                 @foreach($announcement_checked['false']->images as $image)
                 <div class="carousel-item @if($loop->first) active @endif">
-                  <img src="{{ Storage::url($image->path) }}" class="d-block w-100" alt="...">
+                  <img src="{{$image->getUrl(300,300)}}" class="d-block w-100" alt="...">
                 </div>
                 @endforeach
                 @else
