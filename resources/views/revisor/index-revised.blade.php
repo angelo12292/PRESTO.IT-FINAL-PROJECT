@@ -40,12 +40,19 @@
                 <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"
                   aria-label="Slide 3"></button>
                 <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3"
-                  aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4"
                   aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4"
+                  aria-label="Slide 5"></button>
 
               </div>
               <div class="carousel-inner">
+                @if(count($announcement_checked['true']->images))
+                @foreach($announcement_checked['true']->images as $image)
+                <div class="carousel-item @if($loop->first) active @endif">
+                  <img src="{{ Storage::url($image->path) }}" class="d-block w-100" alt="...">
+                </div>
+                @endforeach
+                @else
                 <div class="carousel-item active">
                   <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
                 </div>
@@ -61,7 +68,9 @@
                 <div class="carousel-item">
                   <img src="https://picsum.photos/1600/899" class="d-block w-100 " alt="...">
                 </div>
+                @endif
               </div>
+              
 
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
                 data-bs-slide="prev">
@@ -122,21 +131,28 @@
 
         <div class="col-8 mx-auto mt-4">
           <div class="col-12 mx-auto">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleSlidesOnlyFalse" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active"
+                <button type="button" data-bs-target="#carouselExampleSlidesOnlyFalse" data-bs-slide-to="0" class="active"
                   aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1"
+                <button type="button" data-bs-target="#carouselExampleSlidesOnlyFalse" data-bs-slide-to="1"
                   aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2"
+                <button type="button" data-bs-target="#carouselExampleSlidesOnlyFalse" data-bs-slide-to="2"
                   aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3"
-                  aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4"
+                <button type="button" data-bs-target="#carouselExampleSlidesOnlyFalse" data-bs-slide-to="3"
                   aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleSlidesOnlyFalse" data-bs-slide-to="4"
+                  aria-label="Slide 5"></button>
 
               </div>
               <div class="carousel-inner">
+                @if(count($announcement_checked['false']->images))
+                @foreach($announcement_checked['false']->images as $image)
+                <div class="carousel-item @if($loop->first) active @endif">
+                  <img src="{{ Storage::url($image->path) }}" class="d-block w-100" alt="...">
+                </div>
+                @endforeach
+                @else
                 <div class="carousel-item active">
                   <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
                 </div>
@@ -153,13 +169,14 @@
                   <img src="https://picsum.photos/1600/899" class="d-block w-100 " alt="...">
                 </div>
               </div>
+              @endif
 
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnlyFalse"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnlyFalse"
                 data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>

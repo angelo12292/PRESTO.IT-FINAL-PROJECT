@@ -19,14 +19,14 @@
       <div class="col-12">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
 
-          @if($announcement_to_check->images)
+          @if(count($announcement_to_check->images))
           <div class="carousel-inner">
-            @foreach
-            <div class="carousel-item @if(@loop->first) active @endif">
-              <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
+            @foreach($announcement_to_check->images as $image)
+            <div class="carousel-item @if($loop->first) active @endif">
+              <img src="{{ Storage::url($image->path) }}" class="d-block w-100" alt="...">
             </div>
+            @endforeach
           </div>
-          @endforeach
           @else
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -69,14 +69,14 @@
   <div class="container d-flex gap-3 ">
 
 
-    <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
+    <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
       @csrf
       @method('PATCH')
       <button type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">Accetta</button>
     </form>
 
 
-    <form action="{{route ('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
+    <form action="{{route ('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
       @csrf
       @method('PATCH')
       <button type="submit" class="btn btn-danger rounded-5 ">Rifiuta</button>
