@@ -29,5 +29,25 @@ return [
     'noAnnounceCardSection' => 'No hay anuncios revisados',
     'okAnnounceCardSection' => 'Últimos anuncios insertados',
 
+    // insert announcement
+    'insertTitle' => 'Título',
+    'insertPlaceTitle' => 'Nombre del anuncio',
+    'insertPrice' => 'Precio',
+    'insertDescription' => 'Descripción',
+    'btnCreate' => 'Crear',
+    'btnCancel' => 'Cancelar',
+
+    // Revisor Index
+    'announceCheckTrue' => 'Aquí está el anuncio para revisión',
+    'announceCheckFalse' => 'No hay anuncios para revisar',
+    'btnAccept' => 'Aceptar',
+    'btnRefuse' => 'Rechazar',
+
+    // Revisor index revised
+
+
+
+
+
 
 ];
