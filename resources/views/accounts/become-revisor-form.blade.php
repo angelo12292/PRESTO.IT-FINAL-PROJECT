@@ -2,44 +2,43 @@
     <x-nav />
 
 
-<div class="container-fluid">
+<div class="container-fluid p-0">
     
     
 
     <div class="raw m-0 p-0">
         <div class="col-10 mx-auto text-center">
-            <h5 class="primary-color-text ">richiedi di diventare revisore.</h5>
+            <h1 class="primary-color-text ">richiedi di diventare revisore.</h1>
         </div>
     </div>
 
     <div class="raw m-0 p-0">
         <div class="col-6 mx-auto text-center">        
-            <form>
+            <form action="{{route('become.revisor')}}" method="POST">
+               @csrf
+               <p>
+                    Presto.it è sempre alla ricerca di figure professionali che possano contribuire competenza ed entusiasmo a rendere sempre più sicuro il sito dedicato agli annunci. <br>La nostra aspirazione è di continuare a crescere e migliorare, scommettendo su persone motivate, dinamiche, con talenti speciali.Se stai cercando un lavoro che ti offra la possibilità di esprimere al meglio le tue potenzialità, sei nel posto giusto.
+               </p>
 
-            <div class="mb-3 text-secondary">
-            <label for="exampleInputnaim" class="form-label">Nome</label>
-            <input type="name" class="form-control" id="exampleInputnaim" value="">
-            <div id="nameHelp" class="form-text">Inserisci il tuo nome.</div>
-            </div>
-            <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Indirizzo email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" value="">
-            <div id="emailHelp" class="form-text">Non condividere con nessuno la tua email.</div>
-            </div>
-            <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
+               <h3 class="primary-color-text">
+                    Lascia una breve descrizione di te e delle tue motivazioni.
+               </h3>
 
-            <div class="d-flex mt-3 ">
-                <div class="mx-auto">
-                    <a class="btn btn-primary" href="{{route('become.revisor')}}" role="button">Invia richiesta</a>
+               <div class="mb-3">
+                    <label for="body"  class="form-label"></label>
+                    <textarea type="text" name="body" class="form-control p-0" id="body" placeholder="  Scrivi la richiesta" style="height: 200px"></textarea>
                 </div>
-            </div>
+                
+                <div class="d-flex mt-3 ">
+                    <div class="mx-auto">
+                        <button class="btn btn-primary" type="submit"  role="button">Invia richiesta</button>
+                    </div>
+                </div>
 
             </form>
         </div>
+        <x-footer />
     </div>
 
-    <x-footer />
+    
 </x-layout>

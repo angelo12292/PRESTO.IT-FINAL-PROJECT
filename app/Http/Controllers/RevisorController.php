@@ -10,6 +10,8 @@ use App\Mail\BecomeRevisor;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Artisan;
 use App\Console\Commands\MakeUserRevisor;
+use App\Http\Requests\StoreEmailSentsRequest;
+use App\Models\EmailSents;
 
 
 use Illuminate\Http\Request;
@@ -61,8 +63,18 @@ class RevisorController extends Controller
         return redirect()->back()->with('success', 'Revisone dell \'annuncio ripristinata!');
     }
 
-    public function becomeRevisor()
+    public function becomeRevisor( Request $request)
     {
+
+        EmailSents::create(
+            [
+    
+                'sending_user_id' => Auth::id(),
+                'receiving_user_id' =>null,
+                'body' => $request->body,
+    
+            ]);
+            
         Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
         return redirect('/')->with('success', 'complementi! hai richesto di diventare revisore correttamente, attendi la conferma da parte dell\'admin');
     }
