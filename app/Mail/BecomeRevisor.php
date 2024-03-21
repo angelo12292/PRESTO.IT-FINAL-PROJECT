@@ -9,6 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use App\Models\User;
+use App\Models\EmailSents;
 
 class BecomeRevisor extends Mailable
 {
@@ -18,9 +19,16 @@ class BecomeRevisor extends Mailable
      * Create a new message instance.
      */
     public $user;
+    public $emailSents;
+    public $body;
+
+    
     public function __construct(User $user)
     {
         $this->user = $user;
+        $this->emailSents = EmailSents::where('sending_user_id',auth()->user()->id)->take(1)->orderBy('created_at', 'desc')->get();
+        $this->body=$this->emailSents[0]->body;
+        
     }
 
     // public function build()

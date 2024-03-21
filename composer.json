@@ -16,6 +16,7 @@
         "nyholm/psr7": "*",
         "outhebox/blade-flags": "^1.5",
         "railsware/mailtrap-php": "*",
+        "spatie/image": "2.2.7",
         "symfony/http-client": "*",
         "teamtnt/laravel-scout-tntsearch-driver": "^13.2"
     },

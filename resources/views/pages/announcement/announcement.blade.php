@@ -45,6 +45,13 @@
 
               </div>
               <div class="carousel-inner">
+                @if(count($announcement->images))
+                @foreach($announcement->images as $image)
+              <div class="carousel-item @if($loop->first) active @endif">
+                <img src="{{$image->getUrl(300,200)}}" class="d-block w-100" alt="...">
+              </div>
+              @endforeach
+              @else
                 <div class="carousel-item active">
                   <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
                 </div>
@@ -60,6 +67,7 @@
                 <div class="carousel-item">
                   <img src="https://picsum.photos/1600/899" class="d-block w-100 " alt="...">
                 </div>
+                @endif
               </div>
 
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
@@ -127,6 +135,7 @@
         </div>
 
       </div>
-      <x-footer />
+    </div>
+    <x-footer />
 
 </x-layout>

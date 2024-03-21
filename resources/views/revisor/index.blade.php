@@ -16,34 +16,33 @@
     @if($announcement_to_check)
 
     <div class="row">
-      <div class="col-12">
+      <div class="col-6 mx-auto">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="3" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="4" aria-label="Slide 4"></button>
 
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
+          @if(count($announcement_to_check->images))
+            <div class="carousel-inner">
+              @foreach($announcement_to_check->images as $image)
+              <div class="carousel-item @if($loop->first) active @endif">
+                <img src="{{$image->getUrl(300,200)}}" class="d-block w-100" alt="...">
+              </div>
+              @endforeach
             </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/1600/901" class="d-block w-100 " alt="...">
+          @else  
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://picsum.photos/1600/901" class="d-block w-100 " alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://picsum.photos/1600/898" class="d-block w-100 " alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://picsum.photos/1600/899" class="d-block w-100 " alt="...">
+              </div>
             </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/1600/898" class="d-block w-100 " alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/1600/899" class="d-block w-100 " alt="...">
-            </div>
-          </div>
-
+          @endif
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -63,29 +62,30 @@
           {{ Number::currency($announcement_to_check->price, in: 'EUR', locale: 'it') }}
         </h4>
 
+        <div class="d-flex">
+        <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
+          @csrf
+          @method('PATCH')
+          <button type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">Accetta</button>
+        </form>
+  
+  
+        <form class="ps-3" action="{{route ('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
+          @csrf
+          @method('PATCH')
+          <button type="submit" class="btn btn-danger rounded-5 ">Rifiuta</button>
+        </form>
+      </div>
+  
+    @endif
+
       </div>
     </div>
   </div>
   </div>
-  <div class="container d-flex gap-3 ">
+  
 
 
-    <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
-      @csrf
-      @method('PATCH')
-      <button type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">Accetta</button>
-    </form>
-
-
-    <form action="{{route ('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST">
-      @csrf
-      @method('PATCH')
-      <button type="submit" class="btn btn-danger rounded-5 ">Rifiuta</button>
-    </form>
-
-
-  </div>
-  @endif
   </div>
   <x-footer />
 </x-layout>

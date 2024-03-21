@@ -10,7 +10,7 @@
                 <div class="text-end">
                     <p>{{__('ui.workWithUs')}}</p>
 
-                    <a href="{{route('become.revisor')}}" class="text-white ">{{__('ui.registerClick')}}</a>
+                    <a href="{{route('become.revisor.form')}}" class="text-white ">{{__('ui.registerClick')}}</a>
                 </div>
 
             </div>
