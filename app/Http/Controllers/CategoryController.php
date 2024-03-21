@@ -14,8 +14,9 @@ class CategoryController extends Controller
 
         $category = Category::findOrFail($id);
 
+        $announcements = Category::find($id)->annoucements;
 
 
-        return view('pages.category.category', compact('category'));
+        return view('pages.category.category', compact('category', 'announcements'));
     }
 }

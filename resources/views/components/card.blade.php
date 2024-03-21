@@ -15,6 +15,7 @@
       </p>
       <div id="{{$announcement}}" class="carousel slide" data-bs-ride="carousel">
 
+
         @if(count($images))
         <div class="carousel-inner">
           @foreach($images as $image)
