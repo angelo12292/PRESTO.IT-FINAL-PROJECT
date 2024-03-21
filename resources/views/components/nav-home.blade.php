@@ -24,9 +24,7 @@
         </li>
 
       </ul>
-      <x-_locale lang="it" nation="it" />
-      <x-_locale lang="en" nation="gb" />
-      <x-_locale lang="es" nation="es" />
+
       <livewire:notification-form />
       @guest
       <div class="row m-0 me-lg-4 ms-lg-3">
@@ -50,7 +48,9 @@
             <i class="bi bi-bell-fill"></i>
           </button>
           <ul class="dropdown-menu background ">
-            <li> <livewire:notifications-list /></li>
+            <li>
+              <livewire:notifications-list />
+            </li>
           </ul>
         </div>
 
@@ -87,7 +87,7 @@
             @csrf
             <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start " type="submit">Logout</button>
           </form>
-          
+
           </li>
         </ul>
       </div>
@@ -95,6 +95,20 @@
       <div class="py-2 p-lg-0">
         <a href="{{route('insert_announcement')}}" type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">{{__('ui.InsertAnnounce')}}</a>
       </div>
+
+      <x-_locale lang="en" nation="gb" />
+      <div class="dropdown background ">
+        <button class="btn primary-color-text dropdown-toggle px-2 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        </button>
+        <ul class="dropdown-menu background ">
+          <li>
+            <x-_locale lang="it" nation="it" />
+          </li>
+          <li>
+            <x-_locale lang="es" nation="es" />
+          </li>
+        </ul>
+      </div>
+
     </div>
-  </div>
 </nav>

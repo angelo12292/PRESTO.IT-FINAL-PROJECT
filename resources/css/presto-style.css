@@ -83,19 +83,19 @@ body {
   color: white !important;
 }
 
-.imgNav{
+.imgNav {
   width: 40px !important;
-  overflow:visible !important;
-  overflow-clip-margin:initial !important;
+  overflow: visible !important;
+  overflow-clip-margin: initial !important;
 }
 
 @media (min-width: 992px) {
-  
-.noBorderBot{
 
-  border-bottom: none !important;
+  .noBorderBot {
 
-}
+    border-bottom: none !important;
+
+  }
 }
 
 
@@ -120,15 +120,15 @@ body {
 }
 
 @media (max-width: 992px) {
-  
+
   .shopBack {
-   
+
     right: 19%;
     top: 52%;
     z-index: -1;
     width: 70%;
   }
-  
+
   .shopImage {
     position: absolute;
     right: 40%;
@@ -136,16 +136,17 @@ body {
     width: 32%;
   }
 }
+
 @media (max-width: 768px) {
-  
+
   .shopBack {
-   
+
     right: 15%;
     top: 59%;
     z-index: -1;
     width: 80%;
   }
-  
+
   .shopImage {
     position: absolute;
     right: 37%;
@@ -153,16 +154,17 @@ body {
     width: 41%;
   }
 }
+
 @media (max-width: 576px) {
-  
+
   .shopBack {
-   
+
     right: 9%;
     top: 65%;
     z-index: -1;
     width: 89%;
   }
-  
+
   .shopImage {
     position: absolute;
     right: 37%;
@@ -235,10 +237,10 @@ body {
 }
 
 @media (max-width: 576px) {
-  
-.w-card{
-  width: 75%;
-}
+
+  .w-card {
+    width: 75%;
+  }
 }
 
 
@@ -259,14 +261,14 @@ body {
 /* ANIMATION CARD */
 
 .price {
-  bottom: 20%;
+  bottom: 15%;
   right: 10%;
   text-shadow: 0 1px 5px rgb(15, 15, 15);
 }
 
 .userBar {
 
-  top: 50%;
+  top: 47%;
   left: 50%;
   translate: -50%;
   box-shadow: 0 5px 10px rgb(223, 223, 223);

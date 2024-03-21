@@ -10,7 +10,8 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('show_announcements')}}">{{__('ui.Announce')}}</a>
+          <a class="nav-link active navAnimation linkNav" aria-current="page"
+            href="{{route('show_announcements')}}">{{__('ui.Announce')}}</a>
         </li>
       </ul>
 
@@ -26,9 +27,11 @@
       <div class=" me-3 position-relative d-flex align-items-center ">
         <div class="dropdown background ">
           @if(session()->has('success'))
-          <span class="position-absolute top-0 start-100 translate-middle rounded-pill bg-danger" style="width:10px; height:10px"></span>
+          <span class="position-absolute top-0 start-100 translate-middle rounded-pill bg-danger"
+            style="width:10px; height:10px"></span>
           @endif
-          <button class="btn primary-color-text dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn primary-color-text dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
             <i class="bi bi-bell-fill"></i>
           </button>
           <ul class="dropdown-menu background ">
@@ -50,14 +53,17 @@
         <ul class="dropdown-menu ">
           <li>
             @if (Auth::user()->is_revisor)
-            <a href="{{ route('revisor.index')}}" class=" nav-link text-start position-relative dropdown-item primary-color-text ps-3 p-0 dropDownHover">
-              accetta <br>annunci: <span class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
+            <a href="{{ route('revisor.index')}}"
+              class=" nav-link text-start position-relative dropdown-item primary-color-text ps-3 p-0 dropDownHover">
+              {{__('ui.acceptAnnounce')}}<br>{{__('ui.dropDownAnnounce')}}: <span
+                class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
             </a>
           <li>
             <hr class="dropdown-divider">
           </li>
           <a href="{{ route('revisor.index-revised')}}" class="nav-link primary-color-text ps-3 dropDownHover">
-            ripristina <br>annunci: <span class="fw-bold">{{App\Models\Announcement::revisionedCount()}}</span>
+            {{__('ui.restoreAnnounce')}}<br>{{__('ui.dropDownAnnounce')}}: <span
+              class="fw-bold">{{App\Models\Announcement::revisionedCount()}}</span>
           </a>
           <li>
             <hr class="dropdown-divider">
@@ -66,18 +72,33 @@
           @endif
           <form action="/logout" method="POST" class="nav-link btn ">
             @csrf
-            <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start " type="submit">Logout</button>
+            <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start "
+              type="submit">Logout</button>
           </form>
-          
+
 
           </li>
         </ul>
       </div>
       @endguest
       <div>
-        <a href="{{route('insert_announcement')}}" type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic"><span>Inserisci
-            Annunci</span></a>
+        <a href="{{route('insert_announcement')}}" type="submit"
+          class="btn text-white rounded-5  primary-color-bg btnStatic"><span>{{__('ui.InsertAnnounce')}}</span></a>
       </div>
+    </div>
+    <x-_locale lang="en" nation="gb" />
+    <div class="dropdown background ">
+      <button class="btn primary-color-text dropdown-toggle px-2 " type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+      </button>
+      <ul class="dropdown-menu background ">
+        <li>
+          <x-_locale lang="it" nation="it" />
+        </li>
+        <li>
+          <x-_locale lang="es" nation="es" />
+        </li>
+      </ul>
     </div>
   </div>
 </nav>

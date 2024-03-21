@@ -1,5 +1,5 @@
 <a href="{{ $root }}" class="">
-  <div class="card  reveal reveal.active rounded-4 h-100 shadow card-scale border-0 position-relative " style="width: 22rem;">
+  <div class="card  reveal reveal.active rounded-4 h-100 shadow card-scale border-0 position-relative overflow-hidden " style="width: 22rem;">
     <div class="position-absolute z-1 p-2 px-3 bg-white w-75 rounded-5 userBar primary-color-text">
       <div class="d-flex align-items-center">
         <i class="bi bi-person-circle fs-2 "></i>
@@ -16,28 +16,28 @@
       <div id="{{$announcement}}" class="carousel slide" data-bs-ride="carousel">
 
         @if(count($images))
-            <div class="carousel-inner">
-              @foreach($images as $image)
-              <div class="carousel-item @if($loop->first) active @endif">
-                <img src="{{$image->getUrl(300,300)}}" class="d-block w-100" alt="...">
-              </div>
-              @endforeach
-            </div>
-          @else  
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://picsum.photos/1600/901" class="d-block w-100 " alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/1600/898" class="d-block w-100 " alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/1600/899" class="d-block w-100 " alt="...">
-            </div>
+        <div class="carousel-inner">
+          @foreach($images as $image)
+          <div class="carousel-item @if($loop->first) active @endif">
+            <img src="{{$image->getUrl(300,200)}}" class="d-block w-100 " alt="...">
           </div>
+          @endforeach
+        </div>
+        @else
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://picsum.photos/1600/901" class="d-block w-100 " alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/1600/898" class="d-block w-100 " alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/1600/899" class="d-block w-100 " alt="...">
+          </div>
+        </div>
         @endif
         <button class="carousel-control-prev" type="button" data-bs-target="#{{$announcement}}" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

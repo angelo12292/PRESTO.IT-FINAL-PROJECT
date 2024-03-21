@@ -5,10 +5,11 @@
   <x-error />
   <x-message />
   <!-- HERO SECTION -->
-  <section class="container mt-5" style="height:95vh">
+  <section class="container mt-5" style="min-height:95vh">
     <div class="row">
       <div class="col-12 col-lg-8 col-xl-6 d-flex flex-column justify-content-center pe-md-5 searchBar z-1">
-        <h1 class="fw-bold mb-5 animate__animated animate__fadeInLeft primary-color-text">{{__('ui.AllAnnouncements')}}<br>
+        <h1 class="fw-bold mb-5 animate__animated animate__fadeInLeft primary-color-text">
+          {{__('ui.AllAnnouncements')}}<br>
         </h1>
 
         <div class="row  px-2">
@@ -105,7 +106,8 @@
     </div>
 
 
-    @if($announcements->count() < 1) <h3 class="text-center mb-5 primary-color-text h1" style="z-index: 1;">{{__('ui.noAnnounceCardSection')}}</h3>
+    @if($announcements->count() < 1) <h3 class="text-center mb-5 primary-color-text h1" style="z-index: 1;">
+      {{__('ui.noAnnounceCardSection')}}</h3>
       @else
       <h3 class="text-center mb-5 primary-color-text h1" style="z-index: 1;">{{__('ui.okAnnounceCardSection')}}</h3>
       @endif

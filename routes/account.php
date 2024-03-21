@@ -9,7 +9,7 @@ Route::get('/inserisci_annuncio', [AccountController::class, 'insertAnnouncement
 
 Route::get('/notifiche/index', [AccountController::class, 'notificationIndex'])->name('notification.index');
 
-Route::get('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
+Route::post('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
 
 Route::get('/richiesta/revisore/form', [AccountController::class, 'becomeRevisorForm'])->name('become.revisor.form');
 
