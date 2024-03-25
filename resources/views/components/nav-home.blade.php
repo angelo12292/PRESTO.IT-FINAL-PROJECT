@@ -97,14 +97,24 @@
       </div>
 
       <x-_locale lang="en" nation="gb" />
+      <!-- @if(session()->has('lang','it'))
+      <x-_locale lang="it" nation="it" />
+      @else if (session()->has('lang','es'))
+      <x-_locale lang="es" nation="es" />
+
+      @endif -->
+
       <div class="dropdown background ">
         <button class="btn primary-color-text dropdown-toggle px-2 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
         </button>
         <ul class="dropdown-menu background ">
-          <li>
+          <li class="dropdown-item">
             <x-_locale lang="it" nation="it" />
           </li>
           <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li class="dropdown-item">
             <x-_locale lang="es" nation="es" />
           </li>
         </ul>

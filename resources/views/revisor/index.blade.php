@@ -2,6 +2,8 @@
   <x-nav />
   <div class="container mt-5">
 
+
+
     <div class="row ">
       <div class="col-12">
 
@@ -14,7 +16,7 @@
     @if($announcement_to_check)
 
     <div class="row">
-      <div class="col-6 mx-auto">
+      <div class="col-6">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
 
           @if(count($announcement_to_check->images))
@@ -28,16 +30,16 @@
           @else
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="https://picsum.photos/1600/901" class="d-block w-100 " alt="...">
+              <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
             </div>
             <div class="carousel-item">
-              <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
+              <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
             </div>
             <div class="carousel-item">
-              <img src="https://picsum.photos/1600/898" class="d-block w-100 " alt="...">
+              <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
             </div>
             <div class="carousel-item">
-              <img src="https://picsum.photos/1600/899" class="d-block w-100 " alt="...">
+              <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
             </div>
           </div>
           @endif
@@ -51,36 +53,59 @@
           </button>
         </div>
 
-        <h5 class="mb-2 mt-4 fw-light h2 primary-color-text">{{__('ui.insertTitle')}}: </h5>
-        <h4 class="mb-4  primary-color-text">{{$announcement_to_check->title}}</h4>
-        <h4 class="mb-2 fw-light h2 primary-color-text">{{__('ui.insertDescription')}}:</h4>
-        <h4 class="mb-4  primary-color-text">{{$announcement_to_check->description}}</h4>
-        <h4 class="mb-2 fw-light h2 primary-color-text">{{__('ui.insertPrice')}}:</h4>
-        <h4 class="mb-4  primary-color-text">
-          {{ Number::currency($announcement_to_check->price, in: 'EUR', locale: 'it') }}
-        </h4>
-
-        <div class="d-flex">
-          <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
-            @csrf
-            @method('PATCH')
-            <button type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">{{__('ui.btnAccept')}}</button>
-          </form>
-
-
-          <form class="ps-3" action="{{route ('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
-            @csrf
-            @method('PATCH')
-            <button type="submit" class="btn btn-danger rounded-5 ">{{__('ui.btnRefuse')}}</button>
-          </form>
-        </div>
-
-        @endif
 
       </div>
+      <div class="col-6">
+        <div class="row">
+          <div class="col-4 border-end border-start">
+            <h5 class="mb-2 mt-4 fw-light h2 primary-color-text">{{__('ui.insertTitle')}}: </h5>
+            <h4 class="mb-4  primary-color-text">{{$announcement_to_check->title}}</h4>
+            <h4 class="mb-2 fw-light h2 primary-color-text">{{__('ui.insertDescription')}}:</h4>
+            <h4 class="mb-4  primary-color-text">{{$announcement_to_check->description}}</h4>
+            <h4 class="mb-2 fw-light h2 primary-color-text">{{__('ui.insertPrice')}}:</h4>
+            <h4 class="mb-4  primary-color-text">
+              {{ Number::currency($announcement_to_check->price, in: 'EUR', locale: 'it') }}
+            </h4>
+          </div>
+          <div class="col-4 ps-3 border-end">
+            <h5 class="mb-2 mt-4 fw-light h4 primary-color-text">Revisione Immagini</h5>
+            <p class="mb-2 mt-4  primary-color-text">Adulti: <span class="{{$image->adult}}"></span></p>
+            <p class="mb-2 mt-4  primary-color-text">Satira: <span class="{{$image->spoof}}"></span></p>
+            <p class="mb-2 mt-4  primary-color-text">Medicina: <span class="{{$image->medical}}"></span></p>
+            <p class="mb-2 mt-4  primary-color-text">Violenza: <span class="{{$image->violence}}"></span></p>
+            <p class="mb-2 mt-4  primary-color-text">Contenuto Ammiccante: <span class="{{$image->racy}}"></span></p>
+          </div>
+          <div class="col-4 border-end">
+            <h5 class="mb-2 mt-4 fw-light h4 primary-color-text">Tags</h5>
+
+            @foreach($image->labels as $label)
+            <p class="mb-2 mt-4  primary-color-text">{{$label}}</p>
+            @endforeach
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-  </div>
+
+
+    <div class="d-flex  justify-content-end py-3">
+      <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('PATCH')
+        <button type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">{{__('ui.btnAccept')}}</button>
+      </form>
+
+
+      <form class="ps-3" action="{{route ('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
+        @csrf
+        @method('PATCH')
+        <button type="submit" class="btn btn-danger rounded-5 ">{{__('ui.btnRefuse')}}</button>
+      </form>
+    </div>
+
+    @endif
+
+
 
 
 

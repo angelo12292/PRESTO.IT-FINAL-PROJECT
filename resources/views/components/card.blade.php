@@ -15,6 +15,7 @@
       </p>
       <div id="{{$announcement}}" class="carousel slide" data-bs-ride="carousel">
 
+
         @if(count($images))
         <div class="carousel-inner">
           @foreach($images as $image)
@@ -26,16 +27,16 @@
         @else
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://picsum.photos/300/200" class="d-block w-100 " alt="...">
+            <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
           </div>
           <div class="carousel-item">
-            <img src="https://picsum.photos/300/200" class="d-block w-100 " alt="...">
+            <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
           </div>
           <div class="carousel-item">
-            <img src="https://picsum.photos/300/200" class="d-block w-100 " alt="...">
+            <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
           </div>
           <div class="carousel-item">
-            <img src="https://picsum.photos/300/200" class="d-block w-100 " alt="...">
+            <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
           </div>
         </div>
         @endif

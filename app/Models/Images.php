@@ -11,11 +11,7 @@ class Image extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['announcement_id', 'path'];
-
-    protected $casts = [
-        'labels' => 'array'
-    ];
+    protected $fillable = ['announcementid', 'path'];
 
     public function announcement()
     {
@@ -29,7 +25,7 @@ class Image extends Model
         }
         $path = dirname($filePath);
         $filename = basename($filePath);
-        $file = "{$path}/crop_{$w}x{$h}_{$filename}";
+        $file = "{$path}/crop{$w}x{$h}_{$filename}";
 
         return Storage::url($file);
     }
