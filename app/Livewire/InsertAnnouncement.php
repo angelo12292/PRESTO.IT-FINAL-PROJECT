@@ -2,8 +2,9 @@
 
 namespace App\Livewire;
 
-use Livewire\File;
-use App\Models\Image;
+use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionSafeSearch;
+use App\Jobs\ResizeImage;
 use Livewire\Component;
 use App\Models\Category;
 use App\Jobs\ResizeImage;
@@ -18,18 +19,18 @@ class InsertAnnouncement extends Component
 {
     use WithFileUploads;
 
-   #[Validate('required', message:'Inserire il titolo.')]
-   #[Validate('max:50', message:'il titolo contiene troppi caratteri.')]
+    #[Validate('required', message: 'Inserire il titolo.')]
+    #[Validate('max:50', message: 'il titolo contiene troppi caratteri.')]
     public $AnnTitle;
-    
+
     public $AnnCategory;
-    #[Validate('required', message:'Inserire la descrizione.')]
-    #[Validate('min:1', message:'la descrizione contiene pochi caratteri.')]
+    #[Validate('required', message: 'Inserire la descrizione.')]
+    #[Validate('min:1', message: 'la descrizione contiene pochi caratteri.')]
     public $AnnDescrip;
-    #[Validate('required', message:'Inserire il prezzo.')]
-    #[Validate('max:10000', message:'il prezzo è troppo alto.')]
+    #[Validate('required', message: 'Inserire il prezzo.')]
+    #[Validate('max:10000', message: 'il prezzo è troppo alto.')]
     public $AnnPrice;
-    
+
     #[Validate([
         // 'images' => 'required',
         'images.*' => 'image|max:1024',
@@ -50,11 +51,11 @@ class InsertAnnouncement extends Component
         'required' => 'l\immagine è richiesta.',
         'temporary_images.*image' => 'il file deve essere un\immagine.',
         'temporary_images.*.max' => 'l\'immagine è troppo grande',
-        
+
     ], attribute: [
         'temporary_images.*' => 'temporary_image',
     ])]
-    public $temporary_images =[];
+    public $temporary_images = [];
 
     public $announcement_id = null;
 
@@ -65,40 +66,40 @@ class InsertAnnouncement extends Component
     //         'AnnCategory'=>'required|max:200',
     //         'AnnDescrip'=>'required|min:1',
     //         'AnnPrice'=>'required|max:10000',
-         
+
     //         'images.*'=>'image|max:10000',
     //         'temporary_images.*'=>'image|max:10000',
     //     ];
     // }
 
-    
+
     // protected $messages =[
     //     'required'=> 'il campo :attribute è richiesto',
     //     'images.max'=>'L\'immagine è richiesta',
     //     'temporary_images.*.max'=>'il file deve essere massimo di ',
     //     'temporary_images.required'=>'L\'immagine è richiesta'
-        
-    
+
+
     // ];
 
     public function store()
     {
         $this->validate();
 
-        
+
         $this->announcement_id = Announcement::create([
             'title' => $this->AnnTitle,
             'user_id' => Auth::id(),
             'category_id' => $this->AnnCategory,
             'description' => $this->AnnDescrip,
             'price' => $this->AnnPrice,
-            
-        ])->id;
-        
-            
-        
 
-        
+        ])->id;
+
+
+
+
+
         if (count($this->images)) {
             foreach ($this->images as $image) {
                 // Image::create([
@@ -106,26 +107,28 @@ class InsertAnnouncement extends Component
                 //     'path'=>$image->store('images', 'public')]);
                 $newFileName = "announcement/{$this->announcement_id}";
                 $newImage = Image::create([
-                    'announcement_id'=> $this->announcement_id,'path'=>$image->store($newFileName, 'public')]);
+                    'announcement_id' => $this->announcement_id, 'path' => $image->store($newFileName, 'public')
+                ]);
                 dispatch(new ResizeImage($newImage->path, 300, 200));
                 dispatch(new GoogleVisionSafeSearch($newImage->id));
+                dispatch(new GoogleVisionLabelImage($newImage->id));
             }
+
 
             // File::deleteDirectory(storage_path('app/livewire-tmp'));
         }
 
-        
 
-        
+
+
 
 
         $this->resetAnnounce();
 
 
-        
-        
+
+
         session()->flash('announcementSuccess');
-        
     }
 
     public function resetAnnounce()
@@ -146,22 +149,22 @@ class InsertAnnouncement extends Component
 
     public function updatedTemporaryImages()
     {
-        if($this->validate([
+        if ($this->validate([
             'temporary_images.*' => 'image|max:1024',
-            
-            
-            
 
-        ])){
+
+
+
+        ])) {
             foreach ($this->temporary_images as $image) {
                 $this->images[] = $image;
             }
         }
-        
     }
 
-    public function removeImage($key){
-        if(in_array($key, array_keys($this->images))) {
+    public function removeImage($key)
+    {
+        if (in_array($key, array_keys($this->images))) {
             unset($this->images[$key]);
         }
     }
@@ -171,10 +174,9 @@ class InsertAnnouncement extends Component
         return view('livewire.insert-announcement', ['categories' => Category::all()]);
     }
 
-    public function updated($propertyName) {
+    public function updated($propertyName)
+    {
 
         $this->validateOnly($propertyName);
-
     }
-
 }

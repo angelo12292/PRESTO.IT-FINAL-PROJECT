@@ -5,9 +5,9 @@
   <div class="container-fluid mt-5 ">
 
 
-    
 
-    
+
+
 
     <div class="container mx-auto ">
       <div class="row  m-0 ">
@@ -33,7 +33,7 @@
         <div class="row m-0 text-center mt-2 d-block d-sm-flex ">
 
           <div class="col-10 mx-auto col-sm-5 col-md-6 col-lg-7 p-0 mx-0">
-          
+
 
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-indicators">
@@ -47,11 +47,11 @@
               <div class="carousel-inner">
                 @if(count($announcement->images))
                 @foreach($announcement->images as $image)
-              <div class="carousel-item @if($loop->first) active @endif">
-                <img src="{{$image->getUrl(300,200)}}" class="d-block w-100" alt="...">
-              </div>
-              @endforeach
-              @else
+                <div class="carousel-item @if($loop->first) active @endif">
+                  <img src="{{$image->getUrl(300,200)}}" class="d-block w-100" alt="...">
+                </div>
+                @endforeach
+                @else
                 <div class="carousel-item active">
                   <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
                 </div>
@@ -94,7 +94,7 @@
 
             <livewire:contact-vendor-form :receiving_user_id="$user->id" :receiving_user_email="$user->email" />
             <div class="raw">
-              
+
             </div>
             @else
             <div>
