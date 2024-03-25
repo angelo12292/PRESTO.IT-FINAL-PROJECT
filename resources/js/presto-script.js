@@ -32,3 +32,23 @@ if (toastTrigger) {
     toastBootstrap.show()
   })
 }
+
+
+// nav change flag
+
+// let myImg = document.getElementById('myImg');
+
+// let imgForm = document.getElementById('imgForm');
+
+
+
+// console.log(imgForm);
+
+
+// document.getElementById("imgForm").onclick = function () { myFunction() };
+
+// function myFunction() {
+
+
+//   document.getElementById("myImg").src = "{{asset('vendor/blade-flags/language-' .it. '.svg')}}";
+// }
