@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <div class="row m-0 p-0">
+    <div class="row mt-4 p-4">
         <div class="col-6 mx-auto text-center">
             <form action="{{route('become.revisor')}}" method="POST">
                 @csrf

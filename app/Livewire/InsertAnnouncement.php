@@ -2,15 +2,16 @@
 
 namespace App\Livewire;
 
-use App\Jobs\ResizeImage;
-use Livewire\Component;
-use Livewire\Attributes\Validate;
-use App\Models\Category;
-use App\Models\Announcement;
-use App\Models\Image;
-use Livewire\WithFileUploads;
-use Illuminate\Support\Facades\Auth;
 use Livewire\File;
+use App\Models\Image;
+use Livewire\Component;
+use App\Models\Category;
+use App\Jobs\ResizeImage;
+use App\Models\Announcement;
+use Livewire\WithFileUploads;
+use Livewire\Attributes\Validate;
+use App\Jobs\GoogleVisionSafeSearch;
+use Illuminate\Support\Facades\Auth;
 
 
 class InsertAnnouncement extends Component
@@ -107,6 +108,7 @@ class InsertAnnouncement extends Component
                 $newImage = Image::create([
                     'announcement_id'=> $this->announcement_id,'path'=>$image->store($newFileName, 'public')]);
                 dispatch(new ResizeImage($newImage->path, 300, 200));
+                dispatch(new GoogleVisionSafeSearch($newImage->id));
             }
 
             // File::deleteDirectory(storage_path('app/livewire-tmp'));
