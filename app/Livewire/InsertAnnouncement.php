@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Jobs\ResizeImage;
+use App\Jobs\RemoveFaces;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
 use App\Models\Category;
@@ -106,6 +107,13 @@ class InsertAnnouncement extends Component
                 $newFileName = "announcement/{$this->announcement_id}";
                 $newImage = Image::create([
                     'announcement_id'=> $this->announcement_id,'path'=>$image->store($newFileName, 'public')]);
+
+                RemoveFaces::withChain([
+
+                    new ResizeImage($newImage->path, 400 , 300),
+
+
+                ])->dispactch($newImage->id);  
                 dispatch(new ResizeImage($newImage->path, 300, 200));
             }
 

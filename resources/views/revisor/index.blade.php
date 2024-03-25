@@ -1,8 +1,6 @@
 <x-layout>
   <x-nav />
   <div class="container mt-5">
-    <livewire:notification-message />
-
 
     <div class="row ">
       <div class="col-12">
