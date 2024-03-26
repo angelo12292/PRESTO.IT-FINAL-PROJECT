@@ -22,7 +22,7 @@ class ResizeImage implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct($filePath, $w , $h)
+    public function __construct($filePath, $w, $h)
     {
         $this->path = dirname($filePath);
         $this->fileName = basename($filePath);
@@ -39,20 +39,19 @@ class ResizeImage implements ShouldQueue
         $h = $this->h;
         $srcPath = storage_path() . '/app/public/' . $this->path . '/' . $this->fileName;
         $destPath = storage_path() . '/app/public/' . $this->path . "/crop_{$w}x{$h}_" . $this->fileName;
-        
+
         $croppedImage = Image::load($srcPath)
             ->crop(Manipulations::CROP_CENTER, $w, $h);
         $croppedImage->save($destPath);
 
         $croppedImage->watermark(base_path('resources/img/woman-02.png'))
-            
-            ->watermarkOpacity(30)
+
+            ->watermarkOpacity(80)
             ->watermarkPadding(5)
             ->watermarkWidth(30, Manipulations::UNIT_PERCENT)
             ->watermarkHeight(30, Manipulations::UNIT_PERCENT)
             ->watermarkFit(Manipulations::FIT_STRETCH);
 
-        $croppedImage->save($destPath);                 
-  
+        $croppedImage->save($destPath);
     }
 }

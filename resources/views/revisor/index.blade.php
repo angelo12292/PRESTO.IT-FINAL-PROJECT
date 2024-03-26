@@ -81,7 +81,10 @@
             @foreach($image->labels as $label)
             <p class="mb-2 mt-4  primary-color-text">{{$label}}</p>
             @endforeach
-
+            @else
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
             @endif
           </div>
         </div>
