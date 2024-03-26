@@ -2,18 +2,17 @@
 
 namespace App\Livewire;
 
+use App\Models\Image;
+use Livewire\Component;
+use App\Models\Category;
+use App\Jobs\RemoveFaces;
+use App\Jobs\ResizeImage;
+use App\Models\Announcement;
+use Livewire\WithFileUploads;
+use Livewire\Attributes\Validate;
 use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionSafeSearch;
-use App\Jobs\ResizeImage;
-use App\Jobs\RemoveFaces;
-use Livewire\Component;
-use Livewire\Attributes\Validate;
-use App\Models\Category;
-use App\Models\Announcement;
-use App\Models\Image;
-use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
-use Livewire\File;
 
 
 class InsertAnnouncement extends Component

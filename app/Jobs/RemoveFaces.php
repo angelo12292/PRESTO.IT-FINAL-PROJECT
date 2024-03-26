@@ -24,6 +24,7 @@ class RemoveFaces implements ShouldQueue
      * Create a new job instance.
      */
     public function __construct($announcement_image_id)
+    public function __construct($announcement_image_id)
     {
         $this->$announcement_image_id = $announcement_image_id;
     }

@@ -10,6 +10,7 @@ use App\Mail\BecomeRevisor;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Artisan;
 use App\Console\Commands\MakeUserRevisor;
+use App\Http\Requests\FormRevisorRequest;
 use App\Http\Requests\StoreEmailSentsRequest;
 use App\Models\EmailSents;
 
@@ -63,7 +64,7 @@ class RevisorController extends Controller
         return redirect()->back()->with('success', 'Revisone dell \'annuncio ripristinata!');
     }
 
-    public function becomeRevisor( Request $request)
+    public function becomeRevisor( FormRevisorRequest $request)
     {
 
         EmailSents::create(
