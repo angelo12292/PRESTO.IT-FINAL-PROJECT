@@ -51,5 +51,17 @@ return [
     'announceAcceptedFalse' => 'There are no announcement to review',
     'btnRestore' => 'Restore',
 
+    // announce
+    'announce' => 'Announce',
+    'category' => 'Category',
+    'contactVendor' => 'Contact the vendor',
+    'name' => 'Name',
+    'insertYourName' => 'Insert your name',
+    'emailAdress' => 'Email adress',
+    'dontShareEmail' => 'Don\'t share your email with anyone',
+
+
+
+
 
 ];
