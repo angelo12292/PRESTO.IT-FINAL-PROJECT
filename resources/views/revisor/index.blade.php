@@ -81,6 +81,7 @@
             @foreach($image->labels as $label)
             <p class="mb-2 mt-4  primary-color-text">{{$label}}</p>
             @endforeach
+
             @endif
           </div>
         </div>
