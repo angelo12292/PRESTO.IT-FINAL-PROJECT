@@ -49,19 +49,19 @@
                 @endforeach
                 @else
                 <div class="carousel-item active">
-                  <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
+                  <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://picsum.photos/1600/901" class="d-block w-100 " alt="...">
+                  <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
+                  <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://picsum.photos/1600/898" class="d-block w-100 " alt="...">
+                  <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://picsum.photos/1600/899" class="d-block w-100 " alt="...">
+                  <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
                 </div>
                 @endif
               </div>
@@ -133,24 +133,24 @@
                 @if(count($announcement_checked['false']->images))
                 @foreach($announcement_checked['false']->images as $image)
                 <div class="carousel-item @if($loop->first) active @endif">
-                  <img src="{{$image->getUrl(300,300)}}" class="d-block w-100" alt="...">
+                  <img src="{{$image->getUrl(300,200)}}" class="d-block w-100" alt="...">
                 </div>
                 @endforeach
                 @else
                 <div class="carousel-item active">
-                  <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
+                  <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://picsum.photos/1600/901" class="d-block w-100 " alt="...">
+                  <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
+                  <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://picsum.photos/1600/898" class="d-block w-100 " alt="...">
+                  <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="https://picsum.photos/1600/899" class="d-block w-100 " alt="...">
+                  <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
                 </div>
               </div>
               @endif

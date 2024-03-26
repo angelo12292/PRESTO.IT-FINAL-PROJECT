@@ -9,16 +9,14 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
 
-    public function categoryView(Category $category, Announcement $announcement, $id)
-    {
+        public function categoryView(Category $category, Announcement $announcement, $id)
+        {
 
-        $category = Category::findOrFail($id);
+                $category = Category::findOrFail($id);
 
-        $announcement = Announcement::findOrFail($id);
-
-        // dd(Announcement::findOrFail($id));
+                $announcements = Category::find($id)->annoucements;
 
 
-        return view('pages.category.category', ['category' => $category, 'announcement' => $announcement]);
-    }
+                return view('pages.category.category', compact('category', 'announcements'));
+        }
 }
