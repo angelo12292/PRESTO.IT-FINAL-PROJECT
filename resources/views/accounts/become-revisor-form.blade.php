@@ -21,8 +21,10 @@
 
                 <div class="mb-3">
                     <label for="body" class="form-label"></label>
-                    <textarea type="text" name="body" class="form-control p-0" id="body" placeholder="  Scrivi la richiesta" style="height: 200px"></textarea>
+                    <textarea type="text" name="body" class="form-control p-0" id="body" placeholder="  Scrivi la richiesta"  style="height: 200px">{{ old('body') }}</textarea>
+                    @error('body')<span class="text-danger small">{{ $message }}</span> @enderror
                 </div>
+
 
                 <div class="d-flex mt-3 ">
                     <div class="mx-auto">
@@ -33,8 +35,6 @@
             </form>
         </div>
     </div>
-    <x-footer />
-
     <x-footer />
 
 </x-layout>

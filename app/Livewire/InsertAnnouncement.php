@@ -2,12 +2,10 @@
 
 namespace App\Livewire;
 
-use App\Jobs\GoogleVisionLabelImage;
-use App\Jobs\GoogleVisionSafeSearch;
-use App\Jobs\ResizeImage;
-use App\Jobs\RemoveFaces;
+use App\Models\Image;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Livewire\WithFileUploads;
