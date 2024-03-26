@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('sending_user_id')->nullable();
             $table->unsignedBigInteger('receiving_user_id')->nullable();
             $table->boolean('displayed')->default(false);
-            $table->text('body',300);
+            $table->text('body',300)->nullable();
             $table->timestamps();
             $table->foreign('sending_user_id')->references('id')->on('users');
             $table->foreign('receiving_user_id')->references('id')->on('users');
