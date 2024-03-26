@@ -1,7 +1,6 @@
 <x-layout>
   <x-nav />
   <div class="container mt-5">
-    <livewire:notification-message />
 
 
     <div class="row ">
@@ -30,16 +29,16 @@
           @else
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="https://picsum.photos/1600/901" class="d-block w-100 " alt="...">
+              <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
             </div>
             <div class="carousel-item">
-              <img src="https://picsum.photos/1600/900" class="d-block w-100 " alt="...">
+              <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
             </div>
             <div class="carousel-item">
-              <img src="https://picsum.photos/1600/898" class="d-block w-100 " alt="...">
+              <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
             </div>
             <div class="carousel-item">
-              <img src="https://picsum.photos/1600/899" class="d-block w-100 " alt="...">
+              <img src="/img/woman-02.png" class="d-block w-100 " alt="...">
             </div>
           </div>
           @endif
