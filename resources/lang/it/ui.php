@@ -43,6 +43,14 @@ return [
     'btnAccept' => 'Accetta',
     'btnRefuse' => 'Rifiuta',
 
+    // announce
+    'announce' => 'Annuncio',
+    'category' => 'Categoria',
+    'contactVendor' => 'Contatta il venditore',
+    'name' => 'Nome',
+    'insertYourName' => 'Inserisci il tuo nome',
+    'emailAdress' => 'Indirizzo email',
+    'dontShareEmail' => 'Non condividere con nessuno la tua email',
 
 
 ];

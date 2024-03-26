@@ -75,15 +75,14 @@
             <p class="mb-2 mt-4  primary-color-text">Violenza: <span class="{{$image->violence}}"></span></p>
             <p class="mb-2 mt-4  primary-color-text">Contenuto Ammiccante: <span class="{{$image->racy}}"></span></p>
           </div>
-          <div class="col-4 border-end">
+          <div class="col-4 border-end pe-0 ">
             <h5 class="mb-2 mt-4 fw-light h4 primary-color-text">Tags</h5>
-
             @if($image->labels)
-               @foreach($image->labels as $label)
-              <p class="mb-2 mt-4  primary-color-text">{{$label}}</p>
-              @endforeach 
-            @endif
+            @foreach($image->labels as $label)
+            <p class="mb-2 mt-4  primary-color-text">{{$label}}</p>
+            @endforeach
 
+            @endif
           </div>
         </div>
       </div>
@@ -91,7 +90,7 @@
     </div>
 
 
-    <div class="d-flex  justify-content-end py-3">
+    <div class="d-flex  justify-content-end py-3 border-top ">
       <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
