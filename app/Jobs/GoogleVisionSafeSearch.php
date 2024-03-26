@@ -9,6 +9,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
+use Illuminate\Contracts\Queue\ShouldBeUnique;
 
 class GoogleVisionSafeSearch implements ShouldQueue
 {

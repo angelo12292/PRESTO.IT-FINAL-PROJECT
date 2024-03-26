@@ -78,9 +78,12 @@
           <div class="col-4 border-end">
             <h5 class="mb-2 mt-4 fw-light h4 primary-color-text">Tags</h5>
 
-            @foreach($image->labels as $label)
-            <p class="mb-2 mt-4  primary-color-text">{{$label}}</p>
-            @endforeach
+            @if($image->labels)
+               @foreach($image->labels as $label)
+              <p class="mb-2 mt-4  primary-color-text">{{$label}}</p>
+              @endforeach 
+            @endif
+
           </div>
         </div>
       </div>
