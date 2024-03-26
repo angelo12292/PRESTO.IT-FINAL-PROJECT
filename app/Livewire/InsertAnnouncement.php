@@ -110,9 +110,15 @@ class InsertAnnouncement extends Component
                 $newImage = Image::create([
                     'announcement_id' => $this->announcement_id, 'path' => $image->store($newFileName, 'public')
                 ]);
-                dispatch(new ResizeImage($newImage->path, 300, 200));
-                dispatch(new GoogleVisionSafeSearch($newImage->id));
-                dispatch(new GoogleVisionLabelImage($newImage->id));
+
+                RemoveFaces::withChain([
+                    
+                    new ResizeImage($newImage->path, 300, 200),
+                    new GoogleVisionSafeSearch($newImage->id),
+                    new GoogleVisionLabelImage($newImage->id)
+
+                ])->dispatch($newImage->id);
+              
             }
 
 
