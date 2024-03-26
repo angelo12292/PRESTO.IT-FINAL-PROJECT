@@ -20,6 +20,7 @@
         <div class="carousel-inner">
           @foreach($images as $image)
           <div class="carousel-item @if($loop->first) active @endif">
+            <div class="blackGradient"></div>
             <img src="{{$image->getUrl(300,200)}}" class="d-block w-100 " alt="...">
           </div>
           @endforeach

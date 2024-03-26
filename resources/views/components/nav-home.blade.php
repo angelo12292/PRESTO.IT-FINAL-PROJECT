@@ -10,7 +10,7 @@
     </button>
 
     <div class="collapse navbar-collapse ms-5 pt-3 p-lg-0 " id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+      <ul class="navbar-nav me-auto  mb-lg-0 ">
         <li class="nav-item border-bottom noBorderBot">
           <a class="nav-link active navAnimation linkNav" aria-current="page" href="{{route('home')}}">Home</a>
         </li>
@@ -92,26 +92,44 @@
         </ul>
       </div>
       @endguest
-      <div class="py-2 p-lg-0">
+      <div class="py-3 p-lg-0 d-flex align-items-center ">
         <a href="{{route('insert_announcement')}}" type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">{{__('ui.InsertAnnounce')}}</a>
+
+        @if(session('locale')=='en')
+        <x-_locale lang="en" nation="gb" />
+        @elseif(session('locale')=='it')
+        <x-_locale lang="it" nation="it" />
+        @else
+        <x-_locale lang="es" nation="es" />
+        @endif
+
+        <div class="dropdown background ">
+          <button class="btn primary-color-text dropdown-toggle px-2 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          </button>
+          <ul class="dropdown-menu background ">
+            <li class="dropdown-item">
+              <x-_locale lang="en" nation="en" />
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-item">
+              <x-_locale lang="it" nation="it" />
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-item">
+              <x-_locale lang="es" nation="es" />
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <x-_locale lang="en" nation="gb" />
-      <div class="dropdown background ">
-        <button class="btn primary-color-text dropdown-toggle px-2 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        </button>
-        <ul class="dropdown-menu background ">
-          <li class="dropdown-item">
-            <x-_locale lang="it" nation="it" />
-          </li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li class="dropdown-item">
-            <x-_locale lang="es" nation="es" />
-          </li>
-        </ul>
-      </div>
+
+
+
 
     </div>
+  </div>
 </nav>

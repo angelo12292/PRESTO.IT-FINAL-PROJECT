@@ -43,7 +43,14 @@ return [
     'btnAccept' => 'Aceptar',
     'btnRefuse' => 'Rechazar',
 
-    // Revisor index revised
+    // announce
+    'announce' => 'Anuncio',
+    'category' => 'Categoría',
+    'contactVendor' => 'Contacta al vendedor',
+    'name' => 'Nombre',
+    'insertYourName' => 'Inserta tu nombre',
+    'emailAdress' => 'Dirección de correo electrónico',
+    'dontShareEmail' => 'No compartas tu correo electrónico con nadie',
 
 
 
