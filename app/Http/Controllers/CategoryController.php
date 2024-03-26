@@ -14,8 +14,11 @@ class CategoryController extends Controller
 
         $category = Category::findOrFail($id);
 
+        $announcement = Announcement::findOrFail($id);
+
+        // dd(Announcement::findOrFail($id));
 
 
-        return view('pages.category.category', compact('category'));
+        return view('pages.category.category', ['category' => $category, 'announcement' => $announcement]);
     }
 }
