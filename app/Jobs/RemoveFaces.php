@@ -24,9 +24,8 @@ class RemoveFaces implements ShouldQueue
      * Create a new job instance.
      */
     public function __construct($announcement_image_id)
-    public function __construct($announcement_image_id)
     {
-        $this->$announcement_image_id = $announcement_image_id;
+        $this->announcement_image_id = $announcement_image_id;
     }
 
     /**
@@ -38,7 +37,7 @@ class RemoveFaces implements ShouldQueue
         if (!$i) {
             return;
         }
-        $srcPath = storage_path('app/public' . $i->path);
+        $srcPath = storage_path('app/public/' . $i->path);
         $image = file_get_contents($srcPath);
 
         putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
