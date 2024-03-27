@@ -7,10 +7,10 @@
 
 
 
-      <div class="row g-2">
+      <div class="row g-5">
         @foreach($category->announcements as $annoucement)
         @if($annoucement->is_accepted)
-        <div class="col-4 mb-4 d-flex justify-content-center ">
+        <div class="col-md-6 col-xl-4 mb-4 d-flex justify-content-center ">
           <x-card :announcement="$annoucement->id" :user="$annoucement->user->name" :price="$annoucement->price" :description="$annoucement->description" :category="$annoucement->category->name" :title="$annoucement->title" :root="route('announce.View',$annoucement->id)" :images="$annoucement->images" />
         </div>
         @endif
