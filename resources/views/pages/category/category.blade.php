@@ -8,6 +8,7 @@
 
 
       <div class="row g-5">
+      <div class="row g-5">
         @foreach($category->announcements as $annoucement)
         @if($annoucement->is_accepted)
         <div class="col-mb-4 col-xl-9 mb-4 d-flex justify-content-center">
