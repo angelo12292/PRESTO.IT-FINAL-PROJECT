@@ -57,6 +57,8 @@
       </div>
       <div class="col-6">
         <div class="row">
+
+
           <div class="col-4 border-end border-start">
             <h5 class="mb-2 mt-4 fw-light h2 primary-color-text">{{__('ui.insertTitle')}}: </h5>
             <h4 class="mb-4  primary-color-text">{{$announcement_to_check->title}}</h4>
@@ -67,6 +69,7 @@
               {{ Number::currency($announcement_to_check->price, in: 'EUR', locale: 'it') }}
             </h4>
           </div>
+          @if(count($announcement_to_check->images))
           <div class="col-4 ps-3 border-end">
             <h5 class="mb-2 mt-4 fw-light h4 primary-color-text">Revisione Immagini</h5>
             <p class="mb-2 mt-4  primary-color-text">Adulti: <span class="{{$image->adult}}"></span></p>
@@ -88,6 +91,8 @@
             @endif
           </div>
         </div>
+        @endif
+
       </div>
 
     </div>
