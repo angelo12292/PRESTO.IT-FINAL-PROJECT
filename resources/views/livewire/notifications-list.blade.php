@@ -1,4 +1,13 @@
-<div>
+<div >
+<div class="dropdown background ">
+          @if(count($notifications))
+          <span class="position-absolute top-0 start-100 translate-middle rounded-pill bg-danger" style="width:10px; height:10px"></span>
+          @endif
+          <button class="btn primary-color-text dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-bell-fill"></i>
+          </button>
+          <ul class="dropdown-menu background p-0">
+            <li>
     <h6 class="primary-color-text ps-3 border-top mb-0 py-2">{{__('ui.notifications')}}</h6>
     <ul class="list-group">
         @if(count($notifications))
@@ -21,6 +30,13 @@
             </li>
         @endif
     </ul>
-
+        </li>
+          </ul>
+        </div>  
 
 </div>
+
+
+
+
+
