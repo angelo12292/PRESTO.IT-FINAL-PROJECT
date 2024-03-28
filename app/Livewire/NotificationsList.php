@@ -53,15 +53,4 @@ class NotificationsList extends Component
         
     }
     
-
-    // public function clearNotificationList()
-    // {
-    //     $this->notifications = Notification::where('view',false)->where('user_id',Auth::user()->id)->take(4)->orderBy('id', 'DESC')->get();
-
-    //     $this->notifications->delete();
-
-    //     $this->loadNotification();
-        
-    // }
- 
 }

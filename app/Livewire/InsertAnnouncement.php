@@ -120,19 +120,10 @@ class InsertAnnouncement extends Component
               
             }
 
-
             // File::deleteDirectory(storage_path('app/livewire-tmp'));
         }
 
-
-
-
-
-
         $this->resetAnnounce();
-
-
-
 
         session()->flash('announcementSuccess');
     }

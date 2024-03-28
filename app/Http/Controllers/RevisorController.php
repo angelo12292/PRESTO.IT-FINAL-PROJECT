@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Artisan;
 use App\Console\Commands\MakeUserRevisor;
 use App\Http\Requests\FormRevisorRequest;
 use App\Http\Requests\StoreEmailSentsRequest;
+use App\Models\Notification;
 use App\Models\EmailSents;
 
 
@@ -47,6 +48,11 @@ class RevisorController extends Controller
 
     {
         $announcement->setAccepted(true);
+        Notification::create(
+            [
+                'user_id' => Auth::id(),
+                'body' => "Annuncio accettato",
+            ]);
         return redirect()->back()->with('success', 'Annuncio accettatto!');
     }
 
@@ -54,14 +60,24 @@ class RevisorController extends Controller
 
     {
         $announcement->setAccepted(false);
-        return redirect()->back()->with('fail', 'Annuncio rifiutato!');
+        Notification::create(
+            [
+                'user_id' => Auth::id(),
+                'body' => "Annuncio rifiutato!",
+            ]);
+        return redirect()->back()->with('success', 'Annuncio rifiutato!');
     }
 
     public function restoreRevisionAnnouncement(Announcement $announcement)
 
     {
         $announcement->setAccepted(NULL);
-        return redirect()->back()->with('success', 'Revisone dell \'annuncio ripristinata!');
+        Notification::create(
+            [
+                'user_id' => Auth::id(),
+                'body' => "Annuncio messo in revisione!",
+            ]);
+        
     }
 
     public function becomeRevisor( FormRevisorRequest $request)
@@ -77,6 +93,12 @@ class RevisorController extends Controller
             ]);
             
         Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
+
+        Notification::create(
+            [
+                'user_id' => Auth::id(),
+                'body' => "hai inviato la richiesta da revisore!",
+            ]);
         return redirect('/')->with('success', 'complementi! hai richesto di diventare revisore correttamente, attendi la conferma da parte dell\'admin');
     }
 
