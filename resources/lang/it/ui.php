@@ -40,8 +40,15 @@ return [
     // Revisor Index
     'announceCheckTrue' => 'Ecco l\'annuncio da revisionare',
     'announceCheckFalse' => 'Non ci sono annunci da revisionare',
+    'revisorImg' => 'Revisione immagine',
     'btnAccept' => 'Accetta',
     'btnRefuse' => 'Rifiuta',
+
+    // Revisor index revised
+    'announceAcceptedTrue' => 'Annuncio accettato',
+    'announceDiscardedTrue' => 'Annuncio rifiutato',
+    'announceAcceptedFalse' => 'Non ci sono annunci da revisionare',
+    'btnRestore' => 'Ripristina',
 
     // announce
     'announce' => 'Annuncio',
@@ -51,6 +58,19 @@ return [
     'insertYourName' => 'Inserisci il tuo nome',
     'emailAdress' => 'Indirizzo email',
     'dontShareEmail' => 'Non condividere con nessuno la tua email',
+    'writeVendor' => 'Scrivi al venditore',
+    'sendMessage' => 'Invia messaggio',
+
+    // announce index
+    'announcementSearch' => 'Ricerca annunci',
+    'announcementEmpty' => 'Non ci sono annunci per questa ricerca',
+
+    // notifications list
+    'notifications' => 'NOTIFICHE',
+    'notificationsDelete' => 'cancella',
+    'notificationsEmpty' => 'Non ci sono nuove notifiche',
+
+
 
 
 ];

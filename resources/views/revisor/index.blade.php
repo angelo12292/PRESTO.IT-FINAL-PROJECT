@@ -57,18 +57,18 @@
       <div class="col-12 col-xxl-6">
         <div class="row">
           <div class="col-12 col-sm-4 border-end border-start border-top ps-5 ps-sm-3">
-            <h5 class="mb-2 mt-4 fw-light h2 primary-color-text">{{__('ui.insertTitle')}}: </h5>
+            <h5 class="mb-2 mt-4 fw-light primary-color-text">{{__('ui.insertTitle')}}: </h5>
             <h5 class="mb-4  primary-color-text">{{$announcement_to_check->title}}</h5>
-            <h5 class="mb-2 fw-light h2 primary-color-text">{{__('ui.insertDescription')}}:</h5>
+            <h5 class="mb-2 fw-light  primary-color-text">{{__('ui.insertDescription')}}:</h5>
             <h5 class="mb-4  primary-color-text">{{$announcement_to_check->description}}</h5>
-            <h5 class="mb-2 fw-light h2 primary-color-text">{{__('ui.insertPrice')}}:</h5>
+            <h5 class="mb-2 fw-light  primary-color-text">{{__('ui.insertPrice')}}:</h5>
             <h5 class="mb-4  primary-color-text">
               {{ Number::currency($announcement_to_check->price, in: 'EUR', locale: 'it') }}
             </h5>
           </div>
           @if(count($announcement_to_check->images))
           <div class="col-12 col-sm-4  border-end border-top ps-5 ps-sm-3">
-            <h5 class="mb-2 mt-4 fw-light h4 primary-color-text">Revisione Immagini</h5>
+            <h5 class="mb-2 mt-4 fw-light h4 primary-color-text">{{__('ui.revisorImg')}}</h5>
             <p class="mb-2 mt-4  primary-color-text">Adulti: <span class="{{$image->adult}}"></span></p>
             <p class="mb-2 mt-4  primary-color-text">Satira: <span class="{{$image->spoof}}"></span></p>
             <p class="mb-2 mt-4  primary-color-text">Medicina: <span class="{{$image->medical}}"></span></p>
@@ -92,19 +92,7 @@
         @endif
 
       </div>
-
-    </div>
-
-
-    <div class="d-flex  justify-content-end py-3 border-top ">
-      <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST"
-        enctype="multipart/form-data">
-        @csrf
-        @method('PATCH')
-        <button type="submit"
-          class="btn text-white rounded-5  primary-color-bg btnStatic">{{__('ui.btnAccept')}}</button>
-      </form>
-      <div class="d-flex  justify-content-center py-3 border-top ">
+      <div class="d-flex  justify-content-end py-3 border-top ">
         <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST"
           enctype="multipart/form-data">
           @csrf
@@ -121,23 +109,12 @@
           <button type="submit" class="btn btn-danger rounded-5 ">{{__('ui.btnRefuse')}}</button>
         </form>
       </div>
-
-      @endif
-      <form class="ps-3" action="{{route ('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}"
-        method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('PATCH')
-        <button type="submit" class="btn btn-danger rounded-5 ">{{__('ui.btnRefuse')}}</button>
-      </form>
     </div>
+
+
+
+
   </div>
 
-
-
-
-
-  @endif
-  </div>
-
+  <x-footer />
 </x-layout>
-<x-footer />

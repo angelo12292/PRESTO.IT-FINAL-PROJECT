@@ -5,7 +5,8 @@
       <a class="navbar-brand fw-bold fs-3 p-0 ms-2 primary-color-text" href="{{route('home')}}">Presto</a>
     </div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -17,10 +18,12 @@
 
 
         <li class="nav-item border-bottom noBorderBot">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#category-section">{{__('ui.Category')}}</a>
+          <a class="nav-link active navAnimation linkNav" aria-current="page"
+            href="#category-section">{{__('ui.Category')}}</a>
         </li>
         <li class="nav-item border-bottom noBorderBot">
-          <a class="nav-link active navAnimation linkNav" aria-current="page" href="#announcements-section">{{__('ui.Announce')}}</a>
+          <a class="nav-link active navAnimation linkNav" aria-current="page"
+            href="#announcements-section">{{__('ui.Announce')}}</a>
         </li>
 
       </ul>
@@ -42,9 +45,11 @@
       <div class=" me-3 position-relative d-flex align-items-center ">
         <div class="dropdown background ">
           @if(session()->has('success'))
-          <span class="position-absolute top-0 start-100 translate-middle rounded-pill bg-danger" style="width:10px; height:10px"></span>
+          <span class="position-absolute top-0 start-100 translate-middle rounded-pill bg-danger"
+            style="width:10px; height:10px"></span>
           @endif
-          <button class="btn primary-color-text dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn primary-color-text dropdown-toggle" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
             <i class="bi bi-bell-fill"></i>
           </button>
           <ul class="dropdown-menu background p-0">
@@ -57,26 +62,31 @@
 
 
 
-        @if (Auth::user()->is_revisor)
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          {{App\Models\Announcement::toBeRevisionedCount()}}
-        </span>
-        @endif
-        <button class="btn dropdown-toggle linkNav " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+        <button class="btn dropdown-toggle linkNav position-relative  " type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          @if (Auth::user()->is_revisor)
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{App\Models\Announcement::toBeRevisionedCount()}}
+          </span>
+          @endif
           <i class="bi bi-person-circle me-1"></i>
           {{auth()->user()->name}}
         </button>
         <ul class="dropdown-menu ">
           <li>
             @if (Auth::user()->is_revisor)
-            <a href="{{ route('revisor.index')}}" class=" nav-link text-start position-relative dropdown-item primary-color-text ps-3 p-0 dropDownHover">
-              {{__('ui.acceptAnnounce')}}<br>{{__('ui.dropDownAnnounce')}}: <span class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
+            <a href="{{ route('revisor.index')}}"
+              class=" nav-link text-start position-relative dropdown-item primary-color-text ps-3 p-0 dropDownHover">
+              {{__('ui.acceptAnnounce')}}<br>{{__('ui.dropDownAnnounce')}}: <span
+                class=" fw-bold">{{App\Models\Announcement::toBeRevisionedCount()}}</span>
             </a>
           <li>
             <hr class="dropdown-divider">
           </li>
           <a href="{{ route('revisor.index-revised')}}" class="nav-link primary-color-text ps-3 dropDownHover">
-            {{__('ui.restoreAnnounce')}}<br>{{__('ui.dropDownAnnounce')}}: <span class="fw-bold">{{App\Models\Announcement::revisionedCount()}}</span>
+            {{__('ui.restoreAnnounce')}}<br>{{__('ui.dropDownAnnounce')}}: <span
+              class="fw-bold">{{App\Models\Announcement::revisionedCount()}}</span>
           </a>
           <li>
             <hr class="dropdown-divider">
@@ -85,7 +95,8 @@
           @endif
           <form action="/logout" method="POST" class="nav-link btn ">
             @csrf
-            <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start " type="submit">Logout</button>
+            <button class="nav-link primary-color-text ps-3 dropDownHover w-100 text-start "
+              type="submit">Logout</button>
           </form>
 
           </li>
@@ -93,7 +104,8 @@
       </div>
       @endguest
       <div class="py-3 p-lg-0 d-flex align-items-center ">
-        <a href="{{route('insert_announcement')}}" type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">{{__('ui.InsertAnnounce')}}</a>
+        <a href="{{route('insert_announcement')}}" type="submit"
+          class="btn text-white rounded-5  primary-color-bg btnStatic">{{__('ui.InsertAnnounce')}}</a>
 
         @if(session('locale')=='en')
         <x-_locale lang="en" nation="gb" />
@@ -104,7 +116,8 @@
         @endif
 
         <div class="dropdown background ">
-          <button class="btn primary-color-text dropdown-toggle px-2 " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn primary-color-text dropdown-toggle px-2 " type="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
           </button>
           <ul class="dropdown-menu background ">
             <li class="dropdown-item">
