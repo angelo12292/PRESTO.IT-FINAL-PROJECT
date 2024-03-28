@@ -40,7 +40,7 @@ class NotificationForm extends Component
        Notification::create(
         [
             'user_id' => Auth::id(),
-            'body' => "email inviata correttamente",
+            'body' => "hai inviato un'email al venditore",
         ]);
         
             
@@ -57,7 +57,7 @@ class NotificationForm extends Component
         Notification::create(
         [
             'user_id' => Auth::id(),
-            'body' => "hai creato un nuovo articolo",
+            'body' => "hai creato un nuovo annuncio",
         ]);
             
         $this->dispatch('notification-created');

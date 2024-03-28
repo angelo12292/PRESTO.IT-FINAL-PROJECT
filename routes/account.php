@@ -9,6 +9,8 @@ Route::get('/inserisci_annuncio', [AccountController::class, 'insertAnnouncement
 
 Route::get('/notifiche/index', [AccountController::class, 'notificationIndex'])->name('notification.index');
 
+Route::delete('/notifiche/{notification}/delete',[AccountController::class,'destroyNotification'])->name('notification.destroy');
+
 Route::post('/richiesta/revisore', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
 
 Route::get('/richiesta/revisore/form', [AccountController::class, 'becomeRevisorForm'])->name('become.revisor.form');
