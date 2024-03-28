@@ -11,24 +11,20 @@ use App\Http\Requests\StoreEmailSentsRequest;
 use App\Models\EmailSents;
 use App\Models\User;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Validate;
 
 
 class ContactVendorForm extends Component
 {
     public $emailSentId;
-    #[Validate]
+    #[Validate('required', message: 'il testo è obbligatorio.')]
+    #[Validate('max:300', message: 'il testo non può contenere più di :max caratteri.')]
     public $body;
     public $receiving_user_id;
     public $receiving_user_email;
 
 
 
-    public function rules(){
-        return [
-        'body'=> 'required|max:300'
-        ];
-
-    }
 
     public function render()
     {
@@ -49,8 +45,13 @@ class ContactVendorForm extends Component
 
         ]);
 
-        $this->dispatch('mail-created');
+        Mail::to($this->receiving_user_email)->send(new ContactVendor(Auth::user()));
 
+        $this->resetEmailBody();
+
+        
+        session()->flash('emailSentSuccess');
+        
         
 
     }
@@ -64,22 +65,10 @@ class ContactVendorForm extends Component
     public function emailSent()
     {
         $this->dispatch('email-sent');
-        session()->flash('success');
+        return redirect('/')->with('success', 'complementi! hai richesto di diventare revisore correttamente, attendi la conferma da parte dell\'admin');
        
     }
 
 
-    #[On('mail-created')]
-    public function contactVendor()
-    {
-
-        Mail::to($this->receiving_user_email)->send(new ContactVendor(Auth::user()));
-        $this->resetEmailBody();
-
-        
-        
-        
-
-
-    }
+   
 }

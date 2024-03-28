@@ -33,6 +33,17 @@ class AccountController extends Controller
 
         return view("accounts.notification_index",compact('notifications'));
     }
+
+    public function destroyNotification(Notification $notification)
+    {
+        if($notification->user_id != auth()->user()->id){
+            abort(404);
+        }
+        
+        $notification->delete();
+        return redirect()->back();
+    }
+
     public function becomeRevisorForm()
     {
         return view('accounts.become-revisor-form');

@@ -8,11 +8,7 @@
                 Notifiche livewire form
             </button>
         </p>
-        <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-                <input wire:model='success' type="text" />
-            </div>
-        </div>
+        
     </form>
     @endif
 
@@ -24,13 +20,7 @@
                 Notifiche livewire
             </button>
         </p>
-        <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-                <input wire:model='error' type="text" />
-            
-            </div>
-           
-        </div>
+        
     </form>
     @endif
 </div>

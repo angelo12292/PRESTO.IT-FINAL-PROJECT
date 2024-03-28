@@ -42,12 +42,13 @@ return [
     // Revisor Index
     'announceCheckTrue' => 'Here is the announce for review',
     'announceCheckFalse' => 'There are no announcement to review',
+    'revisorImg' => 'Image review',
     'btnAccept' => 'Accept',
     'btnRefuse' => 'Refuse',
 
     // Revisor index revised
     'announceAcceptedTrue' => 'Announce accepted',
-    'announceDiscardedTrue' => 'Announce accepted',
+    'announceDiscardedTrue' => 'Announce rejected',
     'announceAcceptedFalse' => 'There are no announcement to review',
     'btnRestore' => 'Restore',
 
@@ -59,8 +60,17 @@ return [
     'insertYourName' => 'Insert your name',
     'emailAdress' => 'Email adress',
     'dontShareEmail' => 'Don\'t share your email with anyone',
+    'writeVendor' => 'Write to the seller',
+    'sendMessage' => 'Send Message',
 
+    // announce index
+    'announcementSearch' => 'Search Announcement',
+    'announcementEmpty' => 'There are no announcement for this search',
 
+    // notifications list
+    'notifications' => 'NOTIFICATIONS',
+    'notificationsDelete' => 'delete',
+    'notificationsEmpty' => 'there are no new notifications',
 
 
 

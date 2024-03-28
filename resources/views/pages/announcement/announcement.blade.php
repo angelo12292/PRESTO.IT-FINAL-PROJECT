@@ -1,7 +1,7 @@
 <x-layout>
   <x-nav />
   <div class="container">
-    <div class="col-8 mx-auto ">
+    <div class="col-12">
       <div class="row  m-0 ">
         <div class="col-12 p-0 ">
           <header>
@@ -16,13 +16,13 @@
       </div>
     </div>
 
-    <div class="row mt-2 g-5">
+    <div class="row mt-1 g-5">
 
-      <div class="col-sm-6 col-md-8 mx-auto ">
+      <div class=" col-12 ">
 
         <div class="row m-0 text-center mt-2 d-block d-sm-flex ">
 
-          <div class="col-10 mx-auto col-sm-5 col-md-6 col-lg-7 p-0 mx-0">
+          <div class="col-12  col-md-7 col-lg-7 p-4 m-0">
 
 
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -76,16 +76,14 @@
           </div>
 
 
-          <div class="col-10 mx-auto col-sm-5 col-md-4 col-lg-3 flex-column m-0 p-0 ">
+          <div class="col-12  col-md-5  flex-column m-0 p-4 border-start border-end">
             @auth
             <div>
               <h5 class="primary-color-text ">{{__('ui.contactVendor')}} {{$user->name}}.</h5>
             </div>
 
             <livewire:contact-vendor-form :receiving_user_id="$user->id" :receiving_user_email="$user->email" />
-            <div class="raw">
 
-            </div>
             @else
             <div>
               <h5 class="primary-color-text ">{{__('ui.contactVendor')}} {{$user->name}}.</h3>
