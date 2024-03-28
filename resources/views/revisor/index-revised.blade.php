@@ -16,7 +16,7 @@
 
     <div class="row justify-content-evenly ">
 
-      <div class="col-6 p-3 mb-5 border-start border-end ">
+      <div class="col-12 col-md-6 p-3 mb-5 border-start border-end ">
 
         <div class="col-12 mb-5 ">
           <div class="">
@@ -109,7 +109,7 @@
       </div>
 
 
-      <div class="col-6 p-3 mb-5 border-end ">
+      <div class="col-12 col-md-6 p-3 mb-5 border-end ">
 
         <div class="col-12 mb-5">
           <h1 class="text-center primary-color-text">
