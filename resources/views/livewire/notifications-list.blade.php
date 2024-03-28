@@ -1,4 +1,5 @@
 <div>
+
   <h6 class="primary-color-text ps-3 border-top mb-0 py-2">{{__('ui.notifications')}}</h6>
   <ul class="list-group">
     @if(count($notifications))
@@ -20,6 +21,5 @@
     </li>
     @endif
   </ul>
-
 
 </div>
