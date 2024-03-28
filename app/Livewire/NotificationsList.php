@@ -24,13 +24,13 @@ class NotificationsList extends Component
     {
         return view('livewire.notifications-list');
     }
-    
+    #[On('notification-created')]
     public function mount()
     {
         return $this->loadNotification();
         
     }
-   #[On('notification-created')]
+   
     public function loadNotification()
     {
 
@@ -42,6 +42,26 @@ class NotificationsList extends Component
         }
         
     }
+
+    public function clearNotificationList($notificationId)
+    {
+        $notification = Notification::find($notificationId);
+
+        $notification->delete();
+
+        $this->loadNotification();
+        
+    }
     
+
+    // public function clearNotificationList()
+    // {
+    //     $this->notifications = Notification::where('view',false)->where('user_id',Auth::user()->id)->take(4)->orderBy('id', 'DESC')->get();
+
+    //     $this->notifications->delete();
+
+    //     $this->loadNotification();
+        
+    // }
  
 }

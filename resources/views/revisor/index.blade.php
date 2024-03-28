@@ -13,8 +13,8 @@
     </div>
     @if($announcement_to_check)
 
-    <div class="row">
-      <div class="col-6">
+    <div class="row ">
+      <div class="col-10 col-sm-12 col-lg-8 mx-auto  col-xxl-6 mb-3">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
 
           @if(count($announcement_to_check->images))
@@ -52,25 +52,22 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-
-
       </div>
-      <div class="col-6">
+
+      <div class="col-12 col-xxl-6">
         <div class="row">
-
-
-          <div class="col-4 border-end border-start">
+          <div class="col-12 col-sm-4 border-end border-start border-top ps-5 ps-sm-3">
             <h5 class="mb-2 mt-4 fw-light h2 primary-color-text">{{__('ui.insertTitle')}}: </h5>
-            <h4 class="mb-4  primary-color-text">{{$announcement_to_check->title}}</h4>
-            <h4 class="mb-2 fw-light h2 primary-color-text">{{__('ui.insertDescription')}}:</h4>
-            <h4 class="mb-4  primary-color-text">{{$announcement_to_check->description}}</h4>
-            <h4 class="mb-2 fw-light h2 primary-color-text">{{__('ui.insertPrice')}}:</h4>
-            <h4 class="mb-4  primary-color-text">
+            <h5 class="mb-4  primary-color-text">{{$announcement_to_check->title}}</h5>
+            <h5 class="mb-2 fw-light h2 primary-color-text">{{__('ui.insertDescription')}}:</h5>
+            <h5 class="mb-4  primary-color-text">{{$announcement_to_check->description}}</h5>
+            <h5 class="mb-2 fw-light h2 primary-color-text">{{__('ui.insertPrice')}}:</h5>
+            <h5 class="mb-4  primary-color-text">
               {{ Number::currency($announcement_to_check->price, in: 'EUR', locale: 'it') }}
-            </h4>
+            </h5>
           </div>
           @if(count($announcement_to_check->images))
-          <div class="col-4 ps-3 border-end">
+          <div class="col-12 col-sm-4  border-end border-top ps-5 ps-sm-3">
             <h5 class="mb-2 mt-4 fw-light h4 primary-color-text">Revisione Immagini</h5>
             <p class="mb-2 mt-4  primary-color-text">Adulti: <span class="{{$image->adult}}"></span></p>
             <p class="mb-2 mt-4  primary-color-text">Satira: <span class="{{$image->spoof}}"></span></p>
@@ -78,7 +75,7 @@
             <p class="mb-2 mt-4  primary-color-text">Violenza: <span class="{{$image->violence}}"></span></p>
             <p class="mb-2 mt-4  primary-color-text">Contenuto Ammiccante: <span class="{{$image->racy}}"></span></p>
           </div>
-          <div class="col-4 border-end pe-0 ">
+          <div class="col-12 col-sm-4 border-end pe-0 border-top pb-2 ps-5 ps-sm-3">
             <h5 class="mb-2 mt-4 fw-light h4 primary-color-text">Tags</h5>
             @if($image->labels)
             @foreach($image->labels as $label)
@@ -88,6 +85,7 @@
             <div class="spinner-border text-primary" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
+            @endif
             @endif
           </div>
         </div>
@@ -106,8 +104,25 @@
         <button type="submit"
           class="btn text-white rounded-5  primary-color-bg btnStatic">{{__('ui.btnAccept')}}</button>
       </form>
+      <div class="d-flex  justify-content-center py-3 border-top ">
+        <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST"
+          enctype="multipart/form-data">
+          @csrf
+          @method('PATCH')
+          <button type="submit"
+            class="btn text-white rounded-5  primary-color-bg btnStatic">{{__('ui.btnAccept')}}</button>
+        </form>
 
 
+        <form class="ps-3" action="{{route ('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}"
+          method="POST" enctype="multipart/form-data">
+          @csrf
+          @method('PATCH')
+          <button type="submit" class="btn btn-danger rounded-5 ">{{__('ui.btnRefuse')}}</button>
+        </form>
+      </div>
+
+      @endif
       <form class="ps-3" action="{{route ('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}"
         method="POST" enctype="multipart/form-data">
         @csrf
@@ -115,13 +130,13 @@
         <button type="submit" class="btn btn-danger rounded-5 ">{{__('ui.btnRefuse')}}</button>
       </form>
     </div>
-
-    @endif
-
+  </div>
 
 
 
 
+
+  @endif
   </div>
 
 </x-layout>

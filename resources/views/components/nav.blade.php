@@ -40,7 +40,7 @@
           <button class="btn primary-color-text dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="bi bi-bell-fill"></i>
           </button>
-          <ul class="dropdown-menu background ">
+          <ul class="dropdown-menu background p-0">
             <li>
               <livewire:notifications-list />
             </li>

@@ -2,7 +2,7 @@
     <x-nav />
     <div class="row">
         <div class="col-6 mx-auto">
-            <livewire:notification-message />
+            
         </div>
     </div>
 
