@@ -1,5 +1,5 @@
 <div >
-    <h6 class="primary-color-text ps-3 border-top mb-0 py-2">NOTIFICHE</h6>
+    <h6 class="primary-color-text ps-3 border-top mb-0 py-2">{{__('ui.notifications')}}</h6>
     <ul class="list-group">
         @if(count($notifications))
             @foreach($notifications as $notification)
@@ -9,7 +9,7 @@
                 type="submit">{{$notification->body}}</a>
             </li>
             <li class="list-group-item bg-danger text-center p-0"> 
-            <button wire:click="clearNotificationList({{ $notification->id }})" type="button" class="small fs-6 btn px-5 btn-danger btn-sm">cancella</button>
+            <button wire:click="clearNotificationList({{ $notification->id }})" type="button" class="small fs-6 btn px-5 btn-danger btn-sm">{{__('ui.notificationsDelete')}}</button>
             </li>
             @endforeach
             
@@ -17,7 +17,7 @@
             
         @else
             <li class="primary-color-text list-group-item ps-3 w-100">
-                <p>non ci sono nuove notifiche</p>
+                <p>{{__('ui.notificationsEmpty')}}</p>
             </li>
         @endif    
     </ul>
