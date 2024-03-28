@@ -11,7 +11,7 @@
     </li>
     <li class="list-group-item bg-danger text-center p-0">
       <button wire:click="clearNotificationList({{ $notification->id }})" type="button"
-        class="small fs-6 btn px-5 btn-danger btn-sm">{{__('ui.delete')}}</button>
+        class="small fs-6 btn px-5 btn-danger btn-sm">{{__('ui.notificationsDelete')}}</button>
     </li>
     @endforeach
 
