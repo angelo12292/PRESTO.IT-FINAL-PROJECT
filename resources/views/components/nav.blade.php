@@ -47,12 +47,13 @@
           </ul>
         </div>
 
-        @if (Auth::user()->is_revisor)
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          {{App\Models\Announcement::toBeRevisionedCount()}}
-        </span>
-        @endif
-        <button class="btn dropdown-toggle linkNav " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+        <button class="btn dropdown-toggle linkNav position-relative " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          @if (Auth::user()->is_revisor)
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{App\Models\Announcement::toBeRevisionedCount()}}
+          </span>
+          @endif
           <i class="bi bi-person-circle me-1"></i>
           {{auth()->user()->name}}
         </button>
