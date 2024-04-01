@@ -33,7 +33,46 @@ class PageController extends Controller
 
     public function searchAnnouncements(Request $request)
     {
+        if (session('locale') == 'en') {
+
+            // Per il solo titolo 
+
+            if ($request->searched && $request->searchedCategory == 'Category') {
+                $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
+                return view('pages.announcement.index', compact('announcements'));
+            }
+
+            // Errore
+
+            elseif (!$request->searched && $request->searchedCategory == 'Category') {
+                return redirect()->back()->with('errorSearch', 'Ricerca sbagliata');
+            }
+        }
+
+        if (session('locale') == 'es') {
+
+            // Per il solo titolo 
+
+            if ($request->searched && $request->searchedCategory == 'Categorías') {
+                $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
+                return view('pages.announcement.index', compact('announcements'));
+            }
+
+            // Errore
+
+            elseif (!$request->searched && $request->searchedCategory == 'Categorías') {
+                return redirect()->back()->with('errorSearch', 'Ricerca sbagliata');
+            }
+        }
+
+
+
+
+
+
         // Quello incrociato
+
+
 
         if ($request->searched && $request->searchedCategory != 'Categorie') {
             $announcements = Announcement::search($request->searched)->where('is_accepted', true)->where('category_id', $request->searchedCategory)->paginate(10);
@@ -43,7 +82,7 @@ class PageController extends Controller
 
 
 
-        // Per il solo titolo
+        // Per il solo titolo 
 
         elseif ($request->searched && $request->searchedCategory == 'Categorie') {
             $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
@@ -56,10 +95,13 @@ class PageController extends Controller
             return redirect()->back()->with('errorSearch', 'Ricerca sbagliata');
         }
 
+
+
         // Per la categoria
 
-        elseif (!$request->searched) {
-            $announcements = Announcement::search($request->searchedCategory)->where('is_accepted', true)->paginate(10);
+        elseif (!$request->searched && $request->searchedCategory != 'Categorie') {
+
+            $announcements = Announcement::where('category_id', $request->searchedCategory)->where('is_accepted', true)->paginate(10);
 
             return view('pages.announcement.index', compact('announcements'));
         }
