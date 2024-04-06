@@ -27,7 +27,6 @@
         </li>
 
       </ul>
-
       
       @guest
       <div class="row m-0 me-lg-4 ms-lg-3">

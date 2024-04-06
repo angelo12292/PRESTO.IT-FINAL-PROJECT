@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         User::factory(25)->create();
 
 
-        Announcement::factory(40)->create();
+        Announcement::factory(2)->create();
 
         
 

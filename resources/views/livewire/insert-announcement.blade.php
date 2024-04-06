@@ -62,6 +62,9 @@
                         </div>
                         <div class="mb-3" wire:loading.remove>
                             <button class="btn text-white rounded-5  primary-color-bg btnStatic" wire:click="announcementCreated" wire:target="updatedTemporaryImages" type="submit">{{__('ui.btnCreate')}}</button>
+                            <p>
+                                i campi con sono obbligatori
+                            </p>
                         </div>
                     </div>
                 </div>

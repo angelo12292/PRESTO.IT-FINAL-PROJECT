@@ -23,7 +23,9 @@ class InsertAnnouncement extends Component
     #[Validate('max:50', message: 'il titolo contiene troppi caratteri.')]
     public $AnnTitle;
 
+    #[Validate('required', message: 'seleziona una categoria')]
     public $AnnCategory;
+
     #[Validate('required', message: 'Inserire la descrizione.')]
     #[Validate('min:1', message: 'la descrizione contiene pochi caratteri.')]
     public $AnnDescrip;
