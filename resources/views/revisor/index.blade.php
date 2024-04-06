@@ -41,13 +41,11 @@
             </div>
           </div>
           @endif
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
-            data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"
-            data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
@@ -90,27 +88,24 @@
           </div>
         </div>
 
-         <div class="d-flex  justify-content-end py-3 border-top ">
-        <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST"
-          enctype="multipart/form-data">
-          @csrf
-          @method('PATCH')
-          <button type="submit"
-            class="btn text-white rounded-5  primary-color-bg btnStatic">{{__('ui.btnAccept')}}</button>
-        </form>
+        <div class="d-flex  justify-content-end py-3 border-top ">
+          <form action="{{route ('revisor.accept_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PATCH')
+            <button type="submit" class="btn text-white rounded-5  primary-color-bg btnStatic">{{__('ui.btnAccept')}}</button>
+          </form>
 
 
-        <form class="ps-3" action="{{route ('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}"
-          method="POST" enctype="multipart/form-data">
-          @csrf
-          @method('PATCH')
-          <button type="submit" class="btn btn-danger rounded-5 ">{{__('ui.btnRefuse')}}</button>
-        </form>
-      </div>
+          <form class="ps-3" action="{{route ('revisor.reject_announcement',['announcement'=>$announcement_to_check])}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PATCH')
+            <button type="submit" class="btn btn-danger rounded-5 ">{{__('ui.btnRefuse')}}</button>
+          </form>
+        </div>
         @endif
 
       </div>
-     
+
     </div>
 
 
@@ -118,5 +113,5 @@
 
   </div>
 
-  <x-footer />
 </x-layout>
+<x-footer />

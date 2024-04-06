@@ -1,5 +1,8 @@
 <x-layout>
   <x-nav />
+  <div class="container p-0">
+
+
 
     <div class="row justify-content-evenly ">
 
@@ -183,8 +186,7 @@
         </div>
 
       </div>
-
     </div>
   </div>
-  <x-footer />
 </x-layout>
+<x-footer />
