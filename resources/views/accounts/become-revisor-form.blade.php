@@ -1,5 +1,6 @@
 <x-layout>
     <x-nav />
+    
 
     <div class="row m-0 p-0">
         <div class="col-10 mx-auto text-center">
